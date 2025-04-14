@@ -35,8 +35,7 @@ const Header = () => {
                     <Image
                         src='/avon_with_no_bg.png'
                         alt='w'
-                        layout="fill"
-                        objectFit="cover"
+                        fill
                         quality={100}
                     />
                 </motion.div>
@@ -57,13 +56,12 @@ const Header = () => {
                         >
                     Wonge Market Online
                     <p style={{
-                        fontWeight:'lighter'
+                        fontWeight:'lighter',color:''
                     }}>
-                        Our team of got you covered
-                        from earrings brocho 
+                        Wonge got you covered
+                        from earrings brocho
                         body lotion soap.
-                        Say anything to make you
-                        look outstanding.
+                        Market with us tooday.
                     </p>
                 </motion.div>
 
