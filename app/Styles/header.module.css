@@ -6,13 +6,14 @@
     border: 1px solid rgba(255,255,255,0.5);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    backdrop-filter: blur(10px); /* Apply blur effect */
+    backdrop-filter: blur(1px); /* Apply blur effect */
     box-shadow:7px 2px 10px rgba(0, 0, 0, 0.5) ;
     backdrop-filter: blur(10px); /* For Safari support */
 }
 .imageContainer{
     margin: 10px;
     display:flex;
+    margin: 10px 0px;
 }
 .img{
     width: 150px;
@@ -22,5 +23,5 @@
 .imageContainerText{
     padding: 40px 0px;
     font-weight: bold;
-    max-width: 290px;
+    max-width: 280px;
 }

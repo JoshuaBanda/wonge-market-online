@@ -22,7 +22,7 @@ const Header = () => {
                     animate={{
                         opacity:1,
                         y:10,
-                        scale:[1,1.2],x:10
+                        scale:[1,1.15],x:10
                     }}
                     transition={{
                         type: 'tween',
@@ -43,23 +43,20 @@ const Header = () => {
                 <motion.div className={styles.imageContainerText}
                 
                 initial={{
-                        x:0,y:0,
+                        x:0,y:100,
+                        opacity:0
                     }}
                     animate={{
                         opacity:1,
-                        x:20
+                        y:0
                     }}
                     transition={{
-                        type: 'tween',
-                        stiffness: 20,
-                        repeat: Infinity, 
-                        repeatType:'reverse',
-                        duration:2
+                        type: 'spring',
+                        stiffness: 120,
                         }}
                         >
                     Wonge Market Online
                     <p style={{
-                        width:'350px',
                         fontWeight:'lighter'
                     }}>
                         Our team of got you covered

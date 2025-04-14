@@ -14,7 +14,7 @@ const Pentagon = () => {
         "rgba(54, 162, 235, 1)", // Color 2
         "rgba(255, 159, 64, 1)", // Color 3
         "rgba(75, 192, 192, 1)", // Color 4
-        "rgba(252, 50, 0,0.9)", // Color 5
+        "rgba(255, 255, 255, 0.9)", // Color 5
     ];
 
     // Rotate and change color every 6 seconds
