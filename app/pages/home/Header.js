@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '../../Styles/header.module.css'
 import NavBarItemList from './HeaderItemFlow';
 import { motion, AnimatePresence } from 'framer-motion';
+import Pentagon from './Pentagon';
 const Header = () => {
     return (
         <div className={styles.main}>
@@ -17,12 +18,12 @@ const Header = () => {
                     
                 <motion.div className={styles.img}
                     initial={{
-                        x:0,y:0,
+                        x:-20,y:0,
                     }}
                     animate={{
                         opacity:1,
-                        y:10,
-                        scale:[1,1.15],x:10
+                        //y:5,
+                        scale:[1,1.1],
                     }}
                     transition={{
                         type: 'tween',
@@ -35,8 +36,9 @@ const Header = () => {
                     <Image
                         src='/avon_with_no_bg.png'
                         alt='w'
-                        fill
                         quality={100}
+                        width="210"
+                        height="170"
                     />
                 </motion.div>
                 <motion.div className={styles.imageContainerText}

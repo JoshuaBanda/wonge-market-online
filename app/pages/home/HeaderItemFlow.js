@@ -4,6 +4,7 @@ import styles from '../../Styles/headerItemFlow.module.css';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Pentagon from './Pentagon';
+import PentagonTwo from './PentagonTwo';
 
 const NavBarItemList = () => {
     const [items, setItems] = useState([
@@ -43,7 +44,7 @@ const NavBarItemList = () => {
                                 initial={{ opacity: 0, x: 0, y: 0 }} // Start off to the right
                                 animate={{
                                     scale:index===0?1.5: 1,
-                                    x:index===1?-200:200,
+                                    x:index===1?-60:220,
                                     opacity:index===0?0.8:0,
                                     y:index===1?100:150,
 
@@ -71,7 +72,7 @@ const NavBarItemList = () => {
                                             src={item.src}
                                             alt={item.alt}
                                             layout="fill"
-                                            quality={80}
+                                            quality={100}
                                             priority
                                             style={{ objectFit: 'cover' }} // Ensures the image covers the container
                                         />
@@ -91,9 +92,16 @@ const NavBarItemList = () => {
                         ))}
                     </AnimatePresence>
                 </motion.ul>
-                <div style={{position:'relative',top:'-100px', left:'10px'}}>
+                <div style={{position:'relative',top:'-100px', left:'-20px'}}>
                     
                     <Pentagon/>
+                    <motion.div 
+                        initial={{scale:0.5}}
+                        style={{
+                            position:'absolute',top:'55px',left:'100px'
+                        }}>
+                        <PentagonTwo/>
+                    </motion.div>
                 </div>
             </div>
         </div>
