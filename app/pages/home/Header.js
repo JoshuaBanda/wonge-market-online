@@ -1,9 +1,8 @@
 "use client";
 import Image from 'next/image';
 import styles from '../../Styles/header.module.css'
-import NavBarItemList from './HeaderItemFlow';
 import { motion, AnimatePresence } from 'framer-motion';
-import Pentagon from './Pentagon';
+import NavBarItemList from './HeaderItemFlow';
 const Header = () => {
     return (
         <div className={styles.main}>
@@ -44,7 +43,7 @@ const Header = () => {
                 <motion.div className={styles.imageContainerText}
                 
                 initial={{
-                        x:-30,y:100,
+                        x:-40,y:100,
                         opacity:0
                     }}
                     animate={{
