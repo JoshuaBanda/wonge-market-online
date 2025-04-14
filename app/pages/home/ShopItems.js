@@ -10,6 +10,7 @@ import { FaHeart, FaStar, FaStarHalf } from "react-icons/fa";
 import { FaCartShopping, FaStarHalfStroke } from "react-icons/fa6";
 import LikeButton from "../like/LikeButton";
 import CutEdgeText from "./CutEdgeText";
+import { motion } from "framer-motion";
 
 // Function to fetch like data for a specific post
 const fetchLikeData = async (jwtToken, postId, currentUserId, apiService, setLikeCount, setIsLiked, setErrorMessage) => {
@@ -71,7 +72,14 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
 
   // Map over the items to create the list of items
   const homeItems = Array.isArray(items) && items.map((item) => (
-    <div key={item.id} className={styles.container}>
+    <motion.div key={item.id} className={styles.container}
+      initial={{
+        x:0,y:0
+      }}
+      animate={{
+        y:index===0?100:0,
+      }}
+    >
       {/* Check if photo_url exists and display the image */}
       {item.photo_url ? (
         <div className={styles.picContainer}>
@@ -122,7 +130,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
         
       </Link>
 
-    </div>
+    </motion.div>
   ));
 
   return (

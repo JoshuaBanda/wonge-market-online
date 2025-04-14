@@ -116,7 +116,8 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
             color: isLiked ? '#333' : '#888',
             overflow:'visible',width:'100px',
             borderRadius:'10px',
-            height:'22px'
+            height:'22px',backdropFilter:'blur(10px)',
+            boxShadow:'-2px 6px 10px rgba(0,0,0,0.5)'
           }}
         >
           <div>
