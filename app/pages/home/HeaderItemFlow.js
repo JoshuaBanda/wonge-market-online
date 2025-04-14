@@ -42,7 +42,7 @@ const NavBarItemList = () => {
                                 layout
                                 initial={{ opacity: 0, x: 0, y: 0 }} // Start off to the right
                                 animate={{
-                                    opacity: 1,
+                                    scale:index===0?1.5: 1,
                                     x:index===1?-300:200,
                                     opacity:index===0?0.8:0,
                                     y:index===1?100:80,

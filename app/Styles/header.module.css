@@ -11,7 +11,7 @@
     backdrop-filter: blur(10px); /* For Safari support */
 }
 .imageContainer{
-    margin: 20px;
+    margin: 10px;
     display:flex;
 }
 .img{
@@ -22,4 +22,5 @@
 .imageContainerText{
     padding: 40px 0px;
     font-weight: bold;
+    max-width: 290px;
 }
