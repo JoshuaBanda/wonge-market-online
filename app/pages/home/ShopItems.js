@@ -77,8 +77,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
         x:0,y:0
       }}
       animate={{
-        y:index===1?-30:10,
-        scale:index===1?1.2:1,
+        
       }}
     >
       {/* Check if photo_url exists and display the image */}
