@@ -112,7 +112,7 @@ const HomePage = () => {
             fontSize: '24px',
             fontWeight: 'bold',
             fontFamily: 'DM Sans, sans-serif',
-            color: '#333',
+            color: 'rgba(255,255,255,0.6)',
           }}
         >
           Shopping made easy

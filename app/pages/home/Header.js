@@ -36,8 +36,8 @@ const Header = () => {
                         src='/avon_with_no_bg.png'
                         alt='w'
                         quality={100}
-                        width="210"
-                        height="170"
+                        width="220"
+                        height="190"
                     />
                 </motion.div>
                 <motion.div className={styles.imageContainerText}
