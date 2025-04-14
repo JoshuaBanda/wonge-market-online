@@ -22,9 +22,7 @@
     display: none; /* Hides scrollbar */
   }
   
-.picContainer div:hover{
-    background-color: rgba(0,0,0,0.5);
-}
+
 .pic{
     object-fit: cover;
     

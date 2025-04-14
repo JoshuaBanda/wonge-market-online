@@ -18,12 +18,12 @@ const Header = () => {
                     
                 <motion.div className={styles.img}
                     initial={{
-                        x:-20,y:0,
+                        x:-60,y:0,
                     }}
                     animate={{
                         opacity:1,
                         //y:5,
-                        scale:[1,1.1],
+                        //scale:[1,1.1],
                     }}
                     transition={{
                         type: 'tween',
@@ -44,7 +44,7 @@ const Header = () => {
                 <motion.div className={styles.imageContainerText}
                 
                 initial={{
-                        x:0,y:100,
+                        x:-30,y:100,
                         opacity:0
                     }}
                     animate={{
