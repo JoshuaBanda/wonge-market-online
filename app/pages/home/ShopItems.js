@@ -71,13 +71,14 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
   const checkNameLength = (str) => str.length <= 10;
 
   // Map over the items to create the list of items
-  const homeItems = Array.isArray(items) && items.map((item) => (
+  const homeItems = Array.isArray(items) && items.map((item,index) => (
     <motion.div key={item.id} className={styles.container}
       initial={{
         x:0,y:0
       }}
       animate={{
-        y:index===0?100:0,
+        y:index===1?-30:10,
+        scale:index===1?1.2:1,
       }}
     >
       {/* Check if photo_url exists and display the image */}
