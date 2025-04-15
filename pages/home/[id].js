@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../../Styles/ProductPage.module.css';
 import { FaCartPlus } from 'react-icons/fa';
+import style from '../../app/page.module.css';
 
 const ProductPage = () => {
   const [product, setProduct] = useState(null);
@@ -32,7 +33,7 @@ const ProductPage = () => {
   if (!product) return <div className={styles.error}>Product not found</div>;
 
   return (
-    <div className={styles.productPage}>
+    <div className={style.page}>
       <div className={styles.productInfo}>
         <img style={{border:'1px soilid pink'}} className={styles.productImage} src={product.photo_url} alt={product.name} />
         <div className={styles.productDetails}>
