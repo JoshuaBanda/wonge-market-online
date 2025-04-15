@@ -7,7 +7,7 @@
     background-color: red;
   }
   
-  body {
+  .page {
     color: var(--foreground);
     background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +17,9 @@
     background-image: url('/wonge24.jpg');
     backdrop-filter: blur(10px);
   }
-  
+  .container{
+    backdrop-filter: blur(10px)
+  }
   
   .productInfo {
     position: relative;

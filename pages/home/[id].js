@@ -33,7 +33,9 @@ const ProductPage = () => {
   if (!product) return <div className={styles.error}>Product not found</div>;
 
   return (
-    <div className={style.page}>
+    <div className={styles.page}>
+      
+    <div className={styles.container}>
       <div className={styles.productInfo}>
         <img style={{border:'1px soilid pink'}} className={styles.productImage} src={product.photo_url} alt={product.name} />
         <div className={styles.productDetails}>
@@ -50,6 +52,7 @@ const ProductPage = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };
