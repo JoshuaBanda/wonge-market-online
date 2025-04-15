@@ -11,9 +11,10 @@ const PentagonTwo = () => {
   const [hasMounted, setHasMounted] = useState(false);
 
   const colors = [
-    "rgba(255, 159, 64, 1)",
     "rgba(255, 255, 255, 0.9)",
+    
     "rgba(54, 162, 235, 1)",
+    "rgb(1, 255, 136)",
     "rgba(255, 99, 132, 1)",
     "rgba(75, 192, 192, 1)",
   ];

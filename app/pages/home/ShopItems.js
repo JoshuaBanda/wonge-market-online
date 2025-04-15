@@ -86,9 +86,9 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
           <Image
             src={item.photo_url} // Use the photo_url from the API
             alt={item.name}
-            width={80} // Adjust width as needed
-            height={80} // Adjust height as needed
-            style={{ borderRadius: "5px", marginBottom: "0px",position:'relative',top:'40px',left:'25px' }}
+            width={120} // Adjust width as needed
+            height={100} // Adjust height as needed
+            style={{ borderRadius: "5px", marginBottom: "0px",position:'relative',top:'45px',left:'20px', height:'120px' }}
             className={styles.pic}
           />
           <div className={styles.likeButton}>
@@ -112,7 +112,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
             {checkDescriptionLength(item.description) ? item.description : `${item.description.slice(0, 25)}...`}  
             </p>*/}
             <div style={{
-              position:'relative',top:'80px',
+              position:'relative',top:'65px',
               display:'flex'
             }}>
               <div className={styles.price}>

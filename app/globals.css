@@ -23,8 +23,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #333;
-  background-image: url('/wonge22.jpg');
-  backdrop-filter: blur(9px);
+  background-image: url('/wonge24.jpg');
+  backdrop-filter: blur(10px);
 }
 
 * {

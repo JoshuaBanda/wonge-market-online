@@ -8,7 +8,7 @@ import styles from '../../Styles/home.module.css' ;
 
 const HomePage = () => {
   const { ref: listRef, inView: listInView } = useInView({
-    threshold: 0.6,
+    threshold: 0.2,
   });
 
   const { ref: shopRef, inView: shopInView } = useInView({
@@ -71,7 +71,19 @@ const HomePage = () => {
         <div className={styles.paperTextContainer}>
           <PaperText />
         </div>*/}
-        
+        <div 
+          style={{
+            position: 'relative',
+            margin: '0px 0px -20px 0px',
+            bottom:'0px',
+            textAlign: 'center',
+            fontSize: '20px',
+            fontWeight: 'normal',
+            fontFamily: 'DM Sans, sans-serif',
+            color: 'rgba(0,0,0,0.8)',
+          }}>
+            Our best products
+          </div>
        <AnimatePresence>
           <motion.div
             ref={listRef}
