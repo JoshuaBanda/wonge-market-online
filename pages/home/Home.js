@@ -119,7 +119,7 @@ const HomePage = () => {
           style={{
             position: 'relative',
             margin: '0px 0px 0px 0px',
-            bottom:'50px',
+            bottom:'55px',
             textAlign: 'center',
             fontSize: '24px',
             fontWeight: 'bold',
@@ -128,35 +128,6 @@ const HomePage = () => {
           }}
         >
           Shopping made easy
-          <div
-            style={{
-              position: 'relative',
-              margin: '0px auto', 
-              width: '150px',
-              height: '45px',
-              borderRadius: '25px',
-              backgroundColor: '#333', 
-              display: 'flex',
-              justifyContent: 'center', // Center the text inside button
-              alignItems: 'center', // Vertically center the text
-              cursor: 'pointer',
-              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)', // Shadow for depth
-              transition: 'all 0.3s ease', // Smooth transition for hover effects
-              fontSize: '20px',
-            }}
-          >
-            <div
-              style={{
-                position: 'relative',
-                margin: '0px',
-                fontSize: '16px',
-                fontWeight: '600',
-                color:'white'
-              }}
-            >
-              Start Now
-            </div>
-          </div>
         </motion.div>
       </div>
     </>
