@@ -1,7 +1,8 @@
 /* HomePage.module.css */
 .container {
     position: relative;
-    top: 10px;
+    top: -30px;
+    backdrop-filter: blur(5px);
   }
   
   .title {
@@ -17,7 +18,7 @@
   
   .itemsListContainer {
     position: relative;
-    padding: 10px;
+    padding: 50px;
     margin: 10px;
     overflow-x: scroll;
     max-width: 100%;

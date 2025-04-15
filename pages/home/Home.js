@@ -78,11 +78,11 @@ const HomePage = () => {
             bottom:'0px',
             textAlign: 'center',
             fontSize: '20px',
-            fontWeight: 'normal',
+            fontWeight: 'bold',
             fontFamily: 'DM Sans, sans-serif',
-            color: 'rgba(0,0,0,0.8)',
+            color: 'rgba(255, 255, 255, 0.84)',
           }}>
-            Our best products
+            OUR BEST PRODUCTS
           </div>
        <AnimatePresence>
           <motion.div
@@ -118,7 +118,7 @@ const HomePage = () => {
           }}
           style={{
             position: 'relative',
-            margin: '0px 0px 50px 0px',
+            margin: '0px 0px 0px 0px',
             bottom:'50px',
             textAlign: 'center',
             fontSize: '24px',
@@ -131,7 +131,7 @@ const HomePage = () => {
           <div
             style={{
               position: 'relative',
-              margin: '20px auto', 
+              margin: '0px auto', 
               width: '150px',
               height: '45px',
               borderRadius: '25px',
@@ -148,7 +148,7 @@ const HomePage = () => {
             <div
               style={{
                 position: 'relative',
-                margin: '5px',
+                margin: '0px',
                 fontSize: '16px',
                 fontWeight: '600',
                 color:'white'
