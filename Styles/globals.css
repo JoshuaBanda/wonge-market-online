@@ -24,7 +24,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #333;
   background-image: url('/wonge24.jpg');
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 * {
