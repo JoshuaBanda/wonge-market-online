@@ -1,5 +1,6 @@
 /* ProductPage.module.css */
 .productPage {
+  position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -13,12 +14,23 @@
     font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #333;
     background-image: url('/wonge24.jpg');
     backdrop-filter: blur(10px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  
+    position: relative;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
   }
+  
   .container{
-    backdrop-filter: blur(10px)
+    backdrop-filter: blur(10px);
+    width: 100%;
   }
   
   .productInfo {
@@ -31,7 +43,6 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px;
     padding: 20px;
     text-align: center; 
   }
@@ -50,7 +61,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 100%;
+    width: 80%;
     border-radius: 5%;
     padding: 20px;
     background-color: rgba(255,255,255,0.4);

@@ -79,7 +79,7 @@ const HomePage = () => {
             textAlign: 'center',
             fontSize: '20px',
             fontWeight: 'bold',
-            fontFamily: 'DM Sans, sans-serif',
+            //fontFamily: 'DM Sans, sans-serif',
             color: 'rgba(255, 255, 255, 0.84)',
           }}>
             OUR BEST PRODUCTS
@@ -105,15 +105,14 @@ const HomePage = () => {
         
         <motion.div
           ref={shopNowRef}
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, x: 100 }}
           animate={{
             opacity: shopNowInView ? 1 : 0.2,
-            y: shopNowInView ? 0 : 50,
+            x: shopNowInView ? 0 : 300,
             visibility: shopNowInView ? 'visible' : 'hidden',
           }}
           transition={{
             type: 'keyframes',
-            stiffness: 300,
             duration: 2,
           }}
           style={{
