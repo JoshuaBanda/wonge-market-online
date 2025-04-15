@@ -80,10 +80,36 @@ const HomePage = () => {
             fontSize: '20px',
             fontWeight: 'bold',
             //fontFamily: 'DM Sans, sans-serif',
-            color: 'rgba(255, 255, 255, 0.84)',
+            color: 'rgba(255, 255, 255, 0.9)',
           }}>
             OUR BEST PRODUCTS
           </div>
+          
+        <motion.div
+          ref={shopNowRef}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{
+            opacity: shopNowInView ? 1 : 0.2,
+            x: shopNowInView ? 0 : 300,
+            visibility: shopNowInView ? 'visible' : 'hidden',
+          }}
+          transition={{
+            type: 'keyframes',
+            duration: 2,
+          }}
+          style={{
+            position: 'relative',
+            margin: '20px 0px 0px 0px',
+            textAlign: 'center',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            //fontFamily: 'DM Sans, sans-serif',
+            color: 'rgba(255,255,255,0.8)',
+            justifyContent:'center'
+          }}
+        >
+          Shopping made easy
+        </motion.div>
        <AnimatePresence>
           <motion.div
             ref={listRef}
@@ -103,31 +129,6 @@ const HomePage = () => {
           </motion.div>
         </AnimatePresence>
         
-        <motion.div
-          ref={shopNowRef}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{
-            opacity: shopNowInView ? 1 : 0.2,
-            x: shopNowInView ? 0 : 300,
-            visibility: shopNowInView ? 'visible' : 'hidden',
-          }}
-          transition={{
-            type: 'keyframes',
-            duration: 2,
-          }}
-          style={{
-            position: 'relative',
-            margin: '0px 0px 0px 0px',
-            bottom:'55px',
-            textAlign: 'center',
-            fontSize: '20px',
-            fontWeight: 'bold',
-            //fontFamily: 'DM Sans, sans-serif',
-            color: 'rgba(255,255,255,0.6)',
-          }}
-        >
-          Shopping made easy
-        </motion.div>
       </div>
     </>
   );
