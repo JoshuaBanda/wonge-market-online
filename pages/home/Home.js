@@ -121,9 +121,9 @@ const HomePage = () => {
             margin: '0px 0px 0px 0px',
             bottom:'55px',
             textAlign: 'center',
-            fontSize: '24px',
+            fontSize: '20px',
             fontWeight: 'bold',
-            fontFamily: 'DM Sans, sans-serif',
+            //fontFamily: 'DM Sans, sans-serif',
             color: 'rgba(255,255,255,0.6)',
           }}
         >

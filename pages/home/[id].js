@@ -11,7 +11,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  const { id } = router.query;  // Access the dynamic product id from the URL
+  const { id } = router.query; 
 
   useEffect(() => {
     if (!id) return;
