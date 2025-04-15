@@ -3,7 +3,7 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from '../../styles/ProductPage.module.css'; // Import the CSS module
+import styles from '../../Styles/ProductPage.module.css';
 import { FaCartPlus } from 'react-icons/fa';
 
 const ProductPage = () => {
