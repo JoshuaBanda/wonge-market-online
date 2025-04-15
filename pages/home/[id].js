@@ -1,4 +1,5 @@
 // pages/products/[id].js
+"use client";
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
