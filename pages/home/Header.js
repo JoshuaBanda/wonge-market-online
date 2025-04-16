@@ -118,7 +118,7 @@ const Header = () => {
                         }}
                 >
                     <Image
-                        src='/avon_with_no_bg.png'
+                        src='/avon4_with_no_bg.png'
                         alt='w'
                         quality={100}
                         width="220"
