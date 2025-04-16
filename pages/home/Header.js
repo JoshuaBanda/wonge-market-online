@@ -33,7 +33,7 @@ const Header = () => {
                         }}
                 >
                     <Image
-                        src='/avon_with_no_bg.png'
+                        src='/avon3_with_no_bg.png'
                         alt='w'
                         quality={100}
                         width="220"
@@ -57,16 +57,77 @@ const Header = () => {
                         >
                     Wonge Market Online
                     <p style={{
-                        fontWeight:'lighter',color:''
+                        fontWeight:'lighter',color:'rgba(0,0,0,0.6)'
                     }}>
-                        Wonge got you covered
-                        from earrings brocho
-                        body lotion soap.
-                        Market with us tooday.
+                        Wonge weaves wonder — piece by piece.
+                        Adornment that speaks. Skincare that soothes.
                     </p>
                 </motion.div>
 
             </div>
+            
+
+
+            
+            <div className={styles.imageContainerTwo}>
+
+
+            <motion.div className={styles.imageContainerTextTwo}
+                
+                initial={{
+                        x:0,y:100,
+                        opacity:0
+                    }}
+                    animate={{
+                        opacity:1,
+                        y:0
+                    }}
+                    transition={{
+                        type: 'spring',
+                        stiffness: 120,
+                        }}
+                        >
+                    Wonge Market Online
+                    <p style={{
+                        fontWeight:'lighter',color:'rgba(0,0,0,0.6)'
+                    }}>
+                        Wonge isn&apos;t just a market — it&apos;s a vibe.
+                        Jewelry that speaks. 
+                        Skincare that glows. 
+                        Creations that connect. 
+                        Come market with us today, and every day after.
+                    </p>
+                </motion.div>
+
+                    
+                <motion.div className={styles.img}
+                    initial={{
+                        x:-60,y:0,
+                    }}
+                    animate={{
+                        opacity:1,
+                        //y:5,
+                        scale:[1,1.025],
+                    }}
+                    transition={{
+                        type: 'tween',
+                        stiffness: 200,
+                        repeat: Infinity, 
+                        repeatType:'reverse',
+                        duration:2
+                        }}
+                >
+                    <Image
+                        src='/avon_with_no_bg.png'
+                        alt='w'
+                        quality={100}
+                        width="220"
+                        height="190"
+                    />
+                </motion.div>
+
+            </div>
+            
         </div>
     );
 }
