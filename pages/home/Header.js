@@ -100,7 +100,7 @@ const Header = () => {
                 </motion.div>
 
                     
-                <motion.div className={styles.img}
+                <motion.div className={styles.imgTwo}
                     initial={{
                         x:-60,y:0,
                     }}
