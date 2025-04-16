@@ -8,7 +8,7 @@ import styles from '../../Styles/home.module.css' ;
 
 const HomePage = () => {
   const { ref: listRef, inView: listInView } = useInView({
-    threshold: 0.2,
+    threshold: 0.4,
   });
 
   const { ref: shopRef, inView: shopInView } = useInView({
@@ -87,7 +87,7 @@ const HomePage = () => {
           
         <motion.div
           ref={shopNowRef}
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: -100 }}
           animate={{
             opacity: shopNowInView ? 1 : 0.2,
             x: shopNowInView ? 0 : 300,
@@ -113,10 +113,10 @@ const HomePage = () => {
        <AnimatePresence>
           <motion.div
             ref={listRef}
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, x: -200 }}
             animate={{
               opacity: listInView ? 1 : 0,
-              y: listInView ? 0 : 50,
+              x: listInView ? 0 : -200,
               visibility: listInView ? 'visible' : 'hidden',
             }}
             transition={{

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaBimobject, FaHome, FaObjectGroup, FaSearch, FaShoppingBag, FaShoppingBasket, FaShoppingCart } from "react-icons/fa";
 import { FaBagShopping, FaBars, FaBarsProgress, FaBasketShopping, FaCartShopping } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 const BottomMenu = () => {
     
     const router = useRouter();
@@ -14,7 +15,8 @@ const BottomMenu = () => {
     }
     return (
         <>
-        <div className={styles.main}>
+        <motion.div className={styles.main}
+        >
             <div onClick={handleHomeClick}>
                 <FaHome className={styles.icons}/>
             </div>
@@ -29,7 +31,7 @@ const BottomMenu = () => {
             <div>
                 <FaBars className={styles.icons}/>
             </div>
-        </div>
+        </motion.div>
         </>
     );
 }

@@ -14,7 +14,7 @@
     font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url('/wonge24.jpg');
+    /*background-image: url('/wonge24.jpg');*/
     backdrop-filter: blur(10px);
     background-repeat: no-repeat;
     background-position: center;

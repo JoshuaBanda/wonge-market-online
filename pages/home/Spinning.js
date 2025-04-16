@@ -1,24 +1,39 @@
-// Spinner.js
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-
-const spin = keyframes`
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-`;
-
-const SpinnerContainer = styled.div`
-  border: 8px solid rgba(255, 255, 255, 0.3);
-  border-top: 8px solid rgba(0,10,0); /* Customize the color */
-  border-radius: 50%;
-  width: 40px; /* Customize the size */
-  height: 40px; /* Customize the size */
-  animation: ${spin} 1s linear infinite;
-  margin: auto; /* Center the spinner */
-`;
-
+import { easeInOut, motion } from "framer-motion";
+const loaderVariant={
+  animateOne:{
+    x:[-20,20],
+    y:[0,-30],
+    transition:{
+      x:{
+        repeat:Infinity,
+        repeatType:'reverse' ,
+        duration:0.5,ease:'easeInOut'
+      },
+      y:{
+        repeat:Infinity,
+        repeatType:'reverse' ,
+        duration:0.25,ease:'easeInOut'
+      }
+    }
+  }
+}
 const Spinner = () => {
-  return <SpinnerContainer />;
-};
+  return (
+    <>
+      <motion.div style={{
+        margin:'auto',
+        backgroundColor:'rgba(255,255,255,0.5)',
+        width:'10px',
+        height:"10px",
+        borderRadius:'50%',
+      }}
+      variants={loaderVariant}
+      animate="animateOne"
+      >
 
+      </motion.div>
+    </>
+  );
+}
+ 
 export default Spinner;
