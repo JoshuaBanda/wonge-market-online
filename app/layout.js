@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../Styles/globals.css";
 import BottomMenuWrapper from "./global/BottomMenuWrapper";
-import {Pirata_One} from "next/font/google";
+import {Pirata_One,Amaranth} from "next/font/google";
 
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
   description: "Online Market",
 };
 
-const roboto= Pirata_One({
+const roboto= Amaranth({
   subsets:['latin'],
   weight:'400',
 })
