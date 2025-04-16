@@ -22,7 +22,7 @@ const Header = () => {
                     animate={{
                         opacity:1,
                         //y:5,
-                        //scale:[1,1.1],
+                        scale:[1,1.025],
                     }}
                     transition={{
                         type: 'tween',
