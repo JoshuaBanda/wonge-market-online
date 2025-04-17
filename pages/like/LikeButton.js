@@ -9,7 +9,6 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
   const [isLiked, setIsLiked] = useState(initialLikeStatus);
   const [likeCount, setLikeCount] = useState(initialLikeCount);
   const [isLoading, setIsLoading] = useState(false);
-  const [thumbsOnly,setThumbsOnly]=useState(true);
  // console.log('postId',postId,'userid ',userId,' jwtToken',jwtToken,'initial like count',initialLikeCount,'inititual like status',initialLikeStatus);
 
   // Fetch like data when the component mounts
@@ -40,9 +39,6 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
 
 
       setLikeCount(fetchedLikeCount);
-      if (likeCount!=0){
-        setThumbsOnly(false);
-      }
 
      // console.log('like status response',likeStatusResponse.data,'like count:',likeCount);
       setIsLiked(likeStatusResponse.data);
@@ -124,7 +120,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
           }}
         >
         {
-          thumbsOnly?(<>
+          likeCount==0?(<>
             
           <div>
             <FaThumbsUp size={18} color=''/>
