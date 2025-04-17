@@ -8,7 +8,7 @@ import styles from '../../Styles/home.module.css' ;
 
 const HomePage = () => {
   const { ref: listRef, inView: listInView } = useInView({
-    threshold: 0.4,
+    threshold: 0.3,
   });
 
   const { ref: shopRef, inView: shopInView } = useInView({

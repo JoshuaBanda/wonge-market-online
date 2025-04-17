@@ -4,12 +4,12 @@ import axios from 'axios'; // You can use axios or fetch for https://wonge-backe
 import { ClipLoader } from 'react-spinners'; // For a loading spinner
 import Rating from './Rating';
 import { FaHeart,FaThumbsUp } from 'react-icons/fa6';
-
+import { motion } from 'framer-motion';
 const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeStatus }) => {
   const [isLiked, setIsLiked] = useState(initialLikeStatus);
   const [likeCount, setLikeCount] = useState(initialLikeCount);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [thumbsOnly,setThumbsOnly]=useState(true);
  // console.log('postId',postId,'userid ',userId,' jwtToken',jwtToken,'initial like count',initialLikeCount,'inititual like status',initialLikeStatus);
 
   // Fetch like data when the component mounts
@@ -29,7 +29,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
       });
 
       const fetchedLikeCount = likeCountResponse.data.length;
-      console.log('like count:',fetchedLikeCount);
+      //console.log('like count:',fetchedLikeCount);
 
       // Fetch like status for the current user
       const likeStatusResponse = await axios.get(`https://wonge-backend.onrender.com/post-likes/has-liked/${postId}/${userId}`, {
@@ -40,8 +40,11 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
 
 
       setLikeCount(fetchedLikeCount);
+      if (likeCount!=0){
+        setThumbsOnly(false);
+      }
 
-      console.log('like status response',likeStatusResponse.data,'like count:',likeCount);
+     // console.log('like status response',likeStatusResponse.data,'like count:',likeCount);
       setIsLiked(likeStatusResponse.data);
     } catch (error) {
       console.error("Error fetching like data:", error);
@@ -64,7 +67,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
           },
         });
         
-        console.log('unlike response',response.status);
+        //console.log('unlike response',response.status);
         if (response.status === 200||2001) {
           setIsLiked(false);
           setLikeCount(likeCount - 1);
@@ -81,7 +84,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
             Authorization: `Bearer ${jwtToken}`,
           },
         });
-        console.log('like response',response.status);
+        //console.log('like response',response.status);
         if (response.status === 201) {
           setIsLiked(true);
           setLikeCount(likeCount + 1);
@@ -90,7 +93,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
         }
       }
     } catch (error) {
-      console.error("Error toggling like:", error);
+      //console.error("Error toggling like:", error);
       showErrorSnackbar('An error occurred while processing your request');
     } finally {
       setIsLoading(false);
@@ -113,17 +116,43 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
             background: 'rgba(255,255,255,0.5)',
             border: '1px solid rgba(255,255,255,0.5)',
             cursor: isLoading ? 'not-allowed' : 'pointer',
-            color: isLiked ? '#333' : '#888',
+            color: isLiked ? '#888' : '#333',
             overflow:'visible',width:'100px',
             borderRadius:'10px',
             height:'22px',backdropFilter:'blur(10px)',
             boxShadow:'-2px 6px 10px rgba(0,0,0,0.5)'
           }}
         >
+        {
+          thumbsOnly?(<>
+            
           <div>
-          {likeCount}&nbsp;
-            <FaThumbsUp size={18}/> &nbsp;Likes
+            <FaThumbsUp size={18} color=''/>
           </div>
+          </>
+
+          ):(
+            <>
+              
+          <motion.div
+            initial={{x:0,y:10,opacity:0}}
+            animate={{x:0,y:-1, opacity:1}}
+            transition={{
+              type:"tween",
+            }}
+          >
+          {likeCount}&nbsp;
+            <FaThumbsUp size={18}/> {
+              likeCount==1?(
+                <>&nbsp;Like</>
+              ):(
+                <>&nbsp;Likes</>
+              )
+            }
+          </motion.div>
+            </>
+          )
+        }
         </button>
         {isLoading && (
           <ClipLoader
