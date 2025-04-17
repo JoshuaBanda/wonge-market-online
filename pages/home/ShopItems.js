@@ -149,7 +149,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
         }}
         className="scroll-container"
       >
-        {homeItems.length > 0 ? homeItems : <div style={{position:'relative',margin:'40px auto',}}><Spinner /></div> }
+        {homeItems.length > 0 ? homeItems : <div style={{position:'relative',margin:'240px auto',}}><Spinner /></div> }
       </div>
 
     </>
