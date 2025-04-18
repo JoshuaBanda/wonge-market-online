@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../Styles/globals.css";
-import BottomMenuWrapper from "./global/BottomMenuWrapper";
+import BottomMenuWrapper from "../components/BottomMenuWrapper";
 import {Pirata_One,Amaranth} from "next/font/google";
+import FrontPage from "./home/FrontPage";
 
 
 export const metadata = {
@@ -14,17 +15,16 @@ const roboto= Amaranth({
   weight:'400',
 })
 
-export default function RootLayout({ children }) {
+export default function Home() {
   return (
     <html lang="en">
       <body className={roboto.className }>
         <div  className="blur-wrapper">
           
-        {children}
-        
+        <FrontPage/>
 
         </div>
-        <BottomMenuWrapper/>
+        
       </body>
     </html>
   );

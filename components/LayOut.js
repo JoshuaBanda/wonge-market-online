@@ -1,17 +1,14 @@
-
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import BottomMenuWrapper from "./BottomMenuWrapper";
 
 const LayOut = ({children}) => {
-    return (  
-        <>
-        <Navbar/>
-        {children}
-
-
-        hi
-        <Footer/>
-        </>
+    return ( 
+        <html>
+                
+            <body>
+            {children}
+            <BottomMenuWrapper/>
+            </body>
+        </html> 
     );
 }
  

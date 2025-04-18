@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../../Styles/ProductPage.module.css';
 import { FaCartPlus } from 'react-icons/fa';
-import style from '../../app/page.module.css';
 
 const ProductPage = () => {
   const [product, setProduct] = useState(null);
