@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "../Styles/globals.css";
+import "../app/globals.css";
 import BottomMenuWrapper from "../components/BottomMenuWrapper";
 import {Pirata_One,Amaranth} from "next/font/google";
 import FrontPage from "./home/FrontPage";
