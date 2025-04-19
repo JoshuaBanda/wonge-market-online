@@ -1,6 +1,6 @@
 import Header from "./Header";
 import HomePage from "./Home";
-import '../../Styles/globals.css'
+import '../../app/globals.css'
 
 
 import {Pirata_One,Amaranth} from "next/font/google";
