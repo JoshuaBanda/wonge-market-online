@@ -106,7 +106,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
         <p>No image available</p>
       )}
       
-      <Link href={`/home/${item.id}`} >
+      <Link href={`/blog/${item.id}`} >
         <div className={styles.txt}>
           <h3 style={{ height: '20px' }}>
             {checkNameLength(item.name) ? item.name : `${item.name.slice(0, 10)}...`}  {/* Truncate if name is too long */}
