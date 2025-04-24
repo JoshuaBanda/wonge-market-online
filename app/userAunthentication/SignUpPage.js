@@ -21,6 +21,10 @@ const SignUpPage = () => {
   const [formError, setFormError] = useState(""); // For form-wide errors
   const router = useRouter(); // Initialize router
 
+  const [showClass, setShowClass] = useState(true);
+  setTimeout(()=>{
+    setShowClass(!showClass);
+  },6000)
   const steps = [
     { label: "Email", value: email, setValue: setEmail, type: "email", placeholder: "Email" },
     { label: "Password", value: password, setValue: setPassword, type: "password", placeholder: "Password" },
@@ -130,7 +134,18 @@ const SignUpPage = () => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "20px" }}>
+    <div 
+    style={{
+      position: "relative",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "20px",
+      height:"450px"
+    }}
+        className={showClass ? styles.containR : ''}
+    >
     {/* Title text */}
                 <p
                   style={{
@@ -146,7 +161,7 @@ const SignUpPage = () => {
                     
                 <FaSeedling size={60} />
                 </div> 
-      <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "500px", display: "flex", flexDirection: "column", gap: "20px" ,}}>
+      <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "500px", display: "flex", flexDirection: "column", }}>
         {steps.map((step, index) => (
           <div key={step.label} style={{ display: currentStep === index ? "block" : "none" }}>
             <label>{step.label}</label>
@@ -180,13 +195,13 @@ const SignUpPage = () => {
                     onClick={() => setShowPassword(!showPassword)}
                     style={{
                       position: "absolute",
-                      right: "20px",
+                      right: "10px",
                       top: "50%",
                       background: "none",
                       border: "none",
                       color: "gray",
                       cursor: "pointer",
-                      width:'200px'
+                      width:'120px'
                     }}
                   >
                     {showPassword ? <FaEyeSlash size={20} style={{position:'relative',top:'-10px',right:'-40px',color:"red"}}/> : <FaEye size={20} style={{position:'relative',top:'-10px',right:'-40px'}} />}
@@ -217,7 +232,7 @@ const SignUpPage = () => {
           </button>
         ) : null}
 
-        <div style={{ display: "flex", gap: "10px", justifyContent: "center", marginTop: "10px" }}>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
           {currentStep > 0 && (
             <motion.button
             type="button"

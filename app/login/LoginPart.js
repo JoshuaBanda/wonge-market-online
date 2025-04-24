@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaSeedling } from "react-icons/fa";
 import { motion } from "framer-motion";
 import axios from "axios";
@@ -12,10 +12,15 @@ const LoginPart = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(""); // Added error state for better user experience
+  const [showClass, setShowClass] = useState(false);
 
   const handleLoading = () => {
     setLoading((prev) => !prev);
   };
+  
+    setTimeout(()=>{
+      setShowClass(!showClass);
+    },3000)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,8 +58,11 @@ const LoginPart = () => {
           justifyContent: "center",
           alignItems: "center",
           padding: "20px",
-          borderRadius: "20px",
+          borderTopLeftRadius:"20px",
+          borderBottomLeftRadius:"20px",
+          height:"450px"
         }}
+        className={showClass ? styles.contain : ''}
       >
         {/* Title text */}
         <p
