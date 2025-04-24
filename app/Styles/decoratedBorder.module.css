@@ -26,11 +26,11 @@
     height: 104%;
     z-index: -1;
     border-radius: 20px;
-    background-image: conic-gradient(from var(--angle), transparent, purple,red,blue);
+    background-image: conic-gradient(from var(--angle), transparent, rgb(236, 7, 46),transparent,green, blue);
     animation: 5s spin linear infinite;
   }
   .card::before{
-    filter:blur(0.5em)
+    filter:blur(0)
   }
   @keyframes spin{
   from{
@@ -40,7 +40,9 @@
     --angle:360deg
   }
 }
-
+@keyframes bounce{
+  
+}
 .container {
     margin: 0 auto;
     padding: 0.5em;
