@@ -5,7 +5,7 @@ import BottomMenu from "./bottomMenu";
 
 export default function BottomMenuWrapper() {
   const pathname = usePathname();
-  const hideOnRoutes = ["/login/LoginPage", "/admin",]; // adjust routes here
+  const hideOnRoutes = ["/login", "/admin",]; // adjust routes here
 
   const shouldShow = !hideOnRoutes.includes(pathname);
   console.log("bottom wrapper")
