@@ -1,0 +1,19 @@
+// app/page.tsx or app/home/page.tsx
+import BottomMenuWrapper from "../components/BottomMenuWrapper";
+import FrontPage from "./home/FrontPage";
+import { useEffect, useState } from "react";
+import LoginPage from "./login/LoginPage";
+
+export default function Home() {
+  const [user, setUser] = useState("jo");
+
+  useEffect(() => {
+    // optional logic here
+  }, []);
+
+  return (
+    <div className="blur-wrapper">
+    <LoginPage/>
+    </div>
+  );
+}

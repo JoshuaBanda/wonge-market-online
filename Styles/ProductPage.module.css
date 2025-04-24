@@ -1,0 +1,156 @@
+/* ProductPage.module.css */
+.productPage {
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: red;
+  }
+  
+  .page {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*background-image: url('/wonge24.jpg');*/
+    backdrop-filter: blur(10px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.1);
+  
+    position: relative;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+  }
+  
+  .container{
+    backdrop-filter: blur(10px);
+    width: 100%;
+  }
+  
+  .productInfo {
+    position: relative;
+    left: 0px;right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+    text-align: center; 
+  }
+  
+  .productImage {
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+  }
+  
+  .productDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    border-radius: 5%;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  .productName {
+    font-size: 30px;
+    font-weight: 1000;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .productDescription {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .productPrice {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #333; /* Tomato color for emphasis */
+    margin-bottom: 20px;
+  }
+  
+  .addToCartBtn {
+    background-color: rgba(0, 0, 0); /* Tomato color */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+  }
+  .addToCartBtn div{
+    padding:0px 5px;
+  }
+  
+  .addToCartBtn:hover {
+    background-color: #e5533b; /* Darker tomato on hover */
+  }
+  
+  .loader, .error {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 50px;
+    font-weight: bold;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 600px) {
+    .productPage {
+      padding: 15px;
+    }
+  
+    .productInfo {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .productImage {
+      max-width: 90%;
+      margin-bottom: 15px;
+    }
+  
+    .productName {
+      font-size: 1.3rem;
+    }
+  
+    .productDescription {
+      font-size: 0.9rem;
+    }
+  
+    .productPrice {
+      font-size: 1.1rem;
+    }
+  
+    .addToCartBtn {
+      font-size: 1rem;
+      padding: 10px 18px;
+    }
+  }
+  

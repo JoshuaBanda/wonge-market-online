@@ -1,0 +1,52 @@
+/* HomePage.module.css */
+.container {
+    position: relative;
+    top: -30px;
+    backdrop-filter: blur(2px);
+  }
+  
+  .title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    color: #333;
+    font-weight: bolder;
+    margin: 5px 15px;
+  }
+  
+  .itemsListContainer {
+    position: relative;
+    padding: 50px;
+    margin: 10px;
+    overflow-x: scroll;
+    max-width: 100%;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+  
+  .itemsListContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .itemsListContainer li {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 22px;
+  }
+  
+  .paperTextContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: 18px;
+    margin: 50px 20px;
+  }
+  

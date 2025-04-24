@@ -1,0 +1,28 @@
+.container {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;;
+  }
+   .subContainer{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 20% auto;
+    position: relative;
+    border:1px solid black;
+    top:30%;
+    width: 80%;height: 450px;
+    display: flex;
+   }
+   .loginPart{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+   }
+   
+   .SignPart{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+   }

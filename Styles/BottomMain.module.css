@@ -1,0 +1,73 @@
+.main {
+    position: fixed;
+    background-color: rgba(255,255,255,0.5);
+    width: 90%;
+    height: 60px;
+    top: 91%;
+    left: 50%; /* push to the center */
+    transform: translateX(-50%); /* pull it back 50% of its own width */
+    z-index: 1000;
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    backdrop-filter: blur(5px);
+    border:1px solid rgba(209, 208, 208, 0.322);
+    box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
+    
+  }
+  .main div {
+    padding: 10px 0;
+    border-radius: 30px;
+    width: 200px;
+    display: flex; /* 🆕 */
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .main div:hover{
+    position: relative;
+    background-color: rgba(68, 63, 63, 0.3);
+    border: 1px solid rgba(0,0,0,0.1);
+    height: 50px;
+    top:-5px;
+    top:-5px
+  }
+  .icons {
+    position: relative;
+    top:0px;
+    color: #333;
+    transition: transform 0.2s ease, color 0.2s ease;
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  
+  .icons:hover {
+    transform: scale(1.2);
+    top:-1px;
+    font-size: 22px;
+    color:white;
+  }
+  
+  .menuPopUp {
+    position: absolute; /* relative to the parent */
+    bottom: 50px; /* adjust depending on your layout */
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    padding: 0px;
+    z-index: 100;
+    color: white;
+    font-size: 18px;
+    
+  }
+  
+  .menuPopUp li {
+    list-style: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+  }
+  
+  
