@@ -59,7 +59,7 @@ const Header = () => {
                         >
                     Wonge Market Online
                     <p style={{
-                        fontWeight:'lighter',color:'rgba(0,0,0,0.6)'
+                        fontWeight:'lighter',
                     }}>
                         Wonge weaves wonder — piece by piece.
                         Adornment that speaks. Skincare that soothes.
@@ -89,9 +89,8 @@ const Header = () => {
                         stiffness: 120,
                         }}
                         >
-                    Wonge Market Online
                     <p style={{
-                        fontWeight:'lighter',color:'rgba(0,0,0,0.6)'
+                        fontWeight:'lighter',
                     }}>
                         Wonge isn&apos;t just a market — it&apos;s a vibe.
                         Jewelry that speaks. 

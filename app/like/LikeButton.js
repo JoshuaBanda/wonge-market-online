@@ -109,10 +109,11 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
           onClick={toggleLike}
           disabled={isLoading}
           style={{
-            background: 'rgba(255,255,255,0.5)',
-            border: '1px solid rgba(255,255,255,0.5)',
+            
+            background: isLiked ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.5)',
+            border: '1px solid rgba(255,255,255,0.2)',
             cursor: isLoading ? 'not-allowed' : 'pointer',
-            color: isLiked ? '#888' : '#333',
+            color: isLiked ? '#333' : '#333',
             overflow:'visible',width:'100px',
             borderRadius:'10px',
             height:'22px',backdropFilter:'blur(10px)',

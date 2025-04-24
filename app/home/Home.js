@@ -49,8 +49,8 @@ const HomePage = ({user}) => {
           <ul>
             {items.map((item, index) => {
               const isSelected = selectedItem === item;
-              const myBackgroudColor = isSelected ? "#333" : "white";
-              const myTextColor = isSelected ? "white" : "#333";
+              const myBackgroudColor = isSelected ? "white" : "#333";
+              const myTextColor = isSelected ? "#333" : "white";
 
               return (
                 <motion.li
