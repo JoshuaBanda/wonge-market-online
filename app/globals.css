@@ -9,7 +9,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  animation: swappic 20s infinite ;
+  animation: swappic 30s infinite ;
 }
 @keyframes swappic {
   0% { background-image: url("/wonge26.jpg"); }
@@ -30,7 +30,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(4px);
   min-height: 100vh;
   position: relative;
   top: 0px;
