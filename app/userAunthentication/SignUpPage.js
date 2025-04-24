@@ -21,7 +21,7 @@ const SignUpPage = () => {
   const [formError, setFormError] = useState(""); // For form-wide errors
   const router = useRouter(); // Initialize router
 
-  const [showClass, setShowClass] = useState(true);
+  const [showClass, setShowClass] = useState(false);
   setTimeout(()=>{
     setShowClass(!showClass);
   },6000)
@@ -232,7 +232,7 @@ const SignUpPage = () => {
           </button>
         ) : null}
 
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px",padding:"20px" }}>
           {currentStep > 0 && (
             <motion.button
             type="button"
@@ -246,7 +246,7 @@ const SignUpPage = () => {
               >
               
 
-              <div className={styles.cards}>
+              <div className={showClass?styles.cardTw:styles.cards}>
                 Prev
               </div>
             </motion.button>
@@ -264,7 +264,7 @@ const SignUpPage = () => {
               }}
               >
               
-              <div className={styles.cards}>
+              <div className={showClass?styles.cardTw:styles.cards}>
                 Next
               </div>
             </motion.button>

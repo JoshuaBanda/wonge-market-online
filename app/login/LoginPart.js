@@ -20,7 +20,7 @@ const LoginPart = () => {
   
     setTimeout(()=>{
       setShowClass(!showClass);
-    },3000)
+    },6000)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,7 +60,7 @@ const LoginPart = () => {
           padding: "20px",
           borderTopLeftRadius:"20px",
           borderBottomLeftRadius:"20px",
-          height:"450px"
+          height:"450px",
         }}
         className={showClass ? styles.contain : ''}
       >
@@ -143,11 +143,11 @@ const LoginPart = () => {
             }}
           >
             {loading ? (
-              <p >
-                Loading ...
-              </p>
-            ) : (
               <div className={styles.card}>
+                Loading ...
+              </div>
+            ) : (
+              <div className={showClass?styles.cardT:styles.card}>
                 Login
               </div>
             )}
