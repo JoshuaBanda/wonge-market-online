@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import styles from '../../Styles/header.module.css'
+import styles from '../Styles/header.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import NavBarItemList from './HeaderItemFlow';
 const Header = () => {

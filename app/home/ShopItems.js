@@ -4,12 +4,11 @@ import { useState, useEffect } from "react";
 import axios from "axios"; // Import axios
 import Image from "next/image";
 import Link from "next/link";  // Import Link from Next.js
-import styles from '../../Styles/shopItems.module.css'
+import styles from '../Styles/shopItems.module.css'
 import Spinner from "./Spinning";
 import { FaHeart, FaStar, FaStarHalf } from "react-icons/fa";
 import { FaCartShopping, FaStarHalfStroke } from "react-icons/fa6";
 import LikeButton from "../like/LikeButton";
-import CutEdgeText from "./CutEdgeText";
 import { motion } from "framer-motion";
 
 // Function to fetch like data for a specific post

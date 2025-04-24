@@ -2,17 +2,24 @@
 import { useEffect, useState, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-
+import styles from "../Styles/decoratedBorder.module.css";
 // Lazy load components
 const LoginPart = dynamic(() => import('./LoginPart'));
 const SignUpPage = dynamic(() => import('../userAunthentication/SignUpPage'));
 
 export default function LoginPage() {
   const [selectedSide, setSelectedSide] = useState('left');
+  const [showClass, setShowClass] = useState(true);
 
   useEffect(() => {
-    console.log('Component mounted');
-  }, []);
+    setShowClass(true)
+    const timer = setTimeout(() => {
+      setShowClass(false);
+    }, 4000); // remove after 6 seconds
+
+    return () => clearTimeout(timer); // cleanup on unmount
+  }, [selectedSide]);
+
 
   const handleSelect = (side) => {
     setSelectedSide(side);
@@ -32,21 +39,28 @@ export default function LoginPage() {
   const leftStyles = {
     width: isLeftSelected ? '80%' : '25%',
     zIndex: isLeftSelected ? 1 : 0,
-    left: isLeftSelected ? '20px' : '0px',
-    borderTopLeftRadius: isLeftSelected ? '0px' : '20px',
-    borderBottomLeftRadius: isLeftSelected ? '0px' : '20px',
-    borderTopRightRadius: isLeftSelected ? '20px' : '0px',
-    borderBottomRightRadius: isLeftSelected ? '20px' : '0px',
+    //left: isLeftSelected ? '20px' : '0px',
+    borderTopLeftRadius: isLeftSelected ? '20px' : '0px',
+    borderBottomLeftRadius: isLeftSelected ? '20px' : '0px',
+    borderTopRightRadius: isLeftSelected ? '0px' : '0px',
+    borderBottomRightRadius: isLeftSelected ? '0px' : '0px',
+    backgroundColor:isLeftSelected?"rgba(0,0,0)": 'rgba(255,255,255,0.9)',
+    
+    color:isLeftSelected? 'rgba(255,255,255,0.8)':"rgba(0,0,0)",
   };
 
   const rightStyles = {
     width: isLeftSelected ? '20%' : '75%',
     zIndex: isLeftSelected ? 0 : 1,
-    right: isLeftSelected ? '0px' : '15px',
+   // right: isLeftSelected ? '0px' : '15px',
     borderTopRightRadius: isLeftSelected ? '0px' : '20px',
     borderBottomRightRadius: isLeftSelected ? '0px' : '20px',
-    borderTopLeftRadius: isLeftSelected ? '20px' : '0px',
-    borderBottomLeftRadius: isLeftSelected ? '20px' : '0px',
+    borderTopLeftRadius: isLeftSelected ? '0px' : '0px',
+    borderBottomLeftRadius: isLeftSelected ? '0px' : '0px',
+    
+    backgroundColor:isLeftSelected? 'rgba(255,255,255,0.9)':"rgba(0,0,0)",
+    
+    color:isLeftSelected? 'rgba(0,0,0)':"rgba(255,255,255,0.9)",
   };
 
   return (
@@ -74,21 +88,15 @@ export default function LoginPage() {
             width: '90%',
             alignItems: 'stretch',
           }}
+          className={showClass ? styles.container : ''}
         >
           {/* LEFT PANEL (Login) */}
           <motion.li
             style={{
-              backgroundColor: 'rgba(0,0,0,0.6)',
-              backdropFilter: 'blur(5px)',
-              height: '100%',
-              transition: 'width 0.3s ease, left 0.3s ease',
-              textAlign: 'center',
-              position: 'relative',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
               ...leftStyles,
             }}
+            
+            className={isLeftSelected ? styles.inActiveContainer : styles.inActiveContainer}
             onClick={() => handleSelect('left')}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
@@ -100,19 +108,18 @@ export default function LoginPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ type: 'spring', stiffness: 20 }}
               >
-                <Suspense fallback={<div style={{ color: 'white' }}>Loading Login...</div>}>
+                <Suspense fallback={<div >Loading Login...</div>}>
                   <LoginPart />
                 </Suspense>
               </motion.div>
             ) : (
-              <p style={{ color: 'white' }}>Login</p>
+              <div >Login</div>
             )}
           </motion.li>
 
           {/* RIGHT PANEL (Sign Up) */}
           <motion.li
             style={{
-              backgroundColor: 'rgba(255,255,255,0.5)',
               backdropFilter: 'blur(15px)',
               height: '100%',
               transition: 'width 0.3s ease, right 0.3s ease',
@@ -139,7 +146,7 @@ export default function LoginPage() {
                 </Suspense>
               </motion.div>
             ) : (
-              <p style={{ color: 'black' }}>Sign Up</p>
+              <div>Sign Up</div>
             )}
           </motion.li>
         </motion.ul>

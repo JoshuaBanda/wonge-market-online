@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import styles from "../Styles/BottomMain.module.css"
+import styles from "../app/Styles/BottomMain.module.css";
 import Link from "next/link";
 import { FaHome, FaSearch } from "react-icons/fa";
 import { FaCartShopping, FaBars } from "react-icons/fa6";
@@ -13,13 +13,13 @@ const BottomMenu = () => {
   const menuRef = useRef(null); // Ref to detect outside click
 
   const handleHomeClick = () => {
-    router.push("/");
+    router.push("/home");
   };
 
   const menu = ["Products", "Settings", "Profile","login"];
   const handleMenuPopItems=(item)=>{
     if (item=="login"){
-      router.push("/login/LoginPage")
+      router.push("/login")
     }
   }
   const menuPopUp = menu.map((item, index) => (

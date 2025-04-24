@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import styles from '../../Styles/headerItemFlow.module.css';
+import styles from '../Styles/headerItemFlow.module.css';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Pentagon from './Pentagon';

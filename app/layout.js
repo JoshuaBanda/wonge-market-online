@@ -1,4 +1,3 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css"
 import BottomMenuWrapper from "../components/BottomMenuWrapper";
 import {Pirata_One,Amaranth} from "next/font/google";
@@ -17,15 +16,15 @@ const roboto= Amaranth({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    
       <body className={roboto.className }>
         <div  className="blur-wrapper">
-          
         {children}
-        
 
         </div>
-        
+        <BottomMenuWrapper/>
       </body>
+      
     </html>
   );
 }

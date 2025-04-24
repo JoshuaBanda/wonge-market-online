@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash, FaSeedling } from "react-icons/fa";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { useRouter } from "next/navigation"; // Import router for navigation
+import styles from "../Styles/decoratedBorder.module.css";
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
@@ -133,7 +134,6 @@ const SignUpPage = () => {
     {/* Title text */}
                 <p
                   style={{
-                    color: "orangered",
                     fontSize: "25px",
                     marginBottom: "10px",
                     textAlign: "center",
@@ -145,9 +145,9 @@ const SignUpPage = () => {
                 </p>
                 <div>
                     
-                <FaSeedling size={60} color="orangered"/>
+                <FaSeedling size={60} />
                 </div> 
-      <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "500px", display: "flex", flexDirection: "column", gap: "20px" ,color:'orangered'}}>
+      <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "500px", display: "flex", flexDirection: "column", gap: "20px" ,}}>
         {steps.map((step, index) => (
           <div key={step.label} style={{ display: currentStep === index ? "block" : "none" }}>
             <label>{step.label}</label>
@@ -244,50 +244,18 @@ const SignUpPage = () => {
             <motion.button
             type="button"
               onClick={handlePrev}
-                style={{
-                    margin:'0 auto',
-                  height: '40px',
-                  width: '100px', // Adjust width for the link
-                  textAlign: 'center',
-                  color: 'orangered',
-                  lineHeight: '30px', // Vertically center the text
-                  borderRadius: '50px', // Optional: adds rounded corners
-                  cursor: 'pointer', // Change cursor to pointer to show it’s clickable
-                  zIndex: 20, // Ensure it appears above the overlay and below the welcome text
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center', // Center the text inside the link
-                  border: '3px solid transparent', // Set an initial transparent border
-                  fontSize: '18px',
-                  position: 'relative', // Ensure correct positioning for the animation
-                  overflow: 'hidden', // Ensures border does not exceed the element’s boundary
-                  animation: 'borderAnimation 2s linear infinite', // Apply the animation
-                  backgroundColor:'rgba(0,0,0,0.1)'
-                }}
-                initial={{ opacity: 0.5, y:0 }}
-                animate={{ opacity: 1,y:10 }}
-                transition={{
-                    type: 'spring', stiffness: 255, duration: 150, repeat: Infinity, repeatType: 'reverse',
-                }}
-
+              
+            style={{
+              all: 'unset', // resets most styles
+              cursor: 'pointer', // optional: brings back pointer cursor
+              display: 'inline-block', 
+            }}
               >
               
 
-              <style jsx>{`
-                @keyframes borderAnimation {
-                  0% {
-                    border-color: transparent;
-                  }
-                  50% {
-                    border-color: white;
-                    border-width: 3px;
-                  }
-                  100% {
-                    border-color: transparent;
-                  }
-                }
-              `}</style>
-              Prev
+              <div className={styles.card}>
+                Prev
+              </div>
             </motion.button>
             
           )}
@@ -295,31 +263,17 @@ const SignUpPage = () => {
             <motion.button
               onClick={handleNext}
               type="button"
-                style={{
-                    margin:'0 auto',
-                  height: '40px',
-                  width: '100px', // Adjust width for the link
-                  textAlign: 'center',
-                  color: 'orangered',
-                  lineHeight: '30px', // Vertically center the text
-                  borderRadius: '50px', // Optional: adds rounded corners
-                  cursor: 'pointer', // Change cursor to pointer to show it’s clickable
-                  zIndex: 20, // Ensure it appears above the overlay and below the welcome text
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center', // Center the text inside the link
-                  border: '3px solid transparent', // Set an initial transparent border
-                  fontSize: '18px',
-                  position: 'relative', // Ensure correct positioning for the animation
-                  overflow: 'hidden', // Ensures border does not exceed the element’s boundary
-                  animation: 'borderAnimation 2s linear infinite', // Apply the animation
-                  backgroundColor:'rgba(0,0,0,0.1)'
-                }}
-
+                
+              style={{
+                all: 'unset', // resets most styles
+                cursor: 'pointer', // optional: brings back pointer cursor
+                display: 'inline-block', 
+              }}
               >
               
-
-              Next
+              <div className={styles.card}>
+                Next
+              </div>
             </motion.button>
             
           )}

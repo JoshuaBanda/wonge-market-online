@@ -4,6 +4,7 @@ import { FaSeedling } from "react-icons/fa";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import styles from "../Styles/decoratedBorder.module.css";
 
 const LoginPart = () => {
   const router = useRouter();
@@ -32,7 +33,7 @@ const LoginPart = () => {
 
       if (response.status === 201) {
         console.log("Authentication successful:", response.data);
-        router.push("/home/FrontPage");
+        router.push("/home");
       }
     } catch (error) {
       handleLoading();
@@ -58,7 +59,6 @@ const LoginPart = () => {
         {/* Title text */}
         <p
           style={{
-            color: "wheat",
             fontSize: "25px",
             marginBottom: "10px",
             textAlign: "center",
@@ -70,7 +70,7 @@ const LoginPart = () => {
         </p>
 
         <div>
-          <FaSeedling size={60} color="wheat" />
+          <FaSeedling size={60}  />
         </div>
 
         {/* Login Form */}
@@ -82,7 +82,6 @@ const LoginPart = () => {
             alignItems: "center",
             width: "100%",
             gap: "15px",
-            color: "wheat",
           }}
         >
           {/* Email Input */}
@@ -97,7 +96,6 @@ const LoginPart = () => {
               width: "100%",
               maxWidth: "500px",
               marginBottom: "10px",
-              border: "1px solid wheat",
               borderRadius: "50px",
               fontSize: "16px",
             }}
@@ -113,9 +111,9 @@ const LoginPart = () => {
             style={{
               padding: "10px",
               width: "100%",
-              maxWidth: "500px",
+              maxWidth: "550px",
               marginBottom: "20px",
-              border: "1px solid wheat",
+              border: "1px solid white",
               borderRadius: "50px",
               fontSize: "16px",
             }}
@@ -131,32 +129,19 @@ const LoginPart = () => {
           {/* Submit Button */}
           <motion.button
             style={{
-              margin: "0 auto",
-              height: "40px",
-              width: "200px",
-              textAlign: "center",
-              color: "wheat",
-              lineHeight: "30px",
-              borderRadius: "50px",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "3px solid transparent",
-              fontSize: "22px",
-              position: "relative",
-              overflow: "hidden",
-              backgroundColor: "rgba(0,0,0,0.1)",
+              all: 'unset', // resets most styles
+              cursor: 'pointer', // optional: brings back pointer cursor
+              display: 'inline-block', 
             }}
           >
             {loading ? (
-              <p style={{ color: "wheat", fontSize: "15px", margin: "5px auto" }}>
+              <p >
                 Loading ...
               </p>
             ) : (
-              <p style={{ color: "wheat", fontSize: "20px", margin: "5px auto" }}>
+              <div className={styles.card}>
                 Login
-              </p>
+              </div>
             )}
           </motion.button>
         </form>

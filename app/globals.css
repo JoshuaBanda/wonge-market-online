@@ -44,23 +44,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-
-
-.bottomMenuMain{
- background-color: red; 
- width: 100%;
- height: 60px;
- position: fixed;
- top: auto;
- 
-}
-
-
-.main{
-  position: fixed;
-  background-color: red;
-  width: 100%;
-  height: 60px;top:600px
-
-}
