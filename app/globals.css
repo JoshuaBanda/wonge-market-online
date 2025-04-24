@@ -14,7 +14,8 @@ body {
 }
 
 body {
-  color: #333;
+  color: white;
+  background-color: black;
   position: relative;
   margin: 0;
   padding: 0;

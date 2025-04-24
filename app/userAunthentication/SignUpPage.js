@@ -137,11 +137,10 @@ const SignUpPage = () => {
                     fontSize: "25px",
                     marginBottom: "10px",
                     textAlign: "center",
-                    position: "relative", // Ensure text is clear and not blurred
-                    zIndex: 1, // Text stays on top of the container
+                    position: "relative",
                   }}
                 >
-                  WONGE ENTERPRISE
+                  WONGE MARKET ONLINE
                 </p>
                 <div>
                     
@@ -181,7 +180,7 @@ const SignUpPage = () => {
                     onClick={() => setShowPassword(!showPassword)}
                     style={{
                       position: "absolute",
-                      right: "-30px",
+                      right: "20px",
                       top: "50%",
                       background: "none",
                       border: "none",
@@ -190,7 +189,7 @@ const SignUpPage = () => {
                       width:'200px'
                     }}
                   >
-                    {showPassword ? <FaEyeSlash size={20} style={{position:'relative',top:'-10px',right:'-40px'}}/> : <FaEye size={20} style={{position:'relative',top:'-10px',right:'-40px'}} />}
+                    {showPassword ? <FaEyeSlash size={20} style={{position:'relative',top:'-10px',right:'-40px',color:"red"}}/> : <FaEye size={20} style={{position:'relative',top:'-10px',right:'-40px'}} />}
                   </button>
                 )}
               </div>
@@ -210,33 +209,12 @@ const SignUpPage = () => {
         )}
 
         {currentStep === steps.length - 1 ? (
-          <motion.button
+          <button
             type="submit"
-            style={{
-              height: "40px",
-              width: "100%",
-              textAlign: "center",
-              color: "orangered",
-              lineHeight: "30px",
-              borderRadius: "5px",
-              cursor: "pointer",
-              backgroundColor: "rgba(0,0,0,0.2)",borderRadius:'20px',
-              border:'1px solid orangered',
-              border: "none",
-              fontSize: "16px",
-            }}
-            initial={{ opacity: 0.5, y: 0 }}
-            animate={{ opacity: 1, y: 10 }}
-            transition={{
-              type: "spring",
-              stiffness: 255,
-              duration: 150,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
+            className={styles.cards}
           >
             Submit
-          </motion.button>
+          </button>
         ) : null}
 
         <div style={{ display: "flex", gap: "10px", justifyContent: "center", marginTop: "10px" }}>
@@ -253,7 +231,7 @@ const SignUpPage = () => {
               >
               
 
-              <div className={styles.card}>
+              <div className={styles.cards}>
                 Prev
               </div>
             </motion.button>
@@ -271,7 +249,7 @@ const SignUpPage = () => {
               }}
               >
               
-              <div className={styles.card}>
+              <div className={styles.cards}>
                 Next
               </div>
             </motion.button>

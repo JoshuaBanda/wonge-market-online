@@ -8,7 +8,6 @@ export default function BottomMenuWrapper() {
   const hideOnRoutes = ["/login", "/admin",]; // adjust routes here
 
   const shouldShow = !hideOnRoutes.includes(pathname);
-  console.log("bottom wrapper")
 
   return (
     <>

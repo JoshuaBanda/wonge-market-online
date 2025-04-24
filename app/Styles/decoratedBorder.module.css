@@ -30,7 +30,7 @@
     animation: 5s spin linear infinite;
   }
   .card::before{
-    filter:blur(1.5rem)
+    filter:blur(0.5em)
   }
   @keyframes spin{
   from{
@@ -52,6 +52,7 @@
     border-radius: 20px;
     position: relative;
     color: white;
+    z-index: 10
   }
   
   .containers::after ,.container::before {
@@ -62,9 +63,9 @@
     transform: translate(-50%, -50%); /* Use transform instead of translate */
     width: 101%;
     height: 101%;
-    z-index: -2;
+    z-index: -1;
     border-radius: 20px;
-    background-image: conic-gradient(from var(--angle), transparent, rgb(236, 7, 46),transparent,green,blue);
+    background-image: conic-gradient(from var(--angle), transparent, rgb(236, 7, 46),transparent,green, blue);
     animation: 3s spin linear infinite;
   }
   .container::before{
@@ -81,4 +82,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+
+
+  .cards {
+    margin: 0 auto;
+    padding: 0.5em;
+    width: 100px;
+    background-color: black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+  }
+  
+  .cards::after ,.container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Use transform instead of translate */
+    width: 103%;
+    height: 103%;
+    z-index: -1;
+    border-radius: 20px;
+    background-image: conic-gradient(from var(--angle), transparent, rgb(236, 7, 46),transparent,green, blue);
+    animation: 3s spin linear infinite;
+  }
+  .cards::before{
+    filter:blur(2rem)
+    opacity(1)
   }

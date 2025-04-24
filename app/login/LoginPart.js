@@ -62,11 +62,11 @@ const LoginPart = () => {
             fontSize: "25px",
             marginBottom: "10px",
             textAlign: "center",
-            position: "relative", // Ensure text is clear and not blurred
+            position: "relative",
             zIndex: 1,
           }}
         >
-          WONGE ENTERPRISE
+          WONGE MARKET ONLINE
         </p>
 
         <div>
