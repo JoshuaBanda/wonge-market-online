@@ -38,14 +38,14 @@
 .price{
     position: relative;
     display: flex;
-    margin: 5px;
+    margin: 5px 5px 5px 10px;
     font-size: 16px;
 }
 .buyNow{
     
     position: relative;
     display: flex;
-    margin: 5px;
+    margin: 5px 5px 5px 20px;
     font-size: 16px;
     padding: 5px;
     background-color: rgba(0,0,0,0.4);
