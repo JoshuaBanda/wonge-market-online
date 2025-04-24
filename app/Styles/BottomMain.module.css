@@ -1,6 +1,6 @@
 .main {
     position: fixed;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(49, 49, 49, 0.5);
     width: 90%;
     height: 60px;
     top: 91%;
@@ -37,7 +37,7 @@
   .icons {
     position: relative;
     top:0px;
-    color: #333;
+    color: white;
     transition: transform 0.2s ease, color 0.2s ease;
     font-size: 20px;
     font-weight: lighter;
@@ -53,7 +53,7 @@
   .menuPopUp {
     position: absolute; /* relative to the parent */
     bottom: 50px; /* adjust depending on your layout */
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7);
     border: 1px solid rgba(255,255,255,0.5);
     border-radius: 15px;
     padding: 0px;
