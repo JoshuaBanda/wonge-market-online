@@ -12,10 +12,10 @@ body {
   animation: swappic 30s infinite ;
 }
 @keyframes swappic {
-  0% { background-image: url("/wonge26.jpg"); }
-  25% { background-image: url("/wonge27.jpg"); }
+  0% { background-image: url("/wonge30.jpg"); }
+  25% { background-image: url("/wonge31.jpg"); }
   75% { background-image: url("/wonge28.jpg"); }
-  100%{ background-image: url("/wonge29.jpg"); }
+  100%{ background-image: url("/wonge32.jpg"); }
 }
 body {
   color: white;
