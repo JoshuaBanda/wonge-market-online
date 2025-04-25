@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresen
 import ShopItems from "./ShopItems";
 import { useInView } from "react-intersection-observer";
 import styles from '../Styles/home.module.css' ; 
-import style from "../Styles/decoratedBorder.module.css";
+import style from "../Styles/HomeItems.module.css";
 
 const HomePage = ({user}) => {
   const [userState,setUserState]=useState(user);

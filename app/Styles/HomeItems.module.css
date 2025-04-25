@@ -1,0 +1,62 @@
+
+@property --angleitem{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .normalitem{
+    
+    margin: 0 auto;
+    padding: 0.5em;
+    width: 150px;
+    background-color: black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+  }
+
+  
+  @keyframes spins{
+  from{
+    --angleitem:0deg;
+  }
+  to{
+    --angleitem:360deg
+  }
+}
+
+
+
+.item {
+  margin: 0 auto;
+  padding: 0.5em;
+  width: 150px;
+  background-color: black;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: relative;
+  color: white;
+}
+
+.item::after ,.item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Use transform instead of translate */
+  width: 101%;
+  height: 104%;
+  z-index: -1;
+  border-radius: 20px;
+  background-image: conic-gradient(from var(--angleitem), transparent, rgb(236, 7, 46),transparent,white);
+  animation: 5s spins linear infinite;
+}
+.item::before{
+  filter:blur(8px)
+}
