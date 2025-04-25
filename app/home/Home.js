@@ -51,7 +51,7 @@ const HomePage = ({user}) => {
       }else{
         setListItemBorder(0)
       }
-    }, 3000);
+    }, 6000);
     return () => clearInterval(interval); // Cleanup
   }, [listItemBorder]);
   return (
@@ -63,7 +63,7 @@ const HomePage = ({user}) => {
           <ul>
             {items.map((item, index) => {
               const isSelected = selectedItem === item;
-              const myBackgroudColor = isSelected ? "white" : "#333";
+              const myBackgroudColor = isSelected ? "rgba(255,255,255)" : "#333";
               const myTextColor = isSelected ? "#333" : "white";
 
               return (

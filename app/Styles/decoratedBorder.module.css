@@ -268,12 +268,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Use transform instead of translate */
-    width: 104%;
+    width: 103%;
     height: 105%;
     z-index: -1;
     border-radius: 20px;
-    background-image: conic-gradient(from var(--angle), transparent,transparent, rgb(228, 228, 228,0.1), rgb(228, 228, 228,0.7),transparent);
-    animation: 4s spins linear infinite,
+    background-image: conic-gradient(from var(--angle), transparent, rgb(228, 228, 228,0.3), rgb(228, 228, 228,0.7),rgba(255, 0, 64, 0.651));
+    animation: 3s spins linear infinite,
   }
   .item::before{
     filter:blur(0)
@@ -292,10 +292,10 @@
     color: white;
   }
   @keyframes spins{
-  0%{
+  from{
     --angle:0deg;
   }
-  50%{
+  to{
     --angle:360deg
   }
 }
