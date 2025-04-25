@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresen
 import ShopItems from "./ShopItems";
 import { useInView } from "react-intersection-observer";
 import styles from '../Styles/home.module.css' ; 
+import style from "../Styles/decoratedBorder.module.css";
 
 const HomePage = ({user}) => {
   const [userState,setUserState]=useState(user);
@@ -25,7 +26,7 @@ const HomePage = ({user}) => {
   // State to keep track of selected item
   const [selectedItem, setSelectedItem] = useState(null);
   const [search, setSearch] = useState("Avon");
-
+  const [listItemBorder,setListItemBorder]=useState(0);
   // Handle when an item is clicked
   const handleOnClick = (item) => {
     setSelectedItem(item);
@@ -40,6 +41,19 @@ const HomePage = ({user}) => {
     
   setUserState(user)
   },[user])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if(listItemBorder<=2){
+        
+      setListItemBorder(prev => prev + 1);
+
+      }else{
+        setListItemBorder(0)
+      }
+    }, 3000);
+    return () => clearInterval(interval); // Cleanup
+  }, [listItemBorder]);
   return (
     <>
       <div className={styles.container}>
@@ -59,6 +73,12 @@ const HomePage = ({user}) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ type: 'keyframes', stiffness: 100, duration: 2 }}
                   onClick={() => handleOnClick(item)} // Handle item click
+                  className={`
+                    ${listItemBorder === index ? style.item : style.normalitem}
+                  `}
+                  style={{
+                    ...(isSelected&&{backgroundColor:myBackgroudColor})
+                  }}
                 >
                   <HomeOptions 
                     text={item} 

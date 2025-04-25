@@ -57,7 +57,7 @@
     z-index: 10
   }
   
-  .containers::after ,.container::before {
+  .container::after ,.container::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -88,7 +88,7 @@
   color: white;
 }
 
-.contain::after ,.container::before {
+.contain::after ,.contain::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -121,7 +121,7 @@
   height: 450px
 }
 
-.containR::after ,.container::before {
+.containR::after ,.containR::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -199,11 +199,14 @@
     border-radius: 20px;
     position: relative;
     color: white;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.507);
     
     /* Animation properties */
     animation: bigBounce 0.8s ease-in-out 1; /* Play once */
     transform-origin: center bottom; /* Makes bounce look more natural */
+  }
+  .cardT::before{
+    filter: blur(10px);
   }
 
   .cardTw {
@@ -244,3 +247,61 @@
       transform: translateY(-5px);
     }
   }
+
+
+  .item {
+    margin: 0 auto;
+    padding: 0.5em;
+    width: 150px;
+    background-color: black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+  }
+  
+  .item::after ,.item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Use transform instead of translate */
+    width: 104%;
+    height: 105%;
+    z-index: -1;
+    border-radius: 20px;
+    background-image: conic-gradient(from var(--angle), transparent,transparent, rgb(228, 228, 228,0.1), rgb(228, 228, 228,0.7),transparent);
+    animation: 4s spins linear infinite,
+  }
+  .item::before{
+    filter:blur(0)
+  }
+  .normalitem{
+    
+    margin: 0 auto;
+    padding: 0.5em;
+    width: 150px;
+    background-color: black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+  }
+  @keyframes spins{
+  0%{
+    --angle:0deg;
+  }
+  50%{
+    --angle:360deg
+  }
+}
+@keyframes displayOnce{
+from{
+  opacity:0
+}to {
+opacity: 1;}
+}
