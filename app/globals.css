@@ -12,10 +12,10 @@ body {
   animation: swappic 60s infinite ;
 }
 @keyframes swappic {
-  0% { background-image: url("/wonge30.jpg"); }
-  25% { background-image: url("/wonge31.jpg"); }
+  0% { background-image: url("/wonge27.jpg"); }
+  25% { background-image: url("/wonge25.jpg"); }
   75% { background-image: url("/wonge28.jpg"); }
-  100%{ background-image: url("/wonge32.jpg"); }
+  100%{ background-image: url("/wonge35.jpg"); }
 }
 body {
   color: white;
@@ -30,12 +30,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
   min-height: 100vh;
   position: relative;
   top: 0px;
   bottom: -50px;
-  background-color: rgba(0,0,0,0.025);
+  background-color: rgba(0,0,0,0.3);
   
 }
 
