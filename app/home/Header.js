@@ -6,9 +6,7 @@ import NavBarItemList from './HeaderItemFlow';
 const Header = () => {
     return (
         <div className={styles.main}>
-        <h2 style={{
-            position:'relative',top:'30px',left:'0px',margin:'0px 30px'
-        }}>Wonge Market Online</h2>
+        <h2 className={styles.tittle}>Wonge Market Online</h2>
             <div>
                 
             <NavBarItemList/>

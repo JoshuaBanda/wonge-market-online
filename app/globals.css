@@ -9,7 +9,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  animation: swappic 60s infinite ;
+  /*animation: swappic 60s infinite ;*/
 }
 @keyframes swappic {
   0% { background-image: url("/wonge27.jpg"); }
@@ -19,11 +19,17 @@ body {
 }
 body {
   color: white;
-  background-color: black;
+  background-color: rgb(247, 213, 151);
   position: relative;
   margin: 0;
   padding: 0;
+  font-family: var(--font-amarath);
 }
+
+.special-element {
+  font-family: var(--font-lovers);
+}
+
 .blur-wrapper {
   position: relative;
   /*background-image: url('/wonge24.jpg');*/
@@ -35,7 +41,7 @@ body {
   position: relative;
   top: 0px;
   bottom: -50px;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.025);
   
 }
 

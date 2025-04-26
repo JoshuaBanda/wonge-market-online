@@ -8,10 +8,10 @@ import PentagonTwo from './PentagonTwo';
 
 const NavBarItemList = () => {
     const [items, setItems] = useState([
-        { id: 1, src: '/avon_with_no_bg.png', alt: 'Avon Lotion', text: 'K15,000' },
-        { id: 2, src: '/perfume_with_no_bg.png', alt: 'Perfume', text: 'K15,000' },
-        { id: 3, src: '/earring3.png', alt: 'Earrings', text: 'K15,000' },
-        { id: 4, src: '/brooch_with_no_bg.png', alt: 'Brochures', text: 'K15,000' },
+        { id: 1, src: '/avon3_with_no_bg.png', alt: 'Avon Lotion', text: 'K15,000' },
+        { id: 2, src: '/soap.png', alt: 'Perfume', text: 'K15,000' },
+        { id: 3, src: '/avon3_with_no_bg.png', alt: 'Earrings', text: 'K15,000' },
+ { id: 4, src: '/avon4_with_no_bg.png', alt: 'Brochures', text: 'K15,000' },//
         
         { id: 5, src: '/soap.png', alt: 'Perfume', text: 'K5,000' },
     ]);
@@ -45,7 +45,7 @@ const NavBarItemList = () => {
                                 animate={{
                                     scale:index===0?1.5: 1,
                                     x:index===1?-60:220,
-                                    opacity:index===0?0.8:0,
+                                    opacity:index===0?1:0,
                                     y:index===1?100:150,
 
                                     
@@ -74,7 +74,7 @@ const NavBarItemList = () => {
                                             fill
                                             quality={100}
                                             priority
-                                            style={{ objectFit: 'cover' }} // Ensures the image covers the container
+                                            //style={{ objectFit: 'cover' }} // Ensures the image covers the container
                                             sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
                                         />
                                     </div>
@@ -97,9 +97,9 @@ const NavBarItemList = () => {
                     
                     <Pentagon/>
                     <motion.div 
-                        initial={{scale:0.5}}
+                        initial={{scale:0.6}}
                         style={{
-                            position:'absolute',top:'55px',left:'100px'
+                            position:'absolute',top:'40px',left:'80px'
                         }}>
                         <PentagonTwo/>
                     </motion.div>
