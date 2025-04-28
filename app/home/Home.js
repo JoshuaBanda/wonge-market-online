@@ -19,7 +19,7 @@ const HomePage = ({user}) => {
   });
 
   const { ref: shopNowRef, inView: shopNowInView } = useInView({
-    threshold: 0.3,
+    threshold: 0.5,
   });
   const items = ["Avon", "Earrings", "Brochus", 'Perfume'];
 
@@ -111,16 +111,15 @@ const HomePage = ({user}) => {
           </div>
           
         <motion.div
-          ref={shopNowRef}
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, x: -300 }}
           animate={{
-            opacity: shopNowInView ? 1 : 0.2,
-            x: shopNowInView ? 0 : 300,
-            visibility: shopNowInView ? 'visible' : 'hidden',
+            opacity: shopNowInView ? 0 : 1,
+            x: /*shopNowInView ?*/ 0 //: 300,
+            //visibility: shopNowInView ? 'visible' : 'hidden',
           }}
           transition={{
-            type: 'keyframes',
-            duration: 2,
+            type: 'spring',
+            duration: 1,
           }}
           style={{
             position: 'relative',
@@ -129,7 +128,7 @@ const HomePage = ({user}) => {
             fontSize: '20px',
             fontWeight: 'bold',
             //fontFamily: 'DM Sans, sans-serif',
-            color: 'rgba(255,255,255,0.8)',
+            color: 'rgba(255,255,255,0.9)',
             justifyContent:'center'
           }}
         >
