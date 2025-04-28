@@ -20,7 +20,7 @@ body {
 }.myColor {
   animation: changeTextColor 60s infinite;
   color: var(--textc);
-  transition: color 10s;
+  transition: color 2s;
 }
 
 @keyframes changeTextColor {

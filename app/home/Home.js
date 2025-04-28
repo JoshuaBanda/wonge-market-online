@@ -154,7 +154,7 @@ const HomePage = ({user}) => {
               duration: 1,
             }}
           >
-        <ShopItems searchItem={selectedItem} userState={userState} />
+        <ShopItems searchItem={selectedItem} />
           </motion.div>
         </AnimatePresence>
         

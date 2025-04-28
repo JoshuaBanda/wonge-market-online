@@ -12,10 +12,11 @@ import { useUser } from "../userContext";
 import { useRouter } from "next/navigation";
 
 // Function to fetch like data for a specific post
-const fetchLikeData = async (jwtToken, postId, currentUserId, apiService, setLikeCount, setIsLiked, setErrorMessage) => {
+/*const fetchLikeData = async (jwtToken, postId, currentUserId, apiService, setLikeCount, setIsLiked, setErrorMessage) => {
   try {
     // Fetch the like count from the API
     const fetchedLikeCount = await apiService.fetchLikesForPost(jwtToken, postId);
+    console.log("yo",fetchedLikeCount);
     
     // Fetch the like status for the current user
     const fetchedIsLiked = await apiService.isUserLikedPost(jwtToken, postId, currentUserId);
@@ -26,16 +27,18 @@ const fetchLikeData = async (jwtToken, postId, currentUserId, apiService, setLik
     // Show error message to the user
     setErrorMessage("Failed to load like data. Please try again.");
   }
-};
+};*/
 
-const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiService,userState }) => {
+const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiService, }) => {
  // console.log('user',userState);
  const {person}=useUser();
- //console.log("user",person);
+ //console.log("user",person.userid);
+
+ const currentUserId=person.userid;
   
   const [items, setItems] = useState([]); // Initialize as an empty array
   const [likeCount, setLikeCount] = useState(0);
-  const [isLiked, setIsLiked] = useState(false);
+  //const [isLiked, setIsLiked] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [user,setUser]=useState(person)
   const router=useRouter();
@@ -67,6 +70,8 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
           const response = await axios.get(
             `https://wonge-backend.onrender.com/search/search?name=${searchItem}`
           );
+          
+    console.log("yoooooooo",response);
 
           // Access the 'products' array in the response and set it to items state
           setItems(Array.isArray(response.data.products) ? response.data.products : []); 
@@ -82,9 +87,10 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
   }, [searchItem]); // Effect depends on the searchItem prop
 
   // Use effect to fetch like data for the specific post
-  useEffect(() => {
+  /*useEffect(() => {
     fetchLikeData(jwtToken, post.postId, currentUserId, apiService, setLikeCount, setIsLiked, setErrorMessage);
-  }, [jwtToken, post.postId, currentUserId, apiService]);
+    console.log("yoooooooo");
+  }, [jwtToken, post.postId, currentUserId, apiService]);*/
 
   const checkDescriptionLength = (str) => str.length <= 25;
 
@@ -114,7 +120,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
           />
           <div className={styles.likeButton}>
             <div>
-              <LikeButton postId={item.id} userId='1' initialLikeCount={likeCount} initialLikeStatus={isLiked} />
+              <LikeButton postId={item.id} userId={currentUserId} initialLikeCount={likeCount} /*initialLikeStatus={isLiked}*/ />
             </div>
           </div>
         </div>

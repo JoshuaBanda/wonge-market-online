@@ -5,8 +5,9 @@ import { ClipLoader } from 'react-spinners'; // For a loading spinner
 import Rating from './Rating';
 import { FaHeart,FaThumbsUp } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
-const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeStatus }) => {
-  const [isLiked, setIsLiked] = useState(initialLikeStatus);
+const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
+  //console.log(" postId", postId,"userId",userId,"jwtToken",jwtToken,"initialLikeCount",initialLikeCount);
+  const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(initialLikeCount);
   const [isLoading, setIsLoading] = useState(false);
  // console.log('postId',postId,'userid ',userId,' jwtToken',jwtToken,'initial like count',initialLikeCount,'inititual like status',initialLikeStatus);
@@ -14,6 +15,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount, initialLikeSta
   // Fetch like data when the component mounts
   useEffect(() => {
     fetchLikeData();
+    console.log("like",likeCount,isLiked);
   }, [postId,isLiked]);
 
   // Fetch like count and like status
