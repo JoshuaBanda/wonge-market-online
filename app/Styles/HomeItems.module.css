@@ -54,7 +54,7 @@
   height: 104%;
   z-index: -1;
   border-radius: 20px;
-  background-image: conic-gradient(from var(--angleitem), gold,transparent,transparent,yellow);
+  background-image: conic-gradient(from var(--angleitem), wheat,transparent,transparent,brown);
   animation: 5s spins linear infinite;
 }
 .item::before{
