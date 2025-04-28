@@ -18,13 +18,13 @@ export const UserProvider = ({ children }) => {
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
       setPersonState(parsedUser);
-      console.log("retrieving person", parsedUser);
+      //console.log("retrieving person", parsedUser);
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(person));
-    console.log("storing person", person);
+   // console.log("storing person", person);
   }, [person]);
 
   const setPerson = (data) => {

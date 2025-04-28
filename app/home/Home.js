@@ -108,8 +108,9 @@ const HomePage = ({user}) => {
             fontSize: '20px',
             fontWeight: 'bold',
             //fontFamily: 'DM Sans, sans-serif',
-            color: 'rgba(255, 255, 255, 0.9)',
-          }}>
+            //color: 'rgba(255, 255, 255, 0.9)',
+          }}
+          className="myColor">
             OUR BEST PRODUCTS
           </div>
           
@@ -131,9 +132,10 @@ const HomePage = ({user}) => {
             fontSize: '20px',
             fontWeight: 'bold',
             //fontFamily: 'DM Sans, sans-serif',
-            color: 'rgba(255,255,255,0.9)',
             justifyContent:'center'
           }}
+          
+          className="myColor"
         >
           Shopping made easy
         </motion.div>

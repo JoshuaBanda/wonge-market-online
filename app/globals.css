@@ -1,4 +1,8 @@
-
+@property --textc {
+  syntax: "<color>";
+  initial-value: white;
+  inherits: false;
+}
 
 
 html,
@@ -11,16 +15,38 @@ body {
   background-attachment: fixed;
   /*animation: swappic 60s infinite ;*/
   background-color: #333;
+  animation: swappic 60s infinite; /* Duration + repeat */
+  background-image: url('/wonge37.jpg');
+}.myColor {
+  animation: changeTextColor 60s infinite;
+  color: var(--textc);
+  transition: color 10s;
 }
+
+@keyframes changeTextColor {
+  0% {
+    --textc: white;
+  }
+  50% {
+    --textc: rgb(249, 247, 255);
+  }
+  100% {
+    --textc: white;
+  }
+}
+
 @keyframes swappic {
-  0% { background-image: url("/wonge27.jpg"); }
-  25% { background-image: url("/wonge25.jpg"); }
-  75% { background-image: url("/wonge28.jpg"); }
-  100%{ background-image: url("/wonge35.jpg"); }
+  0% { background-image: url("/wonge37.jpg");
+  }
+  50% { background-image: url("/wonge44.jpg");
+    
+  }
+  
+  100% { background-image: url("/wonge37.jpg");
+  }
 }
 body {
   color: white;
-  background-image: url('/wonge37.jpg');
   position: relative;
   margin: 0;
   padding: 0;
