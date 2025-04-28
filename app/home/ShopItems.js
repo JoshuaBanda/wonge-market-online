@@ -8,6 +8,8 @@ import styles from '../Styles/shopItems.module.css'
 import Spinner from "./Spinning";
 import LikeButton from "../like/LikeButton";
 import { motion } from "framer-motion";
+import { useUser } from "../userContext";
+import { useRouter } from "next/navigation";
 
 // Function to fetch like data for a specific post
 const fetchLikeData = async (jwtToken, postId, currentUserId, apiService, setLikeCount, setIsLiked, setErrorMessage) => {
@@ -27,18 +29,34 @@ const fetchLikeData = async (jwtToken, postId, currentUserId, apiService, setLik
 };
 
 const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiService,userState }) => {
-  //console.log('post',post);
+ // console.log('user',userState);
+ const {person}=useUser();
+ //console.log("user",person);
+  
   const [items, setItems] = useState([]); // Initialize as an empty array
   const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [user,setUser]=useState(userState)
+  const [user,setUser]=useState(person)
+  const router=useRouter();
+
+  const handleBuyNow=(item)=>{
+    if(person.access_token){
+      console.log(person.access_token);
+    router.push(`/blog/${item.id}`)
+    }
+    else{
+      console.log("not authorized");
+      router.push('login')
+  }
+  }
+
 
   // Fetch items from the API based on the search term
   useEffect(()=>{
-    setUser(userState);
+    setUser(user);
     console.log('user',user);
-  },[userState])
+  },[person])
   useEffect(() => {
     const search = async () => {
       if (searchItem) {
@@ -103,8 +121,8 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
       ) : (
         <p>No image available</p>
       )}
-      
-      <Link href={`/blog/${item.id}`} >
+      <div onClick={() => handleBuyNow(item)}>
+
         <div className={styles.txt}>
           <h3 style={{ height: '20px' }}>
             {checkNameLength(item.name) ? item.name : `${item.name.slice(0, 10)}...`}  {/* Truncate if name is too long */}
@@ -131,7 +149,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
 
         </div>
         
-      </Link>
+      </div>
 
     </motion.div>
   ));

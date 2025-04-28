@@ -6,8 +6,10 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import styles from "../Styles/decoratedBorder.module.css";
 import Spinner from "../home/Spinning";
+import { useUser } from "../userContext";
 
 const LoginPart = () => {
+  const {person,setPerson}=useUser();
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,13 +17,15 @@ const LoginPart = () => {
   const [error, setError] = useState(""); // Added error state for better user experience
   const [showClass, setShowClass] = useState(false);
 
+  //actor person
+  //console.log("person b4", person)
   const handleLoading = () => {
     setLoading((prev) => !prev);
   };
   
     setTimeout(()=>{
-      setShowClass(!showClass);
-    },6000)
+     // setShowClass(!showClass);
+    },12000)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,11 +40,21 @@ const LoginPart = () => {
       );
 
       handleLoading();
+if (response.status === 201) {
+  console.log("Authentication successful:", response.data);
+  const result = response.data;
 
-      if (response.status === 201) {
-        console.log("Authentication successful:", response.data);
-        router.push("/home");
-      }
+  setPerson({
+    ...person,
+    firstname: result.user.firstname,
+    lastname: result.user.lastname,
+    email: result.user.email,
+    userid: result.user.userid,
+    access_token: result.result.access_token, // adjust if it's result.user.accessTocken
+  });
+  router.push("/home");
+}
+
     } catch (error) {
       handleLoading();
       setError("Login failed. Please check your credentials.");

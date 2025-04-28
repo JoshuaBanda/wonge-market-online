@@ -1,6 +1,7 @@
 import BottomMenuWrapper from "@/components/BottomMenuWrapper";
 import "./globals.css"
 import { Amaranth, Lovers_Quarrel,Beau_Rivage } from "next/font/google";
+import { UserProvider } from "./userContext";
 
 export const metadata = {
   title: "Wonge Market Online",
@@ -28,10 +29,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${amarath.variable} ${loversQuarrel.variable} ${beauRivage.variable}`}>
       <body>
+      <UserProvider>
         <div className="blur-wrapper">
           {children}
         </div>
         <BottomMenuWrapper/>
+      </UserProvider>
       </body>
     </html>
   );

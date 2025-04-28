@@ -6,9 +6,12 @@ import ShopItems from "./ShopItems";
 import { useInView } from "react-intersection-observer";
 import styles from '../Styles/home.module.css' ; 
 import style from "../Styles/HomeItems.module.css";
+import { useUser } from "../userContext";
 
 const HomePage = ({user}) => {
-  const [userState,setUserState]=useState(user);
+  const {person}=useUser();
+  //console.log("hi",person.firstname)
+  const [userState,setUserState]=useState(person);
   
   const { ref: listRef, inView: listInView } = useInView({
     threshold: 0.15,
@@ -31,6 +34,18 @@ const HomePage = ({user}) => {
   const handleOnClick = (item) => {
     setSelectedItem(item);
     setSearch(item); // Update search when an item is clicked
+    //console.log("item",item);
+    if(item=="Avon"){
+      setListItemBorder(0);
+    }
+    else if (item=="Earrings") {
+      setListItemBorder(1);
+    } else if(item==="Brochus") {
+      setListItemBorder(2);
+    }
+    else{
+      setListItemBorder(3);
+    }
   };
 
   useEffect(() => {
@@ -40,20 +55,8 @@ const HomePage = ({user}) => {
   useEffect(()=>{
     
   setUserState(user)
-  },[user])
+  },[])
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if(listItemBorder<=2){
-        
-      setListItemBorder(prev => prev + 1);
-
-      }else{
-        setListItemBorder(0)
-      }
-    }, 6000);
-    return () => clearInterval(interval); // Cleanup
-  }, [listItemBorder]);
   return (
     <>
       <div className={styles.container}>
@@ -77,7 +80,7 @@ const HomePage = ({user}) => {
                     ${listItemBorder === index ? style.item : style.normalitem}
                   `}
                   style={{
-                    ...(isSelected&&{backgroundColor:myBackgroudColor})
+                    //...(isSelected&&{backgroundColor:myBackgroudColor})
                   }}
                 >
                   <HomeOptions 

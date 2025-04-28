@@ -19,9 +19,8 @@
   .itemsListContainer {
     position: relative;
     padding: 50px;
-    margin: 10px 10px 10px -25px;
+    margin: 10px 0px 10px -25px;
     overflow-x: scroll;
-    max-width: 100%;
     padding-bottom: 15px;
     scrollbar-width: none;
   }
