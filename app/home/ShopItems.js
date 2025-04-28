@@ -42,7 +42,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
 
   const handleBuyNow=(item)=>{
     if(person.access_token){
-      console.log(person.access_token);
+     // console.log(person.access_token);
     router.push(`/blog/${item.id}`)
     }
     else{
@@ -55,7 +55,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
   // Fetch items from the API based on the search term
   useEffect(()=>{
     setUser(user);
-    console.log('user',user);
+   // console.log('user',user);
   },[person])
   useEffect(() => {
     const search = async () => {

@@ -15,7 +15,7 @@ export default function LoginPage() {
     setShowClass(true)
     const timer = setTimeout(() => {
       setShowClass(false);
-    }, 2000); // remove after 6 seconds
+    }, 5000); // remove after 6 seconds
 
     return () => clearTimeout(timer); // cleanup on unmount
   }, [selectedSide]);

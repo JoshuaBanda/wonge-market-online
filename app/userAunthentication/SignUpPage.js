@@ -22,9 +22,9 @@ const SignUpPage = () => {
   const router = useRouter(); // Initialize router
 
   const [showClass, setShowClass] = useState(false);
-  setTimeout(()=>{
+  /*setTimeout(()=>{
     setShowClass(!showClass);
-  },6000)
+  },6000)*/
   const steps = [
     { label: "Email", value: email, setValue: setEmail, type: "email", placeholder: "Email" },
     { label: "Password", value: password, setValue: setPassword, type: "password", placeholder: "Password" },
