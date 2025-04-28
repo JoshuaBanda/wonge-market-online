@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import styles from "../Styles/decoratedBorder.module.css";
+import Spinner from "../home/Spinning";
 
 const LoginPart = () => {
   const router = useRouter();
@@ -144,7 +145,7 @@ const LoginPart = () => {
           >
             {loading ? (
               <div className={styles.card}>
-                Loading ...
+                <Spinner/>
               </div>
             ) : (
               <div className={showClass?styles.cardT:styles.card}>
