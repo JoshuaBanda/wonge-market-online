@@ -10,7 +10,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: black;
+    background-color: rgba(44,54,57);
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@
   margin: 0 auto;
   padding: 0.5em;
   width: 150px;
-  background-color: black;
+  background-color: rgba(44,54,57);
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -54,7 +54,7 @@
   height: 104%;
   z-index: -1;
   border-radius: 20px;
-  background-image: conic-gradient(from var(--angleitem), wheat,transparent,transparent,brown);
+  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(2, 182, 236));
   animation: 5s spins linear infinite;
 }
 .item::before{

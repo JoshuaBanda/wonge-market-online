@@ -1,6 +1,6 @@
 .main {
     position: fixed;
-    background-color: rgba(223, 223, 223, 0.5);
+    background-color: rgba(223, 223, 223, 0.349);
     width: 90%;
     height: 60px;
     top: 91%;
@@ -37,7 +37,7 @@
   .icons {
     position: relative;
     top:0px;
-    color: #333;
+    color: rgba(44,54,57);
     transition: transform 0.2s ease, color 0.2s ease;
     font-size: 20px;
     font-weight: lighter;

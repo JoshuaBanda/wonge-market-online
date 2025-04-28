@@ -63,7 +63,7 @@ const HomePage = ({user}) => {
           <ul>
             {items.map((item, index) => {
               const isSelected = selectedItem === item;
-              const myBackgroudColor = isSelected ? "rgba(255,255,255)" : "#333";
+              const myBackgroudColor = isSelected ? "rgba(255,255,255)" : "rgba(44,54,57)"
               const myTextColor = isSelected ? "#333" : "white";
 
               return (

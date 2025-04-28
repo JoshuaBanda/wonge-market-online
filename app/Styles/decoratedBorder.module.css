@@ -7,7 +7,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: black;
+    background-color: rgba(44,54,57);
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -26,7 +26,7 @@
     height: 104%;
     z-index: -1;
     border-radius: 20px;
-    background-image: conic-gradient(from var(--angle), transparent, rgb(236, 7, 46),transparent,green, blue);
+    background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
     animation: 5s spin linear infinite;
   }
   .card::before{
@@ -47,7 +47,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: black;
+    background-color: rgba(44,54,57);
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@
     height: 101%;
     z-index: -1;
     border-radius: 20px;
-    background-image: conic-gradient(from var(--angle), transparent, rgb(236, 7, 46),transparent,green, blue);
+    background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
     animation: 3s spin linear infinite;
   }
   .container::before{
@@ -80,7 +80,7 @@
 .contain {
   margin: 0 auto;
   padding: 0.5em;
-  background-color: black;
+  background-color: rgba(44,54,57);
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -99,7 +99,7 @@
   z-index: -1;
   border-bottom-left-radius:20px ;
   border-top-left-radius:20px ;
-  background-image: conic-gradient(from var(--angle), transparent, rgb(236, 7, 46),transparent,green, blue);
+  background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
   animation: 3s spin linear infinite;
 }
 .contain::before{
@@ -110,7 +110,7 @@
 .containR {
   margin: 0 auto;
   padding: 0.5em;
-  background-color: black;
+  background-color: rgba(44,54,57);
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -132,7 +132,7 @@
   z-index: -1;
   border-bottom-right-radius:20px ;
   border-top-right-radius:20px ;
-  background-image: conic-gradient(from var(--angle), transparent, rgb(236, 7, 46),transparent,green, blue);
+  background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
   animation: 5s spin linear infinite;
 }
 .containR::before{
@@ -160,7 +160,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 100px;
-    background-color: black;
+    background-color: rgba(44,54,57);
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -179,7 +179,7 @@
     height: 103%;
     z-index: -1;
     border-radius: 20px;
-    background-image: conic-gradient(from var(--angle), transparent, rgb(236, 7, 46),transparent,green, blue);
+    background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
     animation: 3s spin linear infinite;
   }
   .cards::before{
@@ -192,7 +192,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: black;
+    background-color: rgba(44,54,57);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,7 +213,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 100px;
-    background-color: black;
+    background-color: rgba(44,54,57);
     display: flex;
     justify-content: center;
     align-items: center;
