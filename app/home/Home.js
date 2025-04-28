@@ -11,7 +11,7 @@ const HomePage = ({user}) => {
   const [userState,setUserState]=useState(user);
   
   const { ref: listRef, inView: listInView } = useInView({
-    threshold: 0.3,
+    threshold: 0.15,
   });
 
   const { ref: shopRef, inView: shopInView } = useInView({

@@ -6,8 +6,6 @@ import Image from "next/image";
 import Link from "next/link";  // Import Link from Next.js
 import styles from '../Styles/shopItems.module.css'
 import Spinner from "./Spinning";
-import { FaHeart, FaStar, FaStarHalf } from "react-icons/fa";
-import { FaCartShopping, FaStarHalfStroke } from "react-icons/fa6";
 import LikeButton from "../like/LikeButton";
 import { motion } from "framer-motion";
 
@@ -144,7 +142,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', currentUserId, apiServic
       <div
         style={{
           position: "relative",
-          margin: "0px 10px 10px 10px",
+          margin: "0px 0px 10px 10px",
           display: "flex",
           overflowX: "auto", // Allows horizontal scrolling
           flexWrap: "nowrap", // Prevents wrapping
