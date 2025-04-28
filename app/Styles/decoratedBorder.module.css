@@ -71,7 +71,7 @@
     animation: 3s spin linear infinite;
   }
   .container::before{
-    filter:blur(2px)
+    filter:blur(5px)
     opacity(0.5)
   }
 
