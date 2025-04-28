@@ -26,7 +26,7 @@
     height: 104%;
     z-index: -1;
     border-radius: 20px;
-    background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
+  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(2, 182, 236));
     animation: 5s spin linear infinite;
   }
   .card::before{
@@ -67,7 +67,7 @@
     height: 101%;
     z-index: -1;
     border-radius: 20px;
-    background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
+  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(2, 182, 236));
     animation: 3s spin linear infinite;
   }
   .container::before{
@@ -99,7 +99,7 @@
   z-index: -1;
   border-bottom-left-radius:20px ;
   border-top-left-radius:20px ;
-  background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
+  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(2, 182, 236));
   animation: 3s spin linear infinite;
 }
 .contain::before{
@@ -132,7 +132,7 @@
   z-index: -1;
   border-bottom-right-radius:20px ;
   border-top-right-radius:20px ;
-  background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
+  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(2, 182, 236));
   animation: 5s spin linear infinite;
 }
 .containR::before{
@@ -179,7 +179,7 @@
     height: 103%;
     z-index: -1;
     border-radius: 20px;
-    background-image: conic-gradient(from var(--angle), transparent,rgb(255, 153, 0),white);
+  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(2, 182, 236));
     animation: 3s spin linear infinite;
   }
   .cards::before{
