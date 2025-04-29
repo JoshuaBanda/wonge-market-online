@@ -3,6 +3,7 @@ import { useEffect, useState, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import styles from "../Styles/decoratedBorder.module.css";
+import Spinner from '../home/Spinning';
 // Lazy load components
 const LoginPart = dynamic(() => import('./LoginPart'));
 const SignUpPage = dynamic(() => import('../userAunthentication/SignUpPage'));
@@ -108,7 +109,9 @@ export default function LoginPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ type: 'spring', stiffness: 20 }}
               >
-                <Suspense fallback={<div >Loading Login...</div>}>
+                <Suspense fallback={<div > 
+                  <Spinner/>
+                </div>}>
                   <LoginPart />
                 </Suspense>
               </motion.div>
@@ -141,7 +144,7 @@ export default function LoginPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ type: 'spring', stiffness: 20 }}
               >
-                <Suspense fallback={<div style={{ color: 'black' }}>Loading Sign Up...</div>}>
+                <Suspense fallback={<div style={{ color: 'black' }}><Spinner/></div>}>
                   <SignUpPage />
                 </Suspense>
               </motion.div>
