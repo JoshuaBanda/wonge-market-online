@@ -141,7 +141,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
             }}
           >
           {likeCount}&nbsp;
-            <FaThumbsUp size={18}/> {
+            <FaThumbsUp size={18} style={{marginTop:"1px"}}/> {
               likeCount==1?(
                 <>&nbsp;Like</>
               ):(
