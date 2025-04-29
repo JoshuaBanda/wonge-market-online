@@ -5,9 +5,12 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { useRouter } from "next/navigation"; // Import router for navigation
 import styles from "../Styles/decoratedBorder.module.css";
+import { useUser } from "../userContext";
 //users/otp/send
 
 const SignUpPage = () => {
+  
+  const {person,setPerson}=useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -425,7 +428,9 @@ const SignUpPage = () => {
               type="button"
               onClick={()=>{
                 console.log('deleting otp');
-                setOtp("")
+                setOtp("");
+                setErrors({});
+                setFormError("");
                 setVerifyOtpOption(!verifyOtpOption)}}
                 
               style={{
