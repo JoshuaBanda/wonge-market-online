@@ -1,6 +1,6 @@
 import BottomMenuWrapper from "@/components/BottomMenuWrapper";
 import "./globals.css"
-import { Amaranth, Lovers_Quarrel,Beau_Rivage } from "next/font/google";
+import { Amaranth, Lovers_Quarrel,Beau_Rivage,Felipa,Benne, Habibi, Lato, Roboto, Open_Sans, PT_Sans, Merriweather } from "next/font/google";
 import { UserProvider } from "./userContext";
 
 export const metadata = {
@@ -8,7 +8,7 @@ export const metadata = {
   description: "Online Market",
 };
 
-const amarath = Amaranth({
+const amarath = Merriweather({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-amarath',
@@ -19,7 +19,7 @@ const loversQuarrel = Lovers_Quarrel({
   weight: '400',
   variable: '--font-lovers',
 });
-const beauRivage=Beau_Rivage({
+const beauRivage=Felipa({
   subsets:['latin'],
   weight:'400',
   variable:'--font-beauRivage',

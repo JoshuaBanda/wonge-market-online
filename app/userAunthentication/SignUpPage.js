@@ -1,10 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash, FaSeedling } from "react-icons/fa";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { useRouter } from "next/navigation"; // Import router for navigation
 import styles from "../Styles/decoratedBorder.module.css";
+//users/otp/send
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
@@ -25,6 +26,9 @@ const SignUpPage = () => {
   /*setTimeout(()=>{
     setShowClass(!showClass);
   },6000)*/
+  const [verifyOtpOption,setVerifyOtpOption]=useState(true);
+  const [isEmailVerified,setIsEmailVerified]=useState(false);
+  const [otp,setOtp]=useState("");
   const steps = [
     { label: "Email", value: email, setValue: setEmail, type: "email", placeholder: "Email" },
     { label: "Password", value: password, setValue: setPassword, type: "password", placeholder: "Password" },
@@ -80,9 +84,67 @@ const SignUpPage = () => {
       setCurrentStep(currentStep - 1);
     }
   };
-
-  const handleSubmit = async (e) => {
+  const sendOtpVerification=async()=>{
+    console.log("sending for otp",email);
+    
+    if (!firstName || !lastName || !phone || !dateOfBirth || !profilePicture) {
+      setFormError("Please fill out all fields and select a profile picture.");
+      return;
+    }
+    
+    try {
+      const response = await axios.post(
+        "https://wonge-backend.onrender.com/users/otp/send",
+        { email }, // Must be an object with the key 'email'
+        {
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
+    
+      if (response.status === 200 || response.status === 201) {
+        console.log('OTP sent successfully');
+        setVerifyOtpOption(!verifyOtpOption);
+      } else {
+        console.log("Email not verified");
+      }
+    } catch (error) {
+      console.error("Error verifying OTP:", error.response?.data || error.message);
+    }
+    
+  }
+  const handleOtpVerification=async(e)=>{
     e.preventDefault();
+    console.log('verifying otp');
+    
+    if (!firstName || !lastName || !phone || !dateOfBirth || !profilePicture) {
+      console.log("***");
+      setFormError("Please fill out all fields and select a profile picture.");
+      return;
+    }
+    try{
+      const formData=new FormData();
+      formData.append("otp",otp);
+      
+      const response = await axios.post(
+        "https://wonge-backend.onrender.com/users/otp/verify",
+        { email,otp},
+        {
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
+      if(response.status==200||201){
+        console.log('successifuly verified email',response);
+        handleSubmitAfterOtp();
+      }else{
+        console.log("email not verified");
+      }
+    }
+    catch(error){
+      console.error("error verifying otp",error);
+    }
+  }
+  const handleSubmitAfterOtp = async (e) => {
+    if(e){e.preventDefault();}
     console.log('submitting')
     // Validate all fields before submission
     const newErrors = {};
@@ -125,15 +187,28 @@ const SignUpPage = () => {
 
       // If the request is successful
       console.log("Account created successfully");
-      router.push("/home/HomePage"); // Redirect to the home page
+      setPerson({
+        ...person,
+        firstname: result.user.firstname,
+        lastname: result.user.lastname,
+        email: result.user.email,
+        userid: result.user.userid,
+        access_token: result.result.access_token, // adjust if it's result.user.accessTocken
+      });
+      router.push("/home"); // Redirect to the home page
     } catch (error) {
       // Handle error
       console.error("Error creating user:", error.message);
       setFormError(error.message); // Set the error message to display in UI
     }
   };
-
+  useEffect(()=>{
+    console.log("verify",verifyOtpOption);
+  },[verifyOtpOption])
   return (
+    <>
+      {verifyOtpOption?(
+        
     <div 
     style={{
       position: "relative",
@@ -161,7 +236,7 @@ const SignUpPage = () => {
                     
                 <FaSeedling size={60} />
                 </div> 
-      <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "500px", display: "flex", flexDirection: "column", }}>
+      <form onSubmit={handleSubmitAfterOtp} style={{ width: "100%", maxWidth: "500px", display: "flex", flexDirection: "column", }}>
         {steps.map((step, index) => (
           <div key={step.label} style={{ display: currentStep === index ? "block" : "none" }}>
             <label>{step.label}</label>
@@ -223,13 +298,39 @@ const SignUpPage = () => {
           </p>
         )}
 
-        {currentStep === steps.length - 1 ? (
+        {(currentStep === steps.length - 1 && isEmailVerified) ? (
           <button
+            style={{
+              all: 'unset', // resets most styles
+              cursor: 'pointer', // optional: brings back pointer cursor
+              display: 'inline-block', 
+            }}
             type="submit"
-            className={styles.cards}
           >
             Submit
           </button>
+        ) : null}
+        {(currentStep === steps.length - 1 && !isEmailVerified) ? (
+          <motion.button
+            type="button"
+              onClick={()=>{
+                setErrors({});
+                setFormError("");
+                sendOtpVerification()}}
+              
+            style={{
+              all: 'unset', // resets most styles
+              cursor: 'pointer', // optional: brings back pointer cursor
+              display: 'inline-block', 
+              marginTop:"20px"
+            }}
+              >
+              
+
+              <div className={showClass?styles.cardTw:styles.cardT}>
+                Confirm Email
+              </div>
+            </motion.button>
         ) : null}
 
         <div style={{ display: "flex", justifyContent: "center", marginTop: "20px",padding:"20px" }}>
@@ -242,6 +343,7 @@ const SignUpPage = () => {
               all: 'unset', // resets most styles
               cursor: 'pointer', // optional: brings back pointer cursor
               display: 'inline-block', 
+              margin:"0px 20px"
             }}
               >
               
@@ -273,6 +375,76 @@ const SignUpPage = () => {
         </div>
       </form>
     </div>
+      ):(
+        <div  
+        style={{
+          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "20px",
+          height:"450px",
+          color:"white"
+        }}>
+          <div>
+            <h3 style={{
+              margin:"20px"
+            }}>
+              Email Verification
+            </h3>
+            <p>We have sent an email to</p>
+            <p style={{
+              color:'rgb(2, 182, 236)'
+            }}>{email}</p>
+            <span style={{fontWeight:"normal"}}>OTP expires in 10 minutes</span>
+          </div>
+          <form onSubmit={()=>{handleOtpVerification(e)}} style={{color:"white"}}> 
+              <input  label="OTP" placeholder="Enter OTP" type="text" value={otp} onChange={(e)=>setOtp(e.target.value)} 
+                style={{width:"200px",height:"30px",backgroundColor:"rgba(73, 73, 73, 0.5)",border:"1px solid white",
+                borderRadius:"20px",padding:"20px 5px",fontSize:"20px",color:"white",margin:"20px"
+                }}
+              />
+              <div>
+                
+              <motion.button
+              type="button"
+                onClick={handleOtpVerification}
+              style={{
+                all: 'unset', // resets most styles
+                cursor: 'pointer', // optional: brings back pointer cursor
+                display: 'inline-block', 
+              }}
+              >
+              
+              <div className={showClass?styles.cardTw:styles.cards}>
+                Confirm
+              </div>
+            </motion.button>
+              <motion.button
+              type="button"
+              onClick={()=>{
+                console.log('deleting otp');
+                setOtp("")
+                setVerifyOtpOption(!verifyOtpOption)}}
+                
+              style={{
+                all: 'unset', // resets most styles
+                cursor: 'pointer', // optional: brings back pointer cursor
+                display: 'inline-block',
+                margin:"20px" 
+              }}
+              >
+              
+              <div className={showClass?styles.cardTw:styles.cards}>
+                Resend
+              </div>
+            </motion.button>
+              </div>
+          </form>
+        </div>
+      )}
+    </>
   );
 };
 

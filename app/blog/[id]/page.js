@@ -5,6 +5,7 @@ import axios from 'axios';
 import styles from '../../Styles/ProductPage.module.css';
 import { FaCartPlus } from 'react-icons/fa';
 import { use } from 'react';
+import Spinner from '@/app/home/Spinning';
 
 const ProductPage = ({params}) => {
   const [product, setProduct] = useState(null);
@@ -28,7 +29,15 @@ const ProductPage = ({params}) => {
     fetchProduct();
   }, [id]);
 
-  if (loading) return <div className={styles.loader}>Loading...</div>;
+  const addToCart= async()=>{
+    try{
+      const res=await axios.post(`https://wonge-backend.onrender.com/`);
+    } catch(error){
+      console.error("error adding item to cart");
+    }
+  }
+
+  if (loading) return <div className={styles.loader}><Spinner/></div>;
   if (!product) return <div className={styles.error}>Product not found</div>;
 
   return (

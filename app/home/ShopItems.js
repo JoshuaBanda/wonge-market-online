@@ -10,6 +10,7 @@ import LikeButton from "../like/LikeButton";
 import { motion } from "framer-motion";
 import { useUser } from "../userContext";
 import { useRouter } from "next/navigation";
+import { FaShoppingCart } from "react-icons/fa";
 
 // Function to fetch like data for a specific post
 /*const fetchLikeData = async (jwtToken, postId, currentUserId, apiService, setLikeCount, setIsLiked, setErrorMessage) => {
@@ -139,14 +140,17 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
             {checkDescriptionLength(item.description) ? item.description : `${item.description.slice(0, 25)}...`}  
             </p>*/}
             <div style={{
-              position:'relative',top:'65px',
-              display:'flex'
+              position:'relative',top:'48px',left:"20%",
+              alignContent:"center"
+              //display:'flex'
             }}>
               <div className={styles.price}>
-                <p>${item.price}</p>
+                <p>MK{item.price}</p>
               </div>
-              <div className={styles.buyNow}>
-                Buy Now
+              <div className={styles.addToCart}>
+                Add to cart <FaShoppingCart style={{
+                  fontSize:"18px",margin:"1px 1px 1px 3px"
+                }}/>
               </div>
             </div>
           
