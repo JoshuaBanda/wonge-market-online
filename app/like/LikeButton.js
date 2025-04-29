@@ -138,16 +138,20 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
             animate={{x:0,y:-1, opacity:1}}
             transition={{
               type:"tween",
-            }}
+            }}style={{
+  position: "relative",
+  display: "flex",
+  alignItems: "center",      // vertically center items
+  justifyContent: "center",
+  color:isLiked?"grey":"#333"
+}}
+
           >
+          <div style={{fontSize:"18px"}}>
           {likeCount}&nbsp;
-            <FaThumbsUp size={18} style={{marginTop:"1px"}}/> {
-              likeCount==1?(
-                <>&nbsp;Like</>
-              ):(
-                <>&nbsp;Likes</>
-              )
-            }
+          </div>
+          <div>
+          <FaThumbsUp style={{fontSize:"18px"}}/></div>
           </motion.div>
             </>
           )
