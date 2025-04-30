@@ -27,7 +27,7 @@ body {
     --textc: white;
   }
   50% {
-    --textc: #333;
+    --textc: rgb(250, 239, 220);
   }
   100% {
     --textc: white;
@@ -35,13 +35,13 @@ body {
 }
 
 @keyframes swappic {
-  0% { background-image: url("/wonge37.jpg");
+  0% { background-image: url("/wonge44.jpg");
   }
   50% { background-image: url("/wonge45.jpg");
     
   }
   
-  100% { background-image: url("/wonge37.jpg");
+  100% { background-image: url("/wonge44.jpg");
   }
 }
 body {
