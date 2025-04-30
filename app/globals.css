@@ -36,13 +36,13 @@ body {
 }
 
 @keyframes swappic {
-  0% { background-image: url("/wonge37.jpg");
+  0% { background-image: url("/wonge23.jpg");
   }
-  50% { background-image: url("/wonge44.jpg");
+  50% { background-image: url("/wonge46.jpg");
     
   }
   
-  100% { background-image: url("/wonge37.jpg");
+  100% { background-image: url("/wonge23.jpg");
   }
 }
 body {

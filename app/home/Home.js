@@ -77,7 +77,7 @@ const HomePage = ({user}) => {
                   transition={{ type: 'keyframes', stiffness: 100, duration: 2 }}
                   onClick={() => handleOnClick(item)} // Handle item click
                   className={`
-                    ${listItemBorder === index ? style.item : style.normalitem}
+                    ${listItemBorder === index  ? style.item : style.normalitem}
                   `}
                   style={{
                     //...(isSelected&&{backgroundColor:myBackgroudColor})

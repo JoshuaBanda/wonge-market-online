@@ -5,7 +5,7 @@
     background-color: rgba(143, 141, 141, 0.5);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow:7px  10px 10px 10px rgba(2, 2, 2, 0.2) ;
+    box-shadow:1px  1px 5px 5px rgba(2, 2, 2, 0.534) ;
     z-index: 1;
     background-repeat: no-repeat;
     background-position: center;
@@ -45,7 +45,7 @@ background-color: rgba(22, 22, 22, 0);
     font-weight: bold;
     max-width: 300px;
     
-    box-shadow:  2px 5px 10px black;
+    box-shadow:  -1px 5px 10px rgba(0, 0, 0, 0.699);
     background-color:rgba(34,54,57);
     border: 1px solid #333;
     color: rgb(250, 244, 233);
@@ -70,12 +70,12 @@ background-color: rgba(22, 22, 22, 0);
 
 .imageContainerTextTwo{
     
-    margin-top: 40px;
+    margin-top: 25px;
     padding: 20px 5px;
     font-weight: bold;
     max-width: 220px;
     
-    box-shadow:  2px 5px 10px black;
+    box-shadow:  -1px 5px 10px rgba(0, 0, 0, 0.699);
     padding: 5px;
     background-color:rgba(220,215,201);
     border: 1px solid #3333336c;
