@@ -40,6 +40,7 @@ background-color: rgba(22, 22, 22, 0);
     position: relative;
 }
 .imageContainerText{
+    margin-top:15px;
     padding: 10px 10px;
     font-weight: bold;
     max-width: 300px;
@@ -69,7 +70,7 @@ background-color: rgba(22, 22, 22, 0);
 
 .imageContainerTextTwo{
     
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 20px 5px;
     font-weight: bold;
     max-width: 220px;
