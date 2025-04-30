@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // You can use axios or fetch for https://wonge-backend.onrender.com requests
 import { ClipLoader } from 'react-spinners'; // For a loading spinner
 import Rating from './Rating';
-import { FaHeart,FaThumbsUp } from 'react-icons/fa6';
+import { FaHeart,FaThumbsUp, FaRegHeart,FaFaceGrinHearts } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
   //console.log(" postId", postId,"userId",userId,"jwtToken",jwtToken,"initialLikeCount",initialLikeCount);
@@ -126,7 +126,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
           likeCount==0?(<>
             
           <div>
-            <FaThumbsUp size={18} color=''/>
+            <FaHeart size={18} color=''/>
           </div>
           </>
 
@@ -143,15 +143,15 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
   display: "flex",
   alignItems: "center",      // vertically center items
   justifyContent: "center",
-  color:isLiked?"grey":"#333"
+  color:isLiked?"rgba(255, 0, 21, 0.6)":"grey"
 }}
 
           >
-          <div style={{fontSize:"18px"}}>
+          <div style={{fontSize:"18px",color:"#333"}}>
           {likeCount}&nbsp;
           </div>
           <div>
-          <FaThumbsUp style={{fontSize:"18px"}}/></div>
+          <FaHeart style={{fontSize:"18px"}}/></div>
           </motion.div>
             </>
           )

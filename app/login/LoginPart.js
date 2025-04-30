@@ -158,9 +158,7 @@ if (response.status === 201) {
             }}
           >
             {loading ? (
-              <div className={styles.card}>
                 <Spinner/>
-              </div>
             ) : (
               <div className={showClass?styles.cardT:styles.card}>
                 Login

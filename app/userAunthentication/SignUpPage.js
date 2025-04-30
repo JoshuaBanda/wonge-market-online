@@ -190,13 +190,17 @@ const SignUpPage = () => {
 
       // If the request is successful
       console.log("Account created successfully");
+      console.log("response",response.data);
+      const result=response.data.user;
+      console.log("user ",result);
+      const token=response.data.access_token.access_token;
       setPerson({
         ...person,
-        firstname: result.user.firstname,
-        lastname: result.user.lastname,
-        email: result.user.email,
-        userid: result.user.userid,
-        access_token: result.result.access_token, // adjust if it's result.user.accessTocken
+        firstname: result.firstname,
+        lastname: result.lastname,
+        email: result.email,
+        userid: result.userid,
+        access_token:token, // adjust if it's result.user.accessTocken
       });
       router.push("/home"); // Redirect to the home page
     } catch (error) {
@@ -247,7 +251,7 @@ const SignUpPage = () => {
               <select
                 value={step.value}
                 onChange={(e) => step.setValue(e.target.value)}
-                style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
+                style={{ width: "100%", maxWidth: "300px", display: "flex", flexDirection: "column", height:"45px",alignContent:"center",padding:"15px",borderRadius:"20px"}}
               >
                 <option value="male">Male</option>
                 <option value="female">Female</option>
