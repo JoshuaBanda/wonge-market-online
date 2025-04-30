@@ -84,3 +84,8 @@
 .viewProductLin{
     color:red;
 }
+
+.like{
+    
+    font-family: var(--font-beauRivage);
+}

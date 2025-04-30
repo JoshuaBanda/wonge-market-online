@@ -251,7 +251,7 @@ const SignUpPage = () => {
               <select
                 value={step.value}
                 onChange={(e) => step.setValue(e.target.value)}
-                style={{ width: "100%", maxWidth: "300px", display: "flex", flexDirection: "column", height:"45px",alignContent:"center",padding:"15px",borderRadius:"20px"}}
+                style={{position:"relative",left:"40px", width: "100%", maxWidth: "200px", display: "flex", flexDirection: "column", height:"40px",alignContent:"center",padding:"10px",borderRadius:"20px"}}
               >
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -286,7 +286,7 @@ const SignUpPage = () => {
                       width:'120px'
                     }}
                   >
-                    {showPassword ? <FaEyeSlash size={20} style={{position:'relative',top:'-10px',right:'-40px',color:"red"}}/> : <FaEye size={20} style={{position:'relative',top:'-10px',right:'-40px'}} />}
+                    {showPassword ? <FaEyeSlash size={20} style={{position:'relative',top:'-10px',right:'-60px',color:"red"}}/> : <FaEye size={20} style={{position:'relative',top:'-10px',right:'0px'}} />}
                   </button>
                 )}
               </div>

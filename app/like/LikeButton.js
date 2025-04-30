@@ -5,6 +5,7 @@ import { ClipLoader } from 'react-spinners'; // For a loading spinner
 import Rating from './Rating';
 import { FaHeart,FaThumbsUp, FaRegHeart,FaFaceGrinHearts } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
+import styles from "../Styles/like.module.css";
 const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
   //console.log(" postId", postId,"userId",userId,"jwtToken",jwtToken,"initialLikeCount",initialLikeCount);
   const [isLiked, setIsLiked] = useState(false);
@@ -147,7 +148,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
 }}
 
           >
-          <div style={{fontSize:"18px",color:"#333"}}>
+          <div style={{fontSize:"18px",color:"#333"}} className={styles.like}>
           {likeCount}&nbsp;
           </div>
           <div>
