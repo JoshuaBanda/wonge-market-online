@@ -20,7 +20,6 @@ body {
 }.myColor {
   animation: changeTextColor 60s infinite;
   color: var(--textc);
-  transition: color 2s;
 }
 
 @keyframes changeTextColor {
@@ -36,13 +35,13 @@ body {
 }
 
 @keyframes swappic {
-  0% { background-image: url("/wonge23.jpg");
+  0% { background-image: url("/wonge37.jpg");
   }
-  50% { background-image: url("/wonge46.jpg");
+  50% { background-image: url("/wonge45.jpg");
     
   }
   
-  100% { background-image: url("/wonge23.jpg");
+  100% { background-image: url("/wonge37.jpg");
   }
 }
 body {
