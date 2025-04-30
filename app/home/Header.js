@@ -59,7 +59,7 @@ const Header = () => {
                     <p style={{
                         fontWeight:'lighter',
                     }}>
-                        Wonge weaves wonder — piece by piece.
+                        Wonge weaves wonder piece by piece.
                         Adornment that speaks. Skincare that soothes.
                     </p>
                 </motion.div>
@@ -90,11 +90,11 @@ const Header = () => {
                     <p style={{
                         fontWeight:'lighter',
                     }}>
-                        Wonge isn&apos;t just a market — it&apos;s a vibe.
+                        Wonge isn&apos;t just a market. it&apos;s a vibe.
                         Jewelry that speaks. 
                         Skincare that glows. 
                         Creations that connect. 
-                        Come market with us today, and every day after.
+                        Come market with us today.
                     </p>
                 </motion.div>
 
