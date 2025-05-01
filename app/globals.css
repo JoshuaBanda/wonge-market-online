@@ -27,7 +27,7 @@ body {
     --textc: white;
   }
   50% {
-    --textc: rgb(250, 239, 220);
+    --textc: rgb(255, 255, 255);
   }
   100% {
     --textc: white;
