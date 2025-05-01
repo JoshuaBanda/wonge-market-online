@@ -62,7 +62,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
   min-height: 100vh;
   position: relative;
   top: 0px;
