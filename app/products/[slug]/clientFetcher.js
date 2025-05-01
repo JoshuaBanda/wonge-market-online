@@ -108,7 +108,7 @@ export default function ClientFetcher({ productName }) {
                         </div>
                         <div className={styles.addToCart}>
                             Add to cart <FaShoppingCart style={{
-                            fontSize:"18px",margin:"1px 1px 1px 3px"
+                            fontSize:"18px",margin:"1px 1px 1px 0px"
                             }}/>
                         </div>
                         </div>
