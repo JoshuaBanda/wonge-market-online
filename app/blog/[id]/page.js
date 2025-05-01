@@ -2,12 +2,12 @@
 import { useRouter } from 'next/navigation'; // ✅ Fixed import
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from '../../Styles/ProductPage.module.css';
+import styles from '../../Styles//ProductPage.module.css';
 import { FaCartPlus } from 'react-icons/fa';
 import { use } from 'react';
 import Spinner from '@/app/home/Spinning';
 
-const ProductPage = ({params}) => {
+const item = ({params}) => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -65,4 +65,4 @@ const ProductPage = ({params}) => {
   );
 };
 
-export default ProductPage;
+export default item;

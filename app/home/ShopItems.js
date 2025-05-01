@@ -72,7 +72,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
             `https://wonge-backend.onrender.com/search/search?name=${searchItem}`
           );
           
-    console.log("yoooooooo",response);
+          //console.log("yoooooooo",response);
 
           // Access the 'products' array in the response and set it to items state
           setItems(Array.isArray(response.data.products) ? response.data.products : []); 

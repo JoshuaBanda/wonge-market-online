@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../app/Styles/BottomMain.module.css";
 import Link from "next/link";
-import { FaHome, FaSearch } from "react-icons/fa";
+import { FaBox, FaCog, FaHome, FaSearch, FaSignInAlt, FaUser } from "react-icons/fa";
 import { FaCartShopping, FaBars } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -15,18 +15,32 @@ const BottomMenu = () => {
   const handleHomeClick = () => {
     router.push("/home");
   };
-
-  const menu = ["Products", "Settings", "Profile","login"];
+  const menuIcons = {
+    Products: <FaBox />,
+    Settings: <FaCog />,
+    Profile: <FaUser />,
+    login: <FaSignInAlt />,
+  };
+  
+  const menu = ["Products", "Settings", "Profile","Login"];
   const handleMenuPopItems=(item)=>{
-    if (item=="login"){
+    if (item=="Login"){
       router.push("/login")
+    }
+    else if(item=="Products"){
+      router.push('/productList');
+    }
+    else if(item=="Settings"){
+      router.push('/postItems');
     }
   }
   const menuPopUp = menu.map((item, index) => (
-    <li key={index} onClick={() => handleMenuPopItems(item)}>
-      {item}
+    <li key={index} onClick={() => handleMenuPopItems(item)} className={styles.menuItem}>
+      <span className={styles.menuIcon}>{menuIcons[item]}</span>
+      <span>{item}</span>
     </li>
   ));
+  
   
 
   const handleMenuToggle = () => {
