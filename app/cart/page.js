@@ -16,6 +16,10 @@ const Cart = () => {
     //const currentUserId=person.userId;
     //console.log("currentUserId",currentUserId);
     //console.log(cartItems);
+
+
+    const [loadingOrder,setLoadingOrder]=useState(false);
+
     const router=useRouter();
       useEffect(()=>{
         //console.log("updatting");
@@ -44,12 +48,62 @@ const Cart = () => {
 
       const updateCart=async()=>{
         try{
-            const res=await axios.get(`https://wonge-backend.onrender.com/`);
+            const res=await axios.get(`http://localhost3001/cart`);
         }
         catch(error){
             console.error("error updating cart",error);
         }
       }
+
+
+      const makeOrder = async () => {
+          
+        setLoadingOrder(true);
+        const inventoryIds = cartItems
+          .filter(item => item.status === "active")
+          .map(item => item.inventory.id);
+          if (inventoryIds.length<1){
+            
+          console.log(inventoryIds,"no");
+          setLoadingOrder(false);
+          return
+          }
+    
+        
+        try {
+          const res = await axios.patch(`https://wonge-backend.onrender.com//cart/order/`, {
+            user: user.userid,
+            status: "ordered",
+            inventory_ids: inventoryIds,
+          });
+      
+          console.log("response", res.data);
+          
+          // Create a map of updated items from the response for quick lookup
+          const updatedItemsMap = new Map(
+            res.data.map(item => [item.id, item.status])
+          );
+          
+          // Update cart items where IDs match the response
+          setCartItems(
+            cartItems.map(item => {
+              // If item is in the response, update its status
+              if (updatedItemsMap.has(item.id)) {
+                return {
+                  ...item,
+                  status: updatedItemsMap.get(item.id)
+                };
+              }
+              return item;
+            })
+          );
+          
+        } catch (error) {
+          console.error("error updating cart", error);
+        } finally {
+          setLoadingOrder(false);
+        }
+      };
       const itemsInCart=cartItems.map((item,index)=>{
         return(
             <li key={index}>
@@ -90,7 +144,9 @@ const Cart = () => {
                     <div className={styles.price}>
                         Price: Mk {item.inventory.price*item.quantity}
                     </div>
-
+                    <div className={styles.status}>
+                        status: <span> {item.status}</span>
+                    </div>
                     <div className={styles.options}>
 
                       
@@ -120,13 +176,18 @@ const Cart = () => {
     return (
         <div className={styles.container}>
             <h2 className={styles.tittle}> CART </h2>
-            <div className={styles.orderall}>
-                ORDER Now
+            <div className={styles.orderall} onClick={makeOrder}>
+            {loadingOrder?(<>LOADING ...</>):
+                (<>ORDER NOW</>)
+            }
             </div>
             <ul className={styles.unorderedlist}>
                 
                 {itemsInCart}
+                
+        <div style={{position:"relative",height:"100px",backgroundColor:"rgba(255,255,255,0)"}}>jj</div>
             </ul>
+            
         </div>
     );
 }

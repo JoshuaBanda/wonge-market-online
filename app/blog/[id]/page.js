@@ -6,13 +6,32 @@ import styles from '../../Styles//ProductPage.module.css';
 import { FaCartPlus } from 'react-icons/fa';
 import { use } from 'react';
 import Spinner from '@/app/home/Spinning';
+import { useUser } from '@/app/userContext';
 
 const item = ({params}) => {
+
+  const {person}=useUser();
+  
+  const [user,setUser]=useState(person)
+
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const {id}=use(params);
   
+
+
+  useEffect(()=>{
+    //console.log("updatting");
+    setUser(person);
+  //  console.log('user',user,"person",person);
+  },[person]);
+
+
+
+
+
   useEffect(() => {
     if (!id) return;
 
@@ -31,7 +50,16 @@ const item = ({params}) => {
 
   const addToCart= async()=>{
     try{
-      const res=await axios.post(`https://wonge-backend.onrender.com/`);
+      const res=await axios.post(`https://wonge-backend.onrender.com//cart/add-to-cart`,
+        {
+          
+      user_id:user.userid,
+      inventory_id:id,
+      quantity:1,
+      status:"active"
+
+        }
+      );
     } catch(error){
       console.error("error adding item to cart");
     }
@@ -45,7 +73,6 @@ const item = ({params}) => {
       <div className={styles.container}>
         <div className={styles.productInfo}>
           <img
-            style={{ border: '1px solid pink' }}
             className={styles.productImage}
             src={product.photo_url}
             alt={product.name}
@@ -54,7 +81,7 @@ const item = ({params}) => {
             <h1 className={styles.productName}>{product.name}</h1>
             <p className={styles.productDescription}>{product.description}</p>
             <p className={styles.productPrice}>${product.price}</p>
-            <button className={styles.addToCartBtn}>
+            <button className={styles.addToCartBtn} onClick={addToCart}>
               <div>Add to Cart</div>
               <div><FaCartPlus /></div>
             </button>
