@@ -35,7 +35,7 @@ const Cart = () => {
                 
                 const res=await axios.get(`https://wonge-backend.onrender.com/cart/get-cart-items/${user.userid}`);
                 setCartItems(res.data)
-                console.log("fetching",res.data);
+               // console.log("fetching",res.data);
             }catch(error){
                 console.error("error fetching cart",error);
             }
@@ -64,7 +64,7 @@ const Cart = () => {
           .map(item => item.inventory.id);
           if (inventoryIds.length<1){
             
-          console.log(inventoryIds,"no");
+         // console.log(inventoryIds,"no");
           setLoadingOrder(false);
           return
           }
@@ -77,7 +77,7 @@ const Cart = () => {
             inventory_ids: inventoryIds,
           });
       
-          console.log("response", res.data);
+        //  console.log("response", res.data);
           
           // Create a map of updated items from the response for quick lookup
           const updatedItemsMap = new Map(
@@ -104,6 +104,7 @@ const Cart = () => {
           setLoadingOrder(false);
         }
       };
+     // console.log("length",cartItems.length);
       const itemsInCart=cartItems.map((item,index)=>{
         return(
             <li key={index}>
@@ -176,18 +177,33 @@ const Cart = () => {
     return (
         <div className={styles.container}>
             <h2 className={styles.tittle}> CART </h2>
-            <div className={styles.orderall} onClick={makeOrder}>
-            {loadingOrder?(<>LOADING ...</>):
-                (<>ORDER NOW</>)
+            {
+                (cartItems.length>0)?(
+                    <>
+                                  
+                      <div className={styles.orderall} onClick={makeOrder}>
+                      {loadingOrder?(<>LOADING ...</>):
+                          (<>ORDER NOW </>)
+                      }
+                      </div>
+                      <ul className={styles.unorderedlist}>
+                          
+                          {itemsInCart}
+                          
+                        <div style={{position:"relative",height:"150px",backgroundColor:"rgba(255,255,255,0)"}}></div>
+                      </ul>
+                      
+                    </>
+                ):(
+                    <>
+                        <div>
+                        <h3 className={styles.tittle}>
+                        Your Cart is empty
+                        </h3>
+                        </div>
+                    </>
+                )
             }
-            </div>
-            <ul className={styles.unorderedlist}>
-                
-                {itemsInCart}
-                
-        <div style={{position:"relative",height:"150px",backgroundColor:"rgba(255,255,255,0)"}}></div>
-            </ul>
-            
         </div>
     );
 }

@@ -60,8 +60,14 @@ const item = ({params}) => {
 
         }
       );
+      console.log("status",res.status);
+      if (res.status==201){
+        alert(`Dear ${user.firstname} ${user.lastname}, You successfully added"${product.name} to your cart. You can now make an order to purchase ${product.name}`);
+      }
     } catch(error){
-      console.error("error adding item to cart");
+      
+      alert(` Dear ${user.firstname}, you already have ${product.name} added, to cart. For more information view your cart `);
+      //console.error("error adding item to cart");
     }
   }
 

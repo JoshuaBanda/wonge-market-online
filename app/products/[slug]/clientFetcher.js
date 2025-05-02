@@ -71,11 +71,12 @@ export default function ClientFetcher({ productName }) {
                     <div className={styles.picContainer}>
                     <Image
                         src={item.photo_url} // Use the photo_url from the API
-                        alt={item.name}
+                        alt={item.nameor}
                         width={120} // Adjust width as needed
                         height={120} // Adjust height as needed
                         style={{ borderRadius: "5px", marginBottom: "0px",position:'relative',top:'45px',left:'20px', }}
                         className={styles.pic}
+                        priority
                         prioritysizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
                     />
                     <div className={styles.likeButton}>

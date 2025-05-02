@@ -8,10 +8,10 @@ const productList = () => {
       const route = useRouter();
 
     const products=[
-        {name:"Lotion",photo:'/avon3_with_no_bg.png',background:"rgba(122, 121, 121, 0.767)"},
+        {name:"Lotion",photo:'/avon3_with_no_bg.png',background:"rgba(126, 115, 85, 0.4)"},
         {name:"Earrings",photo:'/avon3_with_no_bg.png',background:"rgba(163, 163, 163, 0.7)"},
         {name:"Brochus",photo:'/avon4_with_no_bg.png',background:"rgba(34, 54, 57, 0.59)"},
-        {name:"Perfume",photo:'/avon4_with_no_bg.png',background:"rgba(41, 154, 206, 0.5)"},
+        {name:"Perfume",photo:'/avon4_with_no_bg.png',background:"rgba(114, 122, 126, 0.5)"},
     ];
     const handleRouting=(name)=>{
         if(name=="Lotion"){
