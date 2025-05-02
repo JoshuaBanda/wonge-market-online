@@ -4,7 +4,6 @@
     flex-direction: column;
     backdrop-filter: blur(20px);
     height: 100vh;
-    margin-bottom: 50px;
     background-color: rgba(0, 0, 0, 0.329);
 
 }.tittle {

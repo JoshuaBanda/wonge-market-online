@@ -185,7 +185,7 @@ const Cart = () => {
                 
                 {itemsInCart}
                 
-        <div style={{position:"relative",height:"100px",backgroundColor:"rgba(255,255,255,0)"}}>jj</div>
+        <div style={{position:"relative",height:"150px",backgroundColor:"rgba(255,255,255,0)"}}></div>
             </ul>
             
         </div>
