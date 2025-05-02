@@ -71,7 +71,7 @@ const Cart = () => {
     
         
         try {
-          const res = await axios.patch(`https://wonge-backend.onrender.com//cart/order/`, {
+          const res = await axios.patch(`https://wonge-backend.onrender.com/cart/order/`, {
             user: user.userid,
             status: "ordered",
             inventory_ids: inventoryIds,

@@ -50,7 +50,7 @@ const item = ({params}) => {
 
   const addToCart= async()=>{
     try{
-      const res=await axios.post(`https://wonge-backend.onrender.com//cart/add-to-cart`,
+      const res=await axios.post(`https://wonge-backend.onrender.com/cart/add-to-cart`,
         {
           
       user_id:user.userid,
