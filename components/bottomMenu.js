@@ -75,7 +75,10 @@ const BottomMenu = () => {
         </div>
 
         <div>
-          <FaCartShopping className={styles.icons} />
+          <FaCartShopping className={styles.icons} onClick={()=>{
+            
+            router.push("/cart");
+          }}/>
         </div>
 
         <div ref={menuRef} onClick={handleMenuToggle}>

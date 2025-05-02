@@ -58,7 +58,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
 
   // Fetch items from the API based on the search term
   useEffect(()=>{
-    setUser(user);
+    setUser(person);
    // console.log('user',user);
   },[person])
   useEffect(() => {
