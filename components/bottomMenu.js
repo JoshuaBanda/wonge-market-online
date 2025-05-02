@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../app/Styles/BottomMain.module.css";
 import Link from "next/link";
-import { FaBox, FaCog, FaHome, FaSearch, FaSignInAlt, FaUser } from "react-icons/fa";
+import { FaAddressBook, FaBox, FaCog, FaHome, FaSearch, FaSignInAlt, FaUser } from "react-icons/fa";
 import { FaCartShopping, FaBars } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -19,10 +19,11 @@ const BottomMenu = () => {
     Products: <FaBox />,
     Settings: <FaCog />,
     Profile: <FaUser />,
-    login: <FaSignInAlt />,
+    PurchaseHistory:<FaAddressBook/>,
+    SignIn: <FaSignInAlt />,
   };
   
-  const menu = ["Products", "Settings", "Profile","Login"];
+  const menu = ["Products", "Settings", "Profile","PuchaseHistory","SignIn"];
   const handleMenuPopItems=(item)=>{
     if (item=="Login"){
       router.push("/login")
