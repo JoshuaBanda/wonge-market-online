@@ -23,7 +23,7 @@ const BottomMenu = () => {
     SignIn: <FaSignInAlt />,
   };
   
-  const menu = ["Products", "Settings", "Profile","PuchaseHistory","SignIn"];
+  const menu = ["Products", "Settings", "Profile","PurchaseHistory","SignIn"];
   const handleMenuPopItems=(item)=>{
     if (item=="Login"){
       router.push("/login")
