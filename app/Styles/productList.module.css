@@ -24,10 +24,11 @@
 .displayedItems li{
     list-style: none;
     margin: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.438);
+    border: 1px solid rgba(255, 255, 255, 0.212);
     height: 120px;
     display: flex;
     border-radius: 20px;
+    box-shadow:1px  1px 5px 5px rgba(2, 2, 2, 0.534) ;
 
 }.imgTwo {
     display: block;
