@@ -8,6 +8,7 @@ export async function generateStaticParams() {
       { slug: 'Earrings' },
       { slug: 'Brochus' },
       { slug: 'Perfume' },
+      { slug: 'Soap' },
     ];
   }
   
@@ -16,6 +17,7 @@ export async function generateStaticParams() {
     Earrings: { name: 'Earrings', price: '$30' },
     Brochus: { name: 'Brochus', price: '$50' },
     Perfume: { name: 'Perfume', price: '$50' },
+    Soap:{name:"Soap",price:"$60"}
   };
   
   // ✅ Mark as async and await params

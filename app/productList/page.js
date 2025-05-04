@@ -9,9 +9,12 @@ const productList = () => {
 
     const products=[
         {name:"Lotion",photo:'/avon3_with_no_bg.png',background:"rgba(163, 163, 163, 0.7)"},
-        {name:"Earrings",photo:'/earring2.png',background:"rgba(163, 163, 163, 0.7)"},
-        {name:"Brochus",photo:'/brooc_with_no_bg.png',background:"rgba(163, 163, 163, 0.7)"},
+        
+        {name:"Soap",photo:'/soap.png',background:"rgba(163, 163, 163, 0.7)"},
+        
         {name:"Perfume",photo:'/perfume11.png',background:"rgba(163, 163, 163, 0.7)"},
+        {name:"Brochus",photo:'/brooc_with_no_bg.png',background:"rgba(163, 163, 163, 0.7)"},
+        {name:"Earrings",photo:'/earring2.png',background:"rgba(163, 163, 163, 0.7)"},
     ];
     const handleRouting=(name)=>{
         if(name=="Lotion"){
@@ -23,6 +26,8 @@ const productList = () => {
             route.push("/products/Brochus")
         }else if(name=="Perfume"){
             route.push("/products/Perfume")
+        }else if(name=="Soap"){
+            route.push("/products/Soap")
         }
     }
     const items=products.map((item,index)=>{
@@ -71,7 +76,7 @@ const productList = () => {
         <div>
         <div className="containerlist">
             <h2 className={styles.tittle}>
-                What are you looking for
+            Our Services
             </h2>
             <ul className={styles.displayedItems}>
                 {items}

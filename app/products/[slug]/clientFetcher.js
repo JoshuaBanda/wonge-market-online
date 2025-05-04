@@ -71,7 +71,7 @@ export default function ClientFetcher({ productName }) {
                     <div className={styles.picContainer}>
                     <Image
                         src={item.photo_url} // Use the photo_url from the API
-                        alt={item.nameor}
+                        alt={item.name}
                         width={120} // Adjust width as needed
                         height={120} // Adjust height as needed
                         style={{ borderRadius: "5px", marginBottom: "0px",position:'relative',top:'45px',left:'20px', }}

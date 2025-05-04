@@ -10,15 +10,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    padding: 30px;
     
-    font-family: var(--font-beauRivage);
+    font-family: var(--font-beauRivage  );
     font-size: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+    box-shadow:1px  1px 5px 5px rgba(2, 2, 2, 0.534) ;
+    background-color: rgba(253, 253, 253, 0.425);
 }
 
 .displayedItems{
     position: relative;
-    margin:20px 20px 50px 30px 
+    margin:20px 20px 50px 10px 
 
 }
 .displayedItems li{
