@@ -83,6 +83,8 @@ const productList = () => {
             </ul>
 
         </div>
+        
+        <div style={{position:"relative",height:"150px",backgroundColor:"rgba(255,255,255,0)"}}></div>
         </div>
     );
 }

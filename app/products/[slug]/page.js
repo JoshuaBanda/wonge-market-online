@@ -31,6 +31,9 @@ export async function generateStaticParams() {
       <div>
         <h1 style={{position:"relative", marginLeft:"30%"}}>{product.name}</h1>
         <ClientFetcher productName={product.name}/>
+
+        
+        <div style={{position:"relative",height:"150px",backgroundColor:"rgba(255,255,255,0)"}}></div>
       </div>
     );
   }
