@@ -37,8 +37,20 @@ const BottomMenu = () => {
   }
   const menuPopUp = menu.map((item, index) => (
     <li key={index} onClick={() => handleMenuPopItems(item)} className={styles.menuItem}>
-      <span className={styles.menuIcon}>{menuIcons[item]}</span>
-      <span>{item}</span>
+      <span className={styles.menuIcon}>{menuIcons[item]}</span><span>
+  {
+    (item === "SignIn") ? (
+      <>Sign In</>
+    ) : (
+      (item === "PurchaseHistory") ? (
+        <>Purchase History</>
+      ) : (
+        <>{item}</>
+      )
+    )
+  }
+</span>
+
     </li>
   ));
   
