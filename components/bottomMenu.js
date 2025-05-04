@@ -25,7 +25,7 @@ const BottomMenu = () => {
   
   const menu = ["Products", "Settings", "Profile","PurchaseHistory","SignIn"];
   const handleMenuPopItems=(item)=>{
-    if (item=="Login"){
+    if (item=="SignIn"){
       router.push("/login")
     }
     else if(item=="Products"){
