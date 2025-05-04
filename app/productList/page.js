@@ -9,9 +9,9 @@ const productList = () => {
 
     const products=[
         {name:"Lotion",photo:'/avon3_with_no_bg.png',background:"rgba(126, 115, 85, 0.4)"},
-        {name:"Earrings",photo:'/avon3_with_no_bg.png',background:"rgba(163, 163, 163, 0.7)"},
-        {name:"Brochus",photo:'/avon4_with_no_bg.png',background:"rgba(34, 54, 57, 0.59)"},
-        {name:"Perfume",photo:'/avon4_with_no_bg.png',background:"rgba(114, 122, 126, 0.5)"},
+        {name:"Earrings",photo:'/earring2.png',background:"rgba(163, 163, 163, 0.7)"},
+        {name:"Brochus",photo:'/brooc_with_no_bg.png',background:"rgba(34, 54, 57, 0.59)"},
+        {name:"Perfume",photo:'/perfume11.png',background:"rgba(114, 122, 126, 0.5)"},
     ];
     const handleRouting=(name)=>{
         if(name=="Lotion"){
