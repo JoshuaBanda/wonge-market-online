@@ -14,7 +14,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   /*animation: swappic 60s infinite ;*/
-  background-color: rgba(224, 224, 224, 0.5);
+  background-color: rgba(255, 255, 255, 0.719);
  /* animation: swappic 60s infinite; /* Duration + repeat */
 }.myColor {
   animation: changeTextColor 60s infinite;

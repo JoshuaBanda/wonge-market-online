@@ -41,11 +41,11 @@ export default function LoginPage() {
     width: isLeftSelected ? '80%' : '25%',
     zIndex: isLeftSelected ? 1 : 0,
     //left: isLeftSelected ? '20px' : '0px',
-    borderTopLeftRadius: isLeftSelected ? '20px' : '0px',
-    borderBottomLeftRadius: isLeftSelected ? '20px' : '0px',
+    borderTopLeftRadius: isLeftSelected ? '20px' : '20px',
+    borderBottomLeftRadius: isLeftSelected ? '20px' : '20px',
     borderTopRightRadius: isLeftSelected ? '0px' : '0px',
     borderBottomRightRadius: isLeftSelected ? '0px' : '0px',
-    backgroundColor:isLeftSelected?"rgba(44,54,57)": 'rgba(220,215,201)',
+    backgroundColor:isLeftSelected?"rgba(44,54,57)": 'white',
     
     color:isLeftSelected? 'rgba(255,255,255,0.8)':"rgba(0,0,0)",
   };
@@ -54,12 +54,12 @@ export default function LoginPage() {
     width: isLeftSelected ? '20%' : '75%',
     zIndex: isLeftSelected ? 0 : 1,
    // right: isLeftSelected ? '0px' : '15px',
-    borderTopRightRadius: isLeftSelected ? '0px' : '20px',
-    borderBottomRightRadius: isLeftSelected ? '0px' : '20px',
+    borderTopRightRadius: isLeftSelected ? '20px' : '20px',
+    borderBottomRightRadius: isLeftSelected ? '20px' : '20px',
     borderTopLeftRadius: isLeftSelected ? '0px' : '0px',
     borderBottomLeftRadius: isLeftSelected ? '0px' : '0px',
     
-    backgroundColor:isLeftSelected? 'rgba(220,215,201)':"rgba(44,54,57)",
+    backgroundColor:isLeftSelected? 'white':"rgba(44,54,57)",
     
     color:isLeftSelected? 'rgba(0,0,0)':"rgba(255,255,255,0.9)",
   };
@@ -72,7 +72,7 @@ export default function LoginPage() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          backgroundColor: 'rgba(0, 0, 0, 0.2)',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
