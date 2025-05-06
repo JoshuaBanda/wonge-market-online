@@ -207,7 +207,14 @@ console.log("hi")
           </ul>
         </>
       ) : (
-        <h3 className={styles.tittle}>Your Cart is empty</h3>
+        
+        <div>
+                        <h3 style={{
+                          position:"relative",margin:"20px",display:"flex",color:"black"
+                        }}>
+                        Your Purchase history is empty. order Item
+                        </h3>
+                        </div>
       )}
     </div>
   );

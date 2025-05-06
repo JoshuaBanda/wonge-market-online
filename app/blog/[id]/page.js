@@ -65,12 +65,12 @@ const item = ({params}) => {
       if (res.status==201){
         toast.success(
           
-        `Dear ${user.firstname} ${user.lastname}, You successfully added"${product.name} to your cart. You can now make an order to purchase ${product.name}`,
+        `Dear ${user.firstname} ${user.lastname}, You successfully added ${product.name} to your cart. click here to view your item in cart`,
           {
             onClick: () => {
               router.push('/cart'); // Navigate to cart
             },
-            closeOnClick: false, // Optional: don't auto-close on click
+            closeOnClick: true, // Optional: don't auto-close on click
             draggable: true,
             autoClose: 10000,
           }
@@ -83,7 +83,7 @@ const item = ({params}) => {
           onClick: () => {
             router.push('/cart'); // Navigate to cart
           },
-          closeOnClick: false, // Optional: don't auto-close on click
+          closeOnClick: true, // Optional: don't auto-close on click
           draggable: true,
           autoClose: 12000,
         }

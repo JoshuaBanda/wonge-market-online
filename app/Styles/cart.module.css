@@ -19,8 +19,9 @@
   border-bottom-right-radius: 20px;
   
   box-shadow:1px  1px 5px 5px rgba(2, 2, 2, 0.534) ;
-  background-color: rgba(29, 29, 29, 0.425);
+  background-color: rgba(29, 29, 29, 0.1);
   margin-bottom: 10px;
+  color: black;
 }
 
 .imgTwo{
