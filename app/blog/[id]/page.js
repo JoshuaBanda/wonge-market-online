@@ -7,6 +7,7 @@ import { FaCartPlus } from 'react-icons/fa';
 import { use } from 'react';
 import Spinner from '@/app/home/Spinning';
 import { useUser } from '@/app/userContext';
+import { toast } from 'react-toastify';
 
 const item = ({params}) => {
 
@@ -34,7 +35,7 @@ const item = ({params}) => {
 
   useEffect(() => {
     if (!id) return;
-
+    //console.log("id:",id);
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`https://wonge-backend.onrender.com/inventory/${id}`);
@@ -62,11 +63,35 @@ const item = ({params}) => {
       );
       console.log("status",res.status);
       if (res.status==201){
-        alert(`Dear ${user.firstname} ${user.lastname}, You successfully added"${product.name} to your cart. You can now make an order to purchase ${product.name}`);
+        toast.success(
+          
+        `Dear ${user.firstname} ${user.lastname}, You successfully added"${product.name} to your cart. You can now make an order to purchase ${product.name}`,
+          {
+            onClick: () => {
+              router.push('/cart'); // Navigate to cart
+            },
+            closeOnClick: false, // Optional: don't auto-close on click
+            pauseOnHover: true,
+            draggable: true,
+            autoClose: 15000,
+          }
+        );
       }
     } catch(error){
-      
-      alert(` Dear ${user.firstname}, you already have ${product.name} added, to cart. For more information view your cart `);
+      toast.error(
+        `${user.firstname}, you already have ${product.name} in your cart. For more information, view your cart.`,
+        {
+          onClick: () => {
+            router.push('/cart'); // Navigate to cart
+          },
+          closeOnClick: false, // Optional: don't auto-close on click
+          pauseOnHover: true,
+          draggable: true,
+          autoClose: 15000,
+        }
+      );
+    
+    //alert(` Dear ${user.firstname}, you already have ${product.name} added, to cart. For more information view your cart `);
       //console.error("error adding item to cart");
     }
   }

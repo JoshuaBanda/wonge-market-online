@@ -27,6 +27,12 @@ const Cart = () => {
 
 
     const handleQuantityReduction = async (itemToUpdate, indexToUpdate) => {
+      
+      if (itemToUpdate.status === "ordered") {
+        console.warn("Cannot modify an ordered item.");
+        return;
+      }
+      
       if (itemToUpdate.quantity <= 1) {
         console.warn("Quantity can't be less than 1");
         return;
@@ -60,7 +66,11 @@ const Cart = () => {
     };
     
     const handleQuantityIncrement = async (itemToUpdate, indexToUpdate) => {
-      if (itemToUpdate.quantity >= 100) {
+      if (itemToUpdate.status === "ordered") {
+        console.warn("Cannot modify an ordered item.");
+        return;
+      }
+      if (itemToUpdate.quantity >= 100 && itemToUpdate) {
         console.warn("Quantity can't be greter than 10");
         return;
       }
@@ -202,6 +212,60 @@ const Cart = () => {
         }
       };
      // console.log("length",cartItems.length);
+
+
+     const handleBuyNow=(item)=>{
+      if(person.access_token){
+       // console.log(person.access_token);
+       //console.log("item",item.inventory.id );
+      router.push(`/blog/${item.inventory.id}`)
+      }
+      else{
+        console.log("not authorized");
+        router.push('login')
+    }
+    }
+
+
+    const orderItem = async (itemToBeOrdered) => {
+      console.log("orderItem", itemToBeOrdered);
+      setLoadingOrder(true);
+    
+      try {
+        const res = await axios.patch(`https://wonge-backend.onrender.com/cart/order-one-item/`, {
+          user_id: user.userid,
+          status: "ordered",
+          cart_id: itemToBeOrdered.id,
+        });
+    
+        // Create a map of updated items from the response
+        const updatedItemsMap = new Map(
+          res.data.map(item => [item.id, item.status])
+        );
+    
+        // Update cart items where IDs match
+        setCartItems(
+          cartItems.map(item => {
+            if (updatedItemsMap.has(item.id)) {
+              return {
+                ...item,
+                status: updatedItemsMap.get(item.id)
+              };
+            }
+            return item;
+          })
+        );
+      } catch (error) {
+        console.error("error updating cart", error);
+      } finally {
+        setLoadingOrder(false);
+      }
+    };
+    const totalCost = cartItems.reduce((total, item) => {
+      return total + (item.inventory.price * item.quantity);
+    }, 0);
+    
+    
       const itemsInCart=cartItems.map((item,index)=>{
         return(
             <li key={index}>
@@ -231,6 +295,7 @@ const Cart = () => {
                         height="120"
                         sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
                         priority
+                        onClick={() => handleBuyNow(item)}
                     />
                 </motion.div>
                                    
@@ -245,7 +310,7 @@ const Cart = () => {
                     <div className={styles.status}>
                       status:{" "}
                       {item.status === "active" ? (
-                        <span>Not yet ordered</span>
+                        <span>Pending ...</span>
                       ) : (
                         <span>{item.status}</span>
                       )}
@@ -257,7 +322,9 @@ const Cart = () => {
                     <div className={styles.options}>
 
                       
-                        <div className={styles.order}>
+                        <div className={styles.order}
+                          onClick={()=>{orderItem(item)}}
+                        >
                             order
                         </div>
                         <div className={styles.quantityIn}>
@@ -280,17 +347,23 @@ const Cart = () => {
             </li>
         );
       })
+
     return (
         <div className={styles.container}>
             <h2 className={styles.tittle}> CART </h2>
             {
                 (cartItems.length>0)?(
                     <>
-                                  
+                    
+                      <div className={styles.heading}>
+                      <div className={styles.totalcost}>
+                        <strong>Total Cost:</strong> Mk {totalCost.toLocaleString()}
+                      </div>
                       <div className={styles.orderall} onClick={makeOrder}>
                       {loadingOrder?(<>LOADING ...</>):
                           (<>ORDER NOW </>)
                       }
+                      </div>
                       </div>
                       <ul className={styles.unorderedlist}>
                           
