@@ -71,23 +71,21 @@ const item = ({params}) => {
               router.push('/cart'); // Navigate to cart
             },
             closeOnClick: false, // Optional: don't auto-close on click
-            pauseOnHover: true,
             draggable: true,
-            autoClose: 15000,
+            autoClose: 10000,
           }
         );
       }
     } catch(error){
       toast.error(
-        `${user.firstname}, you already have ${product.name} in your cart. For more information, view your cart.`,
+        `${user.firstname}, you already have ${product.name} in your cart. Click to view cart.`,
         {
           onClick: () => {
             router.push('/cart'); // Navigate to cart
           },
           closeOnClick: false, // Optional: don't auto-close on click
-          pauseOnHover: true,
           draggable: true,
-          autoClose: 15000,
+          autoClose: 12000,
         }
       );
     
