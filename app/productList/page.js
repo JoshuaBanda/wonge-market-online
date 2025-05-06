@@ -74,7 +74,7 @@ const productList = () => {
     })
     return (
         <div>
-        <div className="containerlist">
+        <div className={styles.container}>
             <h2 className={styles.tittle}>
             Our Services
             </h2>
@@ -84,7 +84,7 @@ const productList = () => {
 
         </div>
         
-        <div style={{position:"relative",height:"150px",backgroundColor:"rgba(255,255,255,0)"}}></div>
+        <div style={{position:"relative",height:"150px"}}></div>
         </div>
     );
 }

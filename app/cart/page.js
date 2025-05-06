@@ -291,8 +291,8 @@ const Cart = () => {
                         src={item.inventory.photo_url}
                         alt='w'
                         quality={100}
-                        width="120"
-                        height="120"
+                        width="150"
+                        height="150"
                         sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
                         priority
                         onClick={() => handleBuyNow(item)}
@@ -369,7 +369,7 @@ const Cart = () => {
                           
                           {itemsInCart}
                           
-                        <div style={{position:"relative",height:"150px",backgroundColor:"rgba(255,255,255,0)"}}></div>
+                        <div style={{position:"relative",padding:"150px",}}></div>
                       </ul>
                       
                     </>

@@ -14,9 +14,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   /*animation: swappic 60s infinite ;*/
-  background-color: #333;
-  animation: swappic 60s infinite; /* Duration + repeat */
-  background-image: url('/wonge37.jpg');
+  background-color: rgba(224, 224, 224, 0.5);
+ /* animation: swappic 60s infinite; /* Duration + repeat */
 }.myColor {
   animation: changeTextColor 60s infinite;
   color: var(--textc);
@@ -24,13 +23,13 @@ body {
 
 @keyframes changeTextColor {
   0% {
-    --textc: white;
+    --textc: #222;
   }
   50% {
-    --textc: rgb(255, 255, 255);
+    --textc: #333;
   }
   100% {
-    --textc: white;
+    --textc: #222;
   }
 }
 
@@ -62,12 +61,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  backdrop-filter: blur(0.5px);
+  backdrop-filter: blur(0px);
   min-height: 100vh;
   position: relative;
   top: 0px;
   bottom: -50px;
-  background-color: rgba(255,255,255,0.025);
+  background-color: rgba(255,255,255,0);
   
 }
 

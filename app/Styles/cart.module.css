@@ -4,7 +4,7 @@
     flex-direction: column;
     backdrop-filter: blur(20px);
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.329);
+    background-color: rgba(0, 0, 0, 0);
 
 }.tittle {
     display: flex;
@@ -52,6 +52,7 @@
     border-radius: 10px;
     display: flex;
     background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 1px;
 }
 
   .quantityIn {
@@ -88,7 +89,7 @@ gap: 5%;
 
   .price{
     position: relative;
-    margin: 2px 30px 10px;
+    margin: 10px 30px 10px;
     
   }
 .heading{
@@ -119,7 +120,7 @@ gap: 5%;
 
   .status{
     position: relative;
-    margin-left: 25px;
+    margin:20px 0px 0px 25px;
   }
   .status span{
     color: rgb(44, 44, 44);
@@ -132,5 +133,5 @@ gap: 5%;
   }
   .availableNow{
     position: relative;
-    margin:5px 1px  1px 25px ;
+    margin:15px 1px  5px 25px ;
   }

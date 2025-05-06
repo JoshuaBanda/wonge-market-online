@@ -2,8 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(20px);
-    background-color: rgba(0, 0, 0, 0.23);
+    
     height: 100vh;
     
 
@@ -15,12 +14,12 @@
     
     font-family: var(--font-beauRivage  );
     font-size: 35px;
-    border: 1px solid rgba(255, 255, 255, 0.473);
+    border: 1px solid rgba(70, 70, 70, 0.473);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     
     box-shadow:1px  1px 5px 5px rgba(2, 2, 2, 0.534) ;
-    background-color: rgba(253, 253, 253, 0.425);
+    background-color: rgba(29, 29, 29, 0.425);
 }
 
 .displayedItems{
@@ -31,7 +30,7 @@
 .displayedItems li{
     list-style: none;
     margin: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.212);
+    border: 1px solid rgba(238, 238, 238, 0.212);
     height: 120px;
     display: flex;
     border-radius: 20px;
