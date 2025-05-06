@@ -195,7 +195,7 @@ console.log("hi")
   }
   return (
     <div className={styles.container}>
-      <h2 className={styles.tittle}>CART</h2>
+      <h2 className={styles.tittle}>Purchase History</h2>
       {cartItems.length > 0 ? (
         <>
           <div className={styles.orderall} onClick={makeOrder}>

@@ -100,14 +100,22 @@ const item = ({params}) => {
   if (!product) return <div className={styles.error}>Product not found</div>;
 
   return (
-    <div className={styles.page}>
+    <div>
       <div className={styles.container}>
         <div className={styles.productInfo}>
           <img
             className={styles.productImage}
             src={product.photo_url}
             alt={product.name}
+
+            
+                        quality={100}
+                        width="250"
+                        height="250"
+                        sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
+                        priority
           />
+
           <div className={styles.productDetails}>
             <h1 className={styles.productName}>{product.name}</h1>
             <p className={styles.productDescription}>{product.description}</p>

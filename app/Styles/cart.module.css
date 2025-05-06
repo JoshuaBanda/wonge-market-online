@@ -37,7 +37,7 @@
     
     color: black;
     width: 70%;
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 .name{
     
@@ -47,11 +47,11 @@
     font-size: 20px;
 }
 .unorderedlist li{
-    border: 1px solid rgba(233, 232, 232, 0.5);
-    margin: 10px;
+    border: 1px solid rgba(233, 232, 232, 0.8);
+    margin: 30px 10px;
     border-radius: 10px;
     display: flex;
-    background-color: rgba(255, 255, 255, 0.514);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
   .quantityIn {
@@ -68,7 +68,7 @@
   }
   .order{
     padding: 1px 20px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.829);
     color: white;
     border-radius: 10px;
     box-shadow:1px  1px 5px 5px rgba(2, 2, 2, 0.3) ;

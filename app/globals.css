@@ -41,7 +41,7 @@ body {
     
   }
   
-  100% { background-image: url("/wonge44.jpg");
+  100% { background-image: url("/wonge36.jpg");
   }
 }
 body {
@@ -62,7 +62,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(0.5px);
   min-height: 100vh;
   position: relative;
   top: 0px;
