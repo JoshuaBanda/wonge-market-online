@@ -7,7 +7,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: rgba(44,54,57);
+    background-color: #111;
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -47,7 +47,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: rgba(44,54,57);
+    background-color: #111;
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -67,12 +67,12 @@
     height: 101%;
     z-index: -1;
     border-radius: 20px;
-  background-image: conic-gradient(from var(--angle), rgb(231, 231, 231),transparent,transparent,rgb(2, 182, 236));
+  background-image: conic-gradient(from var(--angle), rgba(253, 153, 2, 0.795),transparent,transparent,#00f5e9ea);
     animation: 3s spin linear infinite;
   }
   .container::before{
-    filter:blur(5px)
-    opacity(0.7)
+    filter:blur(1px)
+    opacity(0.5)
   }
 
 
@@ -80,7 +80,7 @@
 .contain {
   margin: 0 auto;
   padding: 0.5em;
-  background-color: rgba(44,54,57);
+  background-color: #111;
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -110,7 +110,7 @@
 .containR {
   margin: 0 auto;
   padding: 0.5em;
-  background-color: rgba(44,54,57);
+  background-color: #111;
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -160,7 +160,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 100px;
-    background-color: rgba(44,54,57);
+    background-color: #111;
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -192,7 +192,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: rgba(44,54,57);
+    background-color: #111;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,7 +213,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 100px;
-    background-color: rgba(44,54,57);
+    background-color: #111;
     display: flex;
     justify-content: center;
     align-items: center;

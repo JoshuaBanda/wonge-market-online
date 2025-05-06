@@ -45,9 +45,9 @@ export default function LoginPage() {
     borderBottomLeftRadius: isLeftSelected ? '20px' : '20px',
     borderTopRightRadius: isLeftSelected ? '0px' : '0px',
     borderBottomRightRadius: isLeftSelected ? '0px' : '0px',
-    backgroundColor:isLeftSelected?"rgba(44,54,57)": 'white',
+    backgroundColor:isLeftSelected?"#111": 'white',
     
-    color:isLeftSelected? 'rgba(255,255,255,0.8)':"rgba(0,0,0)",
+    color:isLeftSelected? 'rgba(255,255,255,1)':"rgba(0,0,0)",
   };
 
   const rightStyles = {
@@ -59,9 +59,9 @@ export default function LoginPage() {
     borderTopLeftRadius: isLeftSelected ? '0px' : '0px',
     borderBottomLeftRadius: isLeftSelected ? '0px' : '0px',
     
-    backgroundColor:isLeftSelected? 'white':"rgba(44,54,57)",
+    backgroundColor:isLeftSelected? 'white':"#111",
     
-    color:isLeftSelected? 'rgba(0,0,0)':"rgba(255,255,255,0.9)",
+    color:isLeftSelected? 'rgba(0,0,0)':"rgba(255,255,255,1)",
   };
 
   return (
@@ -72,7 +72,7 @@ export default function LoginPage() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.2)',
+          backgroundColor: 'rgba(0, 0, 0, 0)',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -88,6 +88,8 @@ export default function LoginPage() {
             height: '450px',
             width: '90%',
             alignItems: 'stretch',
+            borderRadius:"20px",
+            boxShadow:"1px 1px 10px 1px rgba(0,0,0,0.5)"
           }}
           className={showClass ? styles.container : ''}
         >
