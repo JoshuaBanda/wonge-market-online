@@ -6,7 +6,7 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const [person, setPersonState] = useState({
     access_token: "",
-    userid: 0,
+    userid: "",
     firstname: "",
     lastname: "",
     email: "",

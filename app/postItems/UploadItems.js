@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useUser } from '../userContext';
 
 const UploadItems = () => {
   const [name, setName] = useState('');
@@ -13,9 +14,22 @@ const UploadItems = () => {
   const [price, setPrice] = useState('');
   const [whatsappMessage, setWhatsappMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [quantity,setQuantity]=useState('');
 
 
+
+  const {person}=useUser();
+    
+  const [user,setUser]=useState(person)      
+  useEffect(()=>{
+    //console.log("updatting");
+    setUser(person);
+  //  console.log('user',user,"person",person);
+  },[person]);
   const handleFileChange = (event) => {
+
+
+    
     const selectedFile = event.target.files[0];
     const allowedTypes = ['image/jpeg', 'image/png', 'image/gif']; // Add allowed file types
 
@@ -31,6 +45,10 @@ const UploadItems = () => {
   const handlePriceChange = (event) => {
     const value = event.target.value;
     if (/^\d*\.?\d*$/.test(value)) setPrice(value);
+  };
+  const handleQuantityChange = (event) => {
+    const value = event.target.value;
+    if (/^\d*\.?\d*$/.test(value)) setQuantity(value);
   };
   const handleWhatsappMessageChange = (event) => setWhatsappMessage(event.target.value);
 
@@ -50,10 +68,10 @@ const UploadItems = () => {
     formData.append('name', name);
     formData.append('description', description);
     formData.append('type', typeOfProduct);
+    formData.append('quantity',quantity);
     formData.append('price', price);
     formData.append('whatsappmessage', whatsappMessage);
-    formData.append('user_id', 1); // Assuming user ID is static for now
-
+    formData.append('user_id', user.userid); // Assuming user ID is static for now
     try {
       const response = await axios.post('https://wonge-backend.onrender.com/inventory/create', formData, {
         headers: {
@@ -78,6 +96,7 @@ const UploadItems = () => {
     setTypeOfProduct('');
     setPrice('');
     setWhatsappMessage('');
+    setQuantity('')
   };
 
   useEffect(() => {
@@ -137,6 +156,18 @@ const UploadItems = () => {
             style={inputStyle}
           />
         </div>
+        
+        <div style={formGroupStyle}>
+          <label htmlFor="Quantity" style={labelStyle}>Quantity:</label>
+          <input
+            type="text"
+            id="Quantity"
+            value={quantity}
+            onChange={handleQuantityChange}
+            placeholder="Enter Quantity"
+            style={inputStyle}
+          />
+        </div>
         <div style={formGroupStyle}>
           <label htmlFor="whatsappMessage" style={labelStyle}>Whatsapp Message:</label>
           <input
@@ -165,11 +196,33 @@ const UploadItems = () => {
               <input
                 type="radio"
                 name="type"
-                value="Jewelry"
-                checked={typeOfProduct === 'Jewelry'}
+                value="Earrings"
+                checked={typeOfProduct === 'Earrings'}
                 onChange={handleTypeChange}
               />
-              Jewelry
+              Earrings
+            </label>
+            
+            <label style={radioLabelStyle}>
+              <input
+                type="radio"
+                name="type"
+                value="Brochus"
+                checked={typeOfProduct === 'Brochus'}
+                onChange={handleTypeChange}
+              />
+              Brochus
+            </label>
+            
+            <label style={radioLabelStyle}>
+              <input
+                type="radio"
+                name="type"
+                value="Perfume"
+                checked={typeOfProduct === 'Perfume'}
+                onChange={handleTypeChange}
+              />
+              Perfume
             </label>
           </div>
         </div>
@@ -184,12 +237,13 @@ const UploadItems = () => {
 
 // Styles
 const containerStyle = {
-  maxWidth: '600px',
-  marginTop:"10px",
+  //maxWidth: '600px',
+  //marginTop:"10px",
   padding: '20px',
-  border: '1px solid #ddd',
-  borderRadius: '5px',
+  borderRadius: '20px',
   boxShadow: '0 2px 10px rgba(0, 0, 0, 0.35)',
+  marging:"0 auto",
+  display:"flex"
 };
 
 const formStyle = {
@@ -197,7 +251,9 @@ const formStyle = {
   padding: '20px',
   borderRadius: '5px',
   boxShadow: '0 2px 5px rgba(0, 0, 0, 0.4)',
-  color:"black"
+  color:"black",
+  margin:"0 auto",
+  width:"500px"
 };
 
 const headingStyle = {

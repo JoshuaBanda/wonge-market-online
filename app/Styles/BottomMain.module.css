@@ -50,7 +50,7 @@
   .menuPopUp {
     position: absolute; /* relative to the parent */
     bottom: 60px; /* adjust depending on your layout */
-    right: 10px;
+    right: -25px;
     background: rgba(0,0,0,0.9);
     border: 1px solid rgba(255,255,255,0.5);
     border-radius: 15px;
@@ -65,7 +65,7 @@
     list-style: none;
     padding: 15px 20px;
     cursor: pointer;
-    width: 300px;
+    width: 220px;
   }
   
   .menuItem {

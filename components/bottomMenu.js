@@ -33,6 +33,8 @@ const BottomMenu = () => {
     }
     else if(item=="Settings"){
       router.push('/postItems');
+    }else if (item=="PurchaseHistory"){
+      router.push('/purchaseHistory')
     }
   }
   const menuPopUp = menu.map((item, index) => (

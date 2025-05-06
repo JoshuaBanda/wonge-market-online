@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Spinner from "../home/Spinning";
-import { color } from "framer-motion";
+import { useUser } from "../userContext";
 
 const EditProducts = () => {
     const [shopItems, setShopItems] = useState([]);
@@ -12,36 +12,49 @@ const EditProducts = () => {
     const [deletingId, setDeletingId] = useState(null);
     const [editingId, setEditingId] = useState(null);
     const [message, setMessage] = useState('');
-    const [editForm, setEditForm] = useState({ name: '', price: '', description: '' });
+    const [editForm, setEditForm] = useState({ name: '', price: '', description: '', quantity: '' });
+
+      const {person}=useUser();
+        
+      const [user,setUser]=useState(person)      
+      useEffect(()=>{
+        //console.log("updatting");
+        setUser(person);
+      //  console.log('user',user,"person",person);
+      },[person]);
 
     useEffect(() => {
+
+        
         const fetchShop = async () => {
-            try {
-                const response = await axios.get('https://wonge-backend.onrender.com/inventory');
-                setLoading(false);
-                setShopItems(response.data);
-            } catch (error) {
-                setError('Failed to fetch data, try again later...');
-                console.error("Error fetching data", error);
-            }
-        };
+            if (user) {
+                const userId = user.userid; // or however your user object is structured
+              
+                try {
+                  const response = await axios.get('https://wonge-backend.onrender.com/inventory', {
+                    headers: {
+                      Authorization: `Bearer ${user.access_token}`, // this is enough!
+                    },
+                  });
+                  
+                  setShopItems(response.data);
+                  setLoading(false);
+                } catch (error) {
+                  setError('Failed to fetch data, try again later...');
+                  console.error("Error fetching data", error);
+                }
+              }
+            }              
         fetchShop();
-    }, []);
+    }, [user]);
 
     const handleDelete = async (itemId, publicId) => {
         if (!window.confirm("Are you sure you want to delete this item?")) return;
 
         setDeletingId(itemId);
         try {
-            // Delete item photo from backend if publicId is present
-            if (publicId) {
-                await axios.delete(`https://wonge-backend.onrender.com/inventory/${itemId}`);
-            }
-
-            // Delete item from backend
-            const response=await axios.delete(`https://wonge-backend.onrender.com/inventory/${itemId}`);
+            await axios.delete(`https://wonge-backend.onrender.com/inventory/${itemId}`);
             setShopItems(prevItems => prevItems.filter(item => item.id !== itemId));
-            console.log('status', response.status,'data ',response.data);
             setMessage("Item deleted successfully.");
         } catch (error) {
             setMessage(error.response?.data?.message || "Failed to delete item.");
@@ -51,30 +64,52 @@ const EditProducts = () => {
     };
 
     const handleEditClick = (item) => {
+        console.log("item",item);
         setEditingId(item.id);
-        setEditForm({ name: item.name, price: item.price.toString(), description: item.description });
+        setEditForm({
+            name: item.name,
+            price: item.price.toString(),
+            description: item.description,
+            quantity: item.quantity?.toString() || ''
+        });
     };
 
     const handleEditChange = (e) => {
         const { name, value } = e.target;
+
         setEditForm(prevForm => ({
             ...prevForm,
-            [name]: name === 'price' ? (parseFloat(value) >= 0 ? value : '') : value,
+            [name]: name === 'price' || name === 'quantity'
+                ? (/^\d*\.?\d*$/.test(value) ? value : prevForm[name])
+                : value,
         }));
     };
 
     const handleEditSubmit = async (itemId) => {
-        if (isNaN(editForm.price) || editForm.price <= 0) {
-            setMessage("Price must be a positive number.");
+        const parsedPrice = parseFloat(editForm.price);
+        const parsedQuantity = parseInt(editForm.quantity);
+
+        if (isNaN(parsedPrice) || parsedPrice <= 0 || isNaN(parsedQuantity) || parsedQuantity < 0) {
+            setMessage("Price and Quantity must be valid non-negative numbers.");
             return;
         }
 
         try {
-            const updatedItem = { ...editForm, price: parseFloat(editForm.price) };
-            setShopItems(prevItems => prevItems.map(item => (item.id === itemId ? { ...item, ...updatedItem } : item)));
+            const updatedItem = {
+                name: editForm.name,
+                price: parsedPrice,
+                description: editForm.description,
+                quantity: parsedQuantity
+            };
+
+            setShopItems(prevItems => 
+                prevItems.map(item => item.id === itemId ? { ...item, ...updatedItem } : item)
+            );
+
             await axios.patch(`https://wonge-backend.onrender.com/inventory/${itemId}/description`, updatedItem);
             setMessage("Item updated successfully.");
         } catch (error) {
+            console.error("Update failed:", error);
             setMessage("Failed to update item.");
         } finally {
             setEditingId(null);
@@ -95,8 +130,8 @@ const EditProducts = () => {
                                 <Image
                                     src={item.photo_url}
                                     alt={item.name}
-                                    width={100}  // Set a specific width
-                                    height={100} // Set a specific height
+                                    width={100}
+                                    height={100}
                                     style={imageStyle}
                                     priority
                                 />
@@ -107,7 +142,10 @@ const EditProducts = () => {
                         <div style={infoContainerStyle}>
                             <div>
                                 {editingId === item.id ? (
+                                    <>
+                                    <label htmlFor="productName">Product Name</label>
                                     <input
+                                        id="productName"
                                         type="text"
                                         name="name"
                                         value={editForm.name}
@@ -115,6 +153,7 @@ const EditProducts = () => {
                                         placeholder="Product Name"
                                         style={inputStyle}
                                     />
+</>
                                 ) : (
                                     <h3 style={titleStyle}>
                                         {item.name} <span style={idStyle}>[ID: {item.id}]</span>
@@ -123,6 +162,8 @@ const EditProducts = () => {
                             </div>
                             <div>
                                 {editingId === item.id ? (
+                                    <>
+                                    <label htmlFor="price">Product Price</label> 
                                     <input
                                         type="number"
                                         name="price"
@@ -131,19 +172,40 @@ const EditProducts = () => {
                                         placeholder="Price"
                                         style={inputStyle}
                                     />
+
+                                    </>
                                 ) : (
                                     <p style={priceStyle}>MK{item.price}</p>
                                 )}
                             </div>
                             <div>
                                 {editingId === item.id ? (
+                                    <>
+                                    <label htmlFor="Quantity">Product Quantity</label>
+                                    <input
+                                        type="number"
+                                        name="quantity"
+                                        value={editForm.quantity}
+                                        onChange={handleEditChange}
+                                        placeholder="Quantity"
+                                        style={inputStyle}
+                                    /></>
+                                ) : (
+                                    <p style={priceStyle}>Qty: {item.quantity}</p>
+                                )}
+                            </div>
+                            <div>
+                                {editingId === item.id ? (
+                                    <>
+                                    <label htmlFor="Description">Product Description</label>
+                                    
                                     <textarea
                                         name="description"
                                         value={editForm.description}
                                         onChange={handleEditChange}
                                         placeholder="Description"
                                         style={textareaStyle}
-                                    />
+                                    /></>
                                 ) : (
                                     <p style={descriptionStyle}>{item.description}</p>
                                 )}
@@ -176,6 +238,7 @@ const EditProducts = () => {
     );
 };
 
+// Styles
 const containerStyle = {
     padding: "20px",
     borderRadius: "10px",
@@ -186,14 +249,17 @@ const containerStyle = {
 };
 
 const messageStyle = {
+    color: "green",
+    fontWeight: "bold",
+    marginBottom: "10px",
 };
 
 const itemsContainerStyle = {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr', // Two items per row
-    gap: '15px', // Space between items
+    gridTemplateColumns: '1fr 1fr',
+    gap: '15px',
     marginTop: '20px',
-    color:"black"
+    color: "black"
 };
 
 const itemStyle = {
@@ -201,10 +267,15 @@ const itemStyle = {
     flexDirection: 'column',
     alignItems: 'flex-start',
     borderBottom: '1px solid #ccc',
-    padding: '10px 0',
+    padding: '10px',
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-    marginBottom: '10px',
-    backgroundColor:"rgba(219, 219, 219, 0.7)"
+    backgroundColor: "rgba(219, 219, 219, 0.7)",
+    margin:"0 auto",
+    with:"200px",
+    maxWidth:"200px",
+    border:"1px solid black",
+    borderRadius:"10px"
+
 };
 
 const imageContainerStyle = {
@@ -237,8 +308,7 @@ const priceStyle = {
     fontWeight: 'bold',
 };
 
-const descriptionStyle = {
-};
+const descriptionStyle = {};
 
 const inputStyle = {
     width: '100%',

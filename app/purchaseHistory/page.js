@@ -7,7 +7,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-const Cart = () => {
+const PurchaseHistory = () => {
     
     const [cartItems,setCartItems]=useState([]);
     const {person}=useUser();
@@ -157,7 +157,7 @@ const Cart = () => {
           
         setLoadingOrder(true);
         const inventoryIds = cartItems
-          .filter(item => item.status === "active")
+          .filter(item => item.status === "ordered")
           .map(item => item.inventory.id);
           if (inventoryIds.length<1){
             
@@ -254,7 +254,7 @@ const Cart = () => {
                     <div className={styles.availableNow}>
                       Available now : {item.inventory.quantity}
                     </div>
-                    <div className={styles.options}>
+                    {/*<div className={styles.options}>
 
                       
                         <div className={styles.order}>
@@ -272,7 +272,7 @@ const Cart = () => {
                             </div>
                         </div>
                               
-                    </div>
+                    </div>*/}
 
                    
                 </div> 
@@ -314,4 +314,4 @@ const Cart = () => {
     );
 }
  
-export default Cart;
+export default PurchaseHistory;
