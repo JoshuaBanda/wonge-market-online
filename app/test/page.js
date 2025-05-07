@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "../Styles/test.module.css"
+import AnimatedWord from "@/components/AnimatedWord";
 const Test = () => {
     return (
             
@@ -8,7 +9,10 @@ const Test = () => {
 
             <div className={styles.aboveMaskBox}>
                 <div className={styles.boxWrap}>
-                    <span className={styles.tittle}>Wonge Makert Online</span>
+                    <span className={styles.tittle}>
+                    <AnimatedWord/>
+                    </span>
+                    
                 </div>
             </div>
 
@@ -24,7 +28,7 @@ const Test = () => {
                                 Start Your Day
                             </span>
                             <p className={styles.flesh}>
-                                Flesh
+                                flesh
                             </p>
                         </div>
                         <Image

@@ -14,12 +14,14 @@ body {
   background-position: center;
   background-attachment: fixed;
   /*animation: swappic 60s infinite ;*/
-  background-color:#e4d6ae;
+  background-color:#e4bdae;
 /*animation: swappic 60s infinite; /* Duration + repeat */
  z-index: 1;
 }.myColor {
   animation: changeTextColor 60s infinite;
   color: var(--textc);
+  
+  text-shadow: -4px 2px 4px rgba(14, 14, 14, 0.678);
 }
 
 @keyframes changeTextColor {

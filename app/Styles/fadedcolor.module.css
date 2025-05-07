@@ -7,8 +7,8 @@
     height: 50vh;
     
  box-shadow:
+    inset 0px -5px 20px rgba(222, 184, 135, 0.2),
     inset 0px -10px 20px rgba(222, 184, 135, 0.2),
-    inset 0px -150px 20px rgba(222, 184, 135, 0.2),
-    inset 0px -200px 30px rgba(222, 184, 135, 0.3);
+    inset 0px -15px 30px rgba(238, 230, 219, 0.3);
  
 }
