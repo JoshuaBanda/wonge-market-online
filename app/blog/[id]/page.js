@@ -111,7 +111,6 @@ const item = ({params}) => {
                         width="250"
                         height="250"
                         sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
-                        priority
           />
 
           <div className={styles.productDetails}>

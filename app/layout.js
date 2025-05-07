@@ -3,6 +3,7 @@ import "./globals.css"
 import { Amaranth, Lovers_Quarrel,Beau_Rivage,Felipa,Benne, Habibi, Lato, Roboto, Open_Sans, PT_Sans, Merriweather } from "next/font/google";
 import { UserProvider } from "./userContext";
 import { ToastProvider } from "@/components/ToastProvider";
+import FadedColor from "@/components/FadedColor";
 
 export const metadata = {
   title: "Wonge Market Online",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
         <BottomMenuWrapper/>
       </UserProvider>
       <ToastProvider/>
+      <FadedColor/>
       </body>
     </html>
   );

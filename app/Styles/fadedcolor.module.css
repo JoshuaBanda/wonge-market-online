@@ -1,0 +1,14 @@
+.container{
+    
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 50vh;
+    
+ box-shadow:
+    inset 0px -10px 20px rgba(222, 184, 135, 0.2),
+    inset 0px -150px 20px rgba(222, 184, 135, 0.2),
+    inset 0px -200px 30px rgba(222, 184, 135, 0.3);
+ 
+}
