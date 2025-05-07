@@ -81,6 +81,7 @@ const HomePage = ({user}) => {
                   `}
                   style={{
                     //...(isSelected&&{backgroundColor:myBackgroudColor})
+                    boxShadow:"-5px 5px 10px rgba(0,0,0,0.8)",
                   }}
                 >
                   <HomeOptions 

@@ -10,7 +10,7 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: rgba(44,54,57);
+    background-color: #0f0f0f;
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@
   margin: 0 auto;
   padding: 0.5em;
   width: 150px;
-  background-color: rgba(44,54,57);
+  background-color: #0f0f0f;
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -50,11 +50,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Use transform instead of translate */
-  width: 101%;
-  height: 104%;
+  width: 102%;
+  height: 105%;
   z-index: -1;
   border-radius: 20px;
-  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(2, 182, 236));
+  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(0, 0, 0));
   animation: 5s spins linear infinite;
 }
 .item::before{

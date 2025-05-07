@@ -1,44 +1,54 @@
+import "./globals.css";
 import BottomMenuWrapper from "@/components/BottomMenuWrapper";
-import "./globals.css"
-import { Amaranth, Lovers_Quarrel,Beau_Rivage,Felipa,Benne, Habibi, Lato, Roboto, Open_Sans, PT_Sans, Merriweather } from "next/font/google";
-import { UserProvider } from "./userContext";
-import { ToastProvider } from "@/components/ToastProvider";
 import FadedColor from "@/components/FadedColor";
+import { ToastProvider } from "@/components/ToastProvider";
+import { UserProvider } from "./userContext";
+
+// Fonts
+import {
+  Felipa,
+  Bonheur_Royale,
+  Niconne
+} from "next/font/google";
+
+
+const beauRivage = Felipa({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-beauRivage',
+});
+
+const bonheurRoyale = Niconne({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-bonheurRoyale', // fixed
+});
+
+const niconne=Niconne({
+  subsets:['latin'],
+  weight:'400',
+  variable:'--font-niccone'
+})
 
 export const metadata = {
   title: "Wonge Market Online",
   description: "Online Market",
 };
 
-const amarath = Merriweather({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-amarath',
-});
-
-const loversQuarrel = Lovers_Quarrel({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-lovers',
-});
-const beauRivage=Felipa({
-  subsets:['latin'],
-  weight:'400',
-  variable:'--font-beauRivage',
-})
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${amarath.variable} ${loversQuarrel.variable} ${beauRivage.variable}`}>
+    <html
+      lang="en"
+      className={` ${beauRivage.variable} ${bonheurRoyale.variable} ${niconne.variable}`}
+    >
       <body>
-      <UserProvider>
-        <div className="blur-wrapper">
-          {children}
-        </div>
-        <BottomMenuWrapper/>
-      </UserProvider>
-      <ToastProvider/>
-      <FadedColor/>
+        <UserProvider>
+          <div className="blur-wrapper">{children}</div>
+          <BottomMenuWrapper />
+        </UserProvider>
+        <ToastProvider />
+        <FadedColor />
       </body>
     </html>
   );

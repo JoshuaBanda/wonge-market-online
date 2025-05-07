@@ -1,0 +1,55 @@
+.maskContainer {
+    container-type: inline-size;
+    --mask-head-size: calc(0.117 * 100cqw);
+    --mask-foot-size: calc(0.108 * 100cqw);
+}
+.maskBox {
+    position: relative;
+    top: -30px;
+    margin-block: calc(-1 * var(--mask-head-size) - 1px) calc(-1 * var(--mask-foot-size) - 1px);
+    padding-block: calc(var(--mask-head-size) + 1px) calc(var(--mask-foot-size) + 1px);
+    mask-image:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" width="1000" height="117"><g transform="scale(1,-1)" transform-origin="50%"><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></g></svg>'),
+        linear-gradient(transparent calc(var(--mask-head-size) - 1px), black calc(var(--mask-head-size) - 1px), black calc(100% - var(--mask-foot-size) + 1px), transparent calc(100% - var(--mask-foot-size) + 1px)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" width="1000" height="108"><g transform="scale(1.5,1)" transform-origin="0% 50%"><path d="M500 4c-125 0-125 96-250 96S125 4 0 4V0h1000v4c-125 0-125 96-250 96S625 4 500 4Z"></path></g></svg>');
+    mask-repeat: no-repeat;
+    mask-position: top, center, bottom;
+    mask-size: 100%;
+    background-color: #ddd3b7;
+    background-image: url('/blackbackground.jpg');
+}
+.aboveMaskBox {
+    padding-bottom: var(--mask-head-size);
+    display: block;
+    background: #e4d6ae;
+}
+.belowMaskBox {
+    padding-top: var(--mask-foot-size);
+    display: block;
+    background: #e4d6ae;
+    margin-bottom: -32px;
+}
+.boxWrap {
+    padding: 30px;
+    color: #FFF;
+}
+.tittle{
+    
+    position:relative;
+    top:0px;
+    left:0px;
+    margin:0px 10px;
+    font-family: var(--font-bonheurRoyale);
+    font-size: 25px;
+    color:black;
+    font-weight: bold;
+}
+
+.startYourDay{
+    font-family: var(--font-bonheurRoyale);
+}
+
+.flesh{
+    font-family: var(--font-bonheurRoyale);
+    font-size: 35px;
+}

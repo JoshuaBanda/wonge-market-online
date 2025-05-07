@@ -91,7 +91,7 @@ export default function LoginPage() {
             borderRadius:"20px",
             boxShadow:"1px 1px 10px 1px rgba(0,0,0,0.5)"
           }}
-          className={showClass ? styles.container : ''}
+          className={showClass ? styles.contain : ''}
         >
           {/* LEFT PANEL (Login) */}
           <motion.li
