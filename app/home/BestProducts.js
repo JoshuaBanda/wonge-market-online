@@ -70,7 +70,37 @@ const BestProducts = () => {
  return(
     
     <>
-
+      
+<div 
+  style={{
+    position: 'relative',
+    margin: '20px 10px',
+    padding: '15px',
+    textAlign: 'center',
+    fontSize: '24px',
+    fontWeight: 'bold',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '8px',
+    color: '#2d3748', // Default dark color
+    textShadow: '1px 1px 3px rgba(0,0,0,0.1)',
+    background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent)',
+    borderRadius: '4px'
+  }}
+  className="myColor"
+>
+  Best Products
+  <span style={{
+    fontSize: '14px',
+    fontWeight: 'normal',
+    color: '#4a5568',
+    maxWidth: '80%',
+    lineHeight: '1.4'
+  }}>
+    explore the most recent bought products
+  </span>
+</div>
       <div
         style={{
           position: "relative",
@@ -83,6 +113,8 @@ const BestProducts = () => {
         }}
         className="scroll-container"
       >
+
+          
         {homeItems.length > 0 ? homeItems : <div style={{position:'relative',margin:'170px auto',}}><Spinner /></div> }
       </div>
 

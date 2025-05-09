@@ -8,7 +8,7 @@ import { UserProvider } from "./userContext";
 import {
   Felipa,
   Bonheur_Royale,
-  Niconne
+  Niconne,Gudea
 } from "next/font/google";
 
 
@@ -29,7 +29,13 @@ const niconne=Niconne({
   weight:'400',
   variable:'--font-niccone'
 })
-
+const gudea=Gudea(
+  {
+    subsets:['latin'],
+    weight:'400',
+    variable:'--font-gudea'
+  }
+)
 export const metadata = {
   title: "Wonge Market Online",
   description: "Online Market",
@@ -40,7 +46,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={` ${beauRivage.variable} ${bonheurRoyale.variable} ${niconne.variable}`}
+      className={` ${beauRivage.variable} ${bonheurRoyale.variable} ${niconne.variable} ${gudea.variable}`}
     >
       <body>
         <UserProvider>

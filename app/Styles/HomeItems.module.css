@@ -9,8 +9,8 @@
     
     margin: 0 auto;
     padding: 0.5em;
-    width: 150px;
-    background-color: #0f0f0f;
+    width: 80px;
+    background-color: #e4bdae;
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -34,8 +34,8 @@
 .item {
   margin: 0 auto;
   padding: 0.5em;
-  width: 150px;
-  background-color: #0f0f0f;
+  width: 80px;
+  background-color: #e4bdae;
   display: flex; 
   justify-content: center;
   align-items: center;

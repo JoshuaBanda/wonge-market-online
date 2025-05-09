@@ -5,7 +5,6 @@ import HomePage from "./Home";
 const FrontPage = ({user}) => {
   return (
     <div className="blur-wrapper">
-      <Test/>
       <HomePage user={user}/>
     </div>
   );

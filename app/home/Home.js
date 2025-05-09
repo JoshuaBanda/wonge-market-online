@@ -8,6 +8,7 @@ import styles from '../Styles/home.module.css' ;
 import style from "../Styles/HomeItems.module.css";
 import { useUser } from "../userContext";
 import BestProducts from "./BestProducts";
+import Test from "../test/page";
 
 const HomePage = ({user}) => {
   const {person}=useUser();
@@ -61,8 +62,11 @@ const HomePage = ({user}) => {
   return (
     <>
       <div className={styles.container}>
-        <BestProducts/>
-        <div className={styles.itemsListContainer}>
+
+
+
+
+      <div className={styles.itemsListContainer}>
           <ul>
             {items.map((item, index) => {
               const isSelected = selectedItem === item;
@@ -81,7 +85,7 @@ const HomePage = ({user}) => {
                   `}
                   style={{
                     //...(isSelected&&{backgroundColor:myBackgroudColor})
-                    boxShadow:"-5px 5px 10px rgba(0,0,0,0.8)",
+                    color:"black"
                   }}
                 >
                   <HomeOptions 
@@ -94,6 +98,10 @@ const HomePage = ({user}) => {
             })}
           </ul>
         </div>
+      
+      <Test/>
+        <BestProducts/>
+        
         {/*  
         <Carousel />
 */}   {/*
@@ -103,16 +111,16 @@ const HomePage = ({user}) => {
         <div 
           style={{
             position: 'relative',
-            margin: '0px 0px 0px 0px',
+            margin: '20px 0px 0px 0px',
             bottom:'0px',
             textAlign: 'center',
-            fontSize: '24px',
+            fontSize: '30px',
             fontWeight: 'bold',
             //fontFamily: 'DM Sans, sans-serif',
             //color: 'rgba(255, 255, 255, 0.9)',
           }}
           className="myColor">
-          {selectedItem}
+           Top {selectedItem}
           </div>
           
        <AnimatePresence>

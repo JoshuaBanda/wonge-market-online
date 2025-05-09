@@ -1,7 +1,7 @@
 /* HomePage.module.css */
 .container {
     position: relative;
-    top: -65px;
+    top: 0px;
     backdrop-filter: blur(2px);
   }
   
@@ -16,13 +16,15 @@
     margin: 5px 15px;
   }
   
-  .itemsListContainer {
-    position: relative;
-    padding: 50px;
+  .itemsListContainer {    
+    position: absolute;
+    top: -20;
+    right: 0;
+    padding: 10px;
     margin: 10px 0px 10px -25px;
     overflow-x: scroll;
-    padding-bottom: 15px;
     scrollbar-width: none;
+    width: 60%;
   }
   
   .itemsListContainer ul {
@@ -31,12 +33,13 @@
     margin: 0;
     display: flex;
     flex-wrap: nowrap;
+    z-index: 1000;
   }
   
   .itemsListContainer li {
     margin-left: 10px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 15px;
   }
   
   .paperTextContainer {
