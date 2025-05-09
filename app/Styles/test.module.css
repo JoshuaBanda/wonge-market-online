@@ -23,12 +23,12 @@
 .aboveMaskBox {
     padding-bottom: var(--mask-head-size);
     display: block;
-    background:#e4bdae;
+    background:#fafafa;
 }
 .belowMaskBox {
     padding-top: var(--mask-foot-size);
     display: block;
-    background: #e4bdae;
+    background: #fafafa;
     margin-bottom: -32px;
 }
 .boxWrap {
@@ -49,13 +49,13 @@
 
 .startYourDay{
     font-family: var(--font-bonheurRoyale);
-    color:black;
+    color:white;
 }
 
 .flesh{
     font-family: var(--font-gudea);
     font-size: 65px;
-    color:black;
+    color:white;
     text-shadow: -7px 5px 5px rgb(14, 14, 14);
 }
 

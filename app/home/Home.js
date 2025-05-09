@@ -64,7 +64,8 @@ const HomePage = ({user}) => {
       <div className={styles.container}>
 
 
-
+      
+      <Test/>
 
       <div className={styles.itemsListContainer}>
           <ul>
@@ -76,9 +77,10 @@ const HomePage = ({user}) => {
               return (
                 <motion.li
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ type: 'keyframes', stiffness: 100, duration: 2 }}
+                  
+                  initial={{ opacity: 0, x: -300 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ type: 'spring', stiffness: 300}}
                   onClick={() => handleOnClick(item)} // Handle item click
                   className={`
                     ${listItemBorder === index  ? style.item : style.normalitem}
@@ -94,12 +96,14 @@ const HomePage = ({user}) => {
                     myTextColor={myTextColor} 
                   />
                 </motion.li>
+                
               );
             })}
+            
           </ul>
         </div>
+        
       
-      <Test/>
         <BestProducts/>
         
         {/*  
