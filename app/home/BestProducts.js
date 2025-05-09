@@ -37,6 +37,7 @@ const BestProducts = () => {
     items.map((item, index) => (
       <motion.div
         key={index}
+        style={{left:"50px"}}
         className={styles.container}
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -52,8 +53,8 @@ const BestProducts = () => {
             <Image
                 src={item.photourl}
                 alt={item.alt}
-                width={120}
-                height={120}
+                width={90}
+                height={90}
                 style={{
                 marginBottom: "0px",
                 position: "relative",
@@ -74,7 +75,7 @@ const BestProducts = () => {
 <div 
   style={{
     position: 'relative',
-    margin: '20px 10px',
+    margin: '20px 0px ',
     padding: '15px',
     textAlign: 'center',
     fontSize: '24px',
@@ -104,6 +105,7 @@ const BestProducts = () => {
       <div
         style={{
           position: "relative",
+          margin:"0px 0px",
           display: "flex",
           overflowX: "auto", // Allows horizontal scrolling
           flexWrap: "nowrap", // Prevents wrapping
