@@ -20,13 +20,12 @@ function AnimatedLetter({ letter }) {
       variants={letterChildVariants}
       style={{
         position:"relative",
-        color: '#222',
+        color: 'black',
         display: 'inline-block',
         cursor: 'pointer',
         textShadow: '0 -3px 1px rgba(0,0,0,0.3)',
-        fontSize:"20px"
       }}
-      whileHover={{ scale: 1.2, color: 'coral' }}
+      whileHover={{ scale: 1.2, color: 'white' }}
     >
       {letter}
     </motion.span>

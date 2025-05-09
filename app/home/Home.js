@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 import styles from '../Styles/home.module.css' ; 
 import style from "../Styles/HomeItems.module.css";
 import { useUser } from "../userContext";
+import BestProducts from "./BestProducts";
 
 const HomePage = ({user}) => {
   const {person}=useUser();
@@ -60,8 +61,7 @@ const HomePage = ({user}) => {
   return (
     <>
       <div className={styles.container}>
-
-
+        <BestProducts/>
         <div className={styles.itemsListContainer}>
           <ul>
             {items.map((item, index) => {
@@ -103,43 +103,18 @@ const HomePage = ({user}) => {
         <div 
           style={{
             position: 'relative',
-            margin: '0px 0px -20px 0px',
+            margin: '0px 0px 0px 0px',
             bottom:'0px',
             textAlign: 'center',
-            fontSize: '20px',
+            fontSize: '24px',
             fontWeight: 'bold',
             //fontFamily: 'DM Sans, sans-serif',
             //color: 'rgba(255, 255, 255, 0.9)',
           }}
           className="myColor">
-            OUR BEST PRODUCTS
+          {selectedItem}
           </div>
           
-        <motion.div
-          initial={{ opacity: 0, x: -300 }}
-          animate={{
-            opacity: shopNowInView ? 0 : 1,
-            x: /*shopNowInView ?*/ 0 //: 300,
-            //visibility: shopNowInView ? 'visible' : 'hidden',
-          }}
-          transition={{
-            type: 'spring',
-            duration: 1,
-          }}
-          style={{
-            position: 'relative',
-            margin: '20px 0px 0px 0px',
-            textAlign: 'center',
-            fontSize: '20px',
-            fontWeight: 'bold',
-            //fontFamily: 'DM Sans, sans-serif',
-            justifyContent:'center'
-          }}
-          
-          className="myColor"
-        >
-          Shopping made easy
-        </motion.div>
        <AnimatePresence>
           <motion.div
             ref={listRef}
