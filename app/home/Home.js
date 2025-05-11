@@ -67,7 +67,7 @@ const HomePage = ({user}) => {
       
       <Test/>
 
-      <div className={styles.itemsListContainer}>
+{/*      <div className={styles.itemsListContainer}>
           <ul>
             {items.map((item, index) => {
               const isSelected = selectedItem === item;
@@ -102,7 +102,7 @@ const HomePage = ({user}) => {
             
           </ul>
         </div>
-        
+        */}
       
         <BestProducts/>
         
