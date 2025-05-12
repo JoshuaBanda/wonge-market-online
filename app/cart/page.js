@@ -377,7 +377,7 @@ const Cart = () => {
                     <>
                         <div>
                         <h3 style={{
-                          position:"relative",margin:"20px",display:"flex",color:"black"
+                          position:"relative",margin:"20px",display:"flex",
                         }}>
                         Your Cart is empty
                         </h3>

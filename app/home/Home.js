@@ -49,7 +49,7 @@ useEffect(() => {
       index=0;
       //clearInterval(interval); // Stop after last item
     }
-  }, 20000); // Change every 3 seconds
+  }, 60000); // Change every 60 seconds
 
   return () => clearInterval(interval); // Cleanup on unmount or search change
 }, [search]);
@@ -143,6 +143,8 @@ useEffect(() => {
             fontWeight: 'bold',
             //fontFamily: 'DM Sans, sans-serif',
             //color: 'rgba(255, 255, 255, 0.9)',
+            
+    background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent)',
           }}
           className="myColor">
            Top {selectedItem}

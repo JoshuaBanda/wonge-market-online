@@ -34,7 +34,7 @@
   .icons {
     position: relative;
     top:0px;
-    color: #fff9e9;
+    color: #fff;
     transition: transform 0.2s ease, color 0.2s ease;
     font-size: 20px;
     font-weight: lighter;

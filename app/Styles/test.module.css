@@ -23,12 +23,12 @@
 .aboveMaskBox {
     padding-bottom: var(--mask-head-size);
     display: block;
-    background:#fafafa;
+    background:#fafafa00;
 }
 .belowMaskBox {
     padding-top: var(--mask-foot-size);
     display: block;
-    background: #fafafa;
+    background: #fafafa00;
     margin-bottom: -110px;
 }
 .boxWrap {

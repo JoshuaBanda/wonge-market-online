@@ -25,7 +25,8 @@
 }
 
 .imgTwo{
-    
+    position: relative;
+    left: -12px;
     display: block;
     /*margin: 0px 0 10px auto;*/
     width: 35%;
@@ -43,7 +44,6 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     
-    color: black;
     width: 70%;
     border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -59,10 +59,11 @@
     margin: 30px 10px;
     border-radius: 10px;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px 1px;
     
     box-shadow:1px  1px 5px 1px rgba(2, 2, 2, 0.2) ;
+    color: white;
 }
 
   .quantityIn {
@@ -75,7 +76,9 @@
     height: 24px;
     width: 50%;
     max-width: 130px;
+    color: black;
     box-shadow:1px  1px 5px 5px rgba(2, 2, 2, 0.4) ;
+  
   }
   .order{
     padding: 1px 20px;

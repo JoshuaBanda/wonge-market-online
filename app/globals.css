@@ -15,7 +15,7 @@ body {
   background-attachment: fixed;
   /*animation: swappic 60s infinite ;*/
   background-color:#fafafa;
-/*animation: swappic 60s infinite; /* Duration + repeat */
+animation: swappic 60s infinite; /* Duration + repeat */
  z-index: 1;
 }.myColor {
   animation: changeTextColor 60s infinite;
@@ -67,12 +67,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(3px);
   min-height: 100vh;
   position: relative;
   top: 0px;
-  bottom: -50px;
-  background-color: rgba(255,255,255,0);
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0);
   
 }
 
