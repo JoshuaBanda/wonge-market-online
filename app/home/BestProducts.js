@@ -37,7 +37,7 @@ const BestProducts = () => {
     items.map((item, index) => (
       <motion.div
         key={index}
-        style={{left:"50px"}}
+        style={{left:"30px"}}
         className={styles.container}
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -53,8 +53,8 @@ const BestProducts = () => {
             <Image
                 src={item.photourl}
                 alt={item.alt}
-                width={90}
-                height={90}
+                width={50}
+                height={50}
                 style={{
                 marginBottom: "0px",
                 position: "relative",
@@ -93,12 +93,12 @@ const BestProducts = () => {
 >
   Best Products
   <span style={{
-    fontSize: '14px',
     fontWeight: 'normal',
     color: '#4a5568',
     maxWidth: '80%',
     lineHeight: '1.4'
-  }}>
+  }}
+  className={styles.explore}>
     explore the most recent bought products
   </span>
 </div>

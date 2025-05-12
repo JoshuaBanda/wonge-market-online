@@ -29,7 +29,7 @@ const Test = () => {
                                 Start Your Day
                             </span>
                             <p className={styles.flesh}>
-                                flesh
+                                Flesh
                             </p>
                         </div>
 
@@ -46,7 +46,7 @@ const Test = () => {
                             <ImageContainer 
                                 width={120} 
                                 height={50} 
-                                rightOffset={160}
+                                rightOffset={220}
                                 src="/str.png"
                                 alt="Product 1"
                             />

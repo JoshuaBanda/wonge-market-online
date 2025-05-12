@@ -113,8 +113,8 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
           <Image
             src={item.photo_url} // Use the photo_url from the API
             alt={item.name}
-            width={120} // Adjust width as needed
-            height={120} // Adjust height as needed
+            width={80} // Adjust width as needed
+            height={80} // Adjust height as needed
             style={{ borderRadius: "5px", marginBottom: "0px",position:'relative',top:'45px',left:'20px', }}
             className={styles.pic}
             prioritysizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
@@ -181,7 +181,10 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
         className="scroll-container"
       >
         {homeItems.length > 0 ? homeItems : <div style={{position:'relative',margin:'170px auto',}}><Spinner /></div> }
+        
+                        <div style={{position:"relative",padding:"150px",}}></div>
       </div>
+      
 
     </>
   );

@@ -4,11 +4,11 @@
     
     border: 1px solid rgba(0, 0, 0, 0.096);
     border-radius: 10px;
-    margin:25px 8% 10px 1%;
-    width: 120px;
-    height: 120px;
+    margin:0px 8% 10px 0.25%;
+    width: 70px;
+    height: 70px;
     flex-shrink: 0;
-    box-shadow: -5px 10px 15px rgba(31, 30, 30, 0.5);
+    box-shadow: -3px 5px 4px rgba(31, 30, 30, 0.25);
 
 }
 
@@ -40,8 +40,8 @@
   .txt {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4);
-    width: 120px;
-    height: 120px;
+    width: 70px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,5 +52,12 @@
     z-index: 2; /* Ensure it’s above the image */
     object-fit: cover;
     border-radius: 10px;
+    font-size: 15px;
+    font-family: var(--font-bonheurRoyale);
   }
   
+  .explore{
+    
+    font-size: 20px;
+    font-family: var(--font-bonheurRoyale);
+  }

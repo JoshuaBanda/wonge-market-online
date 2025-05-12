@@ -4,7 +4,7 @@ const FadedColor = () => {
     return (
         <>
             <div className={styles.container}>
-            h
+            
             </div>
         </>
     );

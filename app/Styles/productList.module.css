@@ -4,6 +4,7 @@
     flex-direction: column;
     
     height: 100vh;
+    color: white;
     
 
 }.tittle {
@@ -34,7 +35,7 @@
     height: 120px;
     display: flex;
     border-radius: 20px;
-    box-shadow:1px  1px 5px 5px rgba(2, 2, 2, 0.534) ;
+    box-shadow:1px   5px 5px rgba(2, 2, 2, 0.7) ;
 
 }.imgTwo {
     display: block;
@@ -52,7 +53,6 @@
     border-bottom-left-radius: 20px;
 }
 .itemText span{
-    font-family: var(--font-beauRivage);
     font-size: 30px;
     margin-top: 30px;
     
