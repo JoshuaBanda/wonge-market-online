@@ -153,7 +153,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
                 <p>MK{item.price}</p>
               </div>
               <div className={styles.addToCart}>
-                Add to cart <FaShoppingCart style={{
+                Buy Now <FaShoppingCart style={{
                   fontSize:"18px",margin:"1px 1px 1px 3px"
                 }}/>
               </div>

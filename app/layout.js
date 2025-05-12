@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
           <BottomMenuWrapper />
         </UserProvider>
         <ToastProvider />
-        <FadedColor />
+       {/* <FadedColor />*/}
       </body>
     </html>
   );
