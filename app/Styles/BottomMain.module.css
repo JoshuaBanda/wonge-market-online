@@ -1,9 +1,9 @@
 .main {
     position: fixed;
-    background-color: rgba(22, 22, 22, 0.349);
+    background-color: rgba(22, 22, 22, 0.4);
     width: 90%;
     height: 60px;
-    top: 91%;
+    bottom: 9%;
     left: 50%; /* push to the center */
     transform: translateX(-50%); /* pull it back 50% of its own width */
     z-index: 1000;
