@@ -3,7 +3,7 @@
     background-color: rgba(22, 22, 22, 0.4);
     width: 90%;
     height: 60px;
-    bottom: 9%;
+    bottom: 1%;
     left: 50%; /* push to the center */
     transform: translateX(-50%); /* pull it back 50% of its own width */
     z-index: 1000;
