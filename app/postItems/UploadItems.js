@@ -241,16 +241,17 @@ const containerStyle = {
   //marginTop:"10px",
   padding: '20px',
   borderRadius: '20px',
-  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.35)',
+  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
   marging:"0 auto",
-  display:"flex"
+  display:"flex",
+  backgroundColor:"rgba(0,0,0,0.4)"
 };
 
 const formStyle = {
-  backgroundColor: 'rgba(255,255,255,0.4)',
+  backgroundColor: 'rgba(0,0,0,0.3)',
   padding: '20px',
   borderRadius: '5px',
-  boxShadow: '0 2px 5px rgba(0, 0, 0, 0.4)',
+  boxShadow: '0 2px 5px rgba(0, 0, 0, 0.5)',
   color:"black",
   margin:"0 auto",
   width:"500px"

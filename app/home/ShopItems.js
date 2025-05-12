@@ -43,6 +43,8 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
   const [errorMessage, setErrorMessage] = useState('');
   const [user,setUser]=useState(person)
   const router=useRouter();
+  const [page,setPage]=useState(1);
+  const limit=10;
 
   const handleBuyNow=(item)=>{
     if(person.access_token){
@@ -69,13 +71,17 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
 
           // Make API call to search for items
           const response = await axios.get(
-            `https://wonge-backend.onrender.com/search/search?name=${searchItem}`
+            //`https://wonge-backend.onrender.com/search/search?name=${searchItem}`
+            `http://localhost:3001/inventory/products/${searchItem}/${page}/${limit}`
           );
+          console.log(`fecthing ttp://localhost:3001/inventory/products/${searchItem}/${page}/${limit} ${response.data}`)
           
-          //console.log("yoooooooo",response);
+          console.log("yoooooooo",response.data);
 
           // Access the 'products' array in the response and set it to items state
-          setItems(Array.isArray(response.data.products) ? response.data.products : []); 
+
+          setItems(Array.isArray(response.data) ? response.data : []); 
+        
         } catch (error) {
           console.error("Error fetching data", error);
         }
@@ -182,7 +188,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
       >
         {homeItems.length > 0 ? homeItems : <div style={{position:'relative',margin:'170px auto',}}><Spinner /></div> }
         
-                        <div style={{position:"relative",padding:"150px",}}></div>
+                        <div style={{position:"relative",padding:"180px 0px",}}></div>
       </div>
       
 

@@ -33,6 +33,27 @@ const HomePage = ({user}) => {
   const [search, setSearch] = useState("Avon");
   const [listItemBorder,setListItemBorder]=useState(0);
   // Handle when an item is clicked
+
+useEffect(() => {
+  const items = ["Avon", "Earrings", "Brochus", "Perfume"];
+  let index = 0;
+
+  const interval = setInterval(() => {
+    setSelectedItem(items[index]);
+    
+      console.log("index",index,"item length",items.length);
+    index++;
+
+    if (index >= items.length) {
+      console.log("clearing");
+      index=0;
+      //clearInterval(interval); // Stop after last item
+    }
+  }, 20000); // Change every 3 seconds
+
+  return () => clearInterval(interval); // Cleanup on unmount or search change
+}, [search]);
+
   const handleOnClick = (item) => {
     setSelectedItem(item);
     setSearch(item); // Update search when an item is clicked

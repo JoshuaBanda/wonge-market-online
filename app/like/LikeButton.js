@@ -16,7 +16,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
   // Fetch like data when the component mounts
   useEffect(() => {
     fetchLikeData();
-    console.log("like",likeCount,isLiked);
+//console.log("like",likeCount,isLiked);
   }, [postId,isLiked]);
 
   // Fetch like count and like status
