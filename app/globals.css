@@ -15,7 +15,7 @@ body {
   background-attachment: fixed;
   /*animation: swappic 60s infinite ;*/
   background-color:#fafafa;
-animation: swappic 60s infinite; /* Duration + repeat */
+ /*animation: swappic 60s infinite; /* Duration + repeat */
  z-index: 1;
 }.myColor {
   animation: changeTextColor 60s infinite;
