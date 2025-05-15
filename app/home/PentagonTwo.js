@@ -10,18 +10,10 @@ const PentagonTwo = () => {
   const [colorIndex, setColorIndex] = useState(0);
   const [hasMounted, setHasMounted] = useState(false);
 
-  const colors = [
-    
-        "white",
-        "white",
-       "white",
-       "white",
-       "white",
-    
-  ];
+  const colors = ["white", "white", "white", "white", "white"];
 
   useEffect(() => {
-    setHasMounted(true); // Avoids SSR mismatch
+    setHasMounted(true);
 
     const interval = setInterval(() => {
       setRotation((prevRotation) => prevRotation - 72);
@@ -44,18 +36,29 @@ const PentagonTwo = () => {
     transition: 'transform 2s ease-in-out'
   };
 
-  // ✅ Prevent SSR mismatch
   if (!hasMounted) return null;
 
   return (
     <svg width="200" height="200">
+      {/* 🔽 Define blur filter */}
+      <defs><filter id="glow-filter" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="glow"/>
+  <feMerge>
+    <feMergeNode in="glow" />
+    <feMergeNode in="SourceGraphic" />
+  </feMerge>
+</filter>
+
+      </defs>
+
       <polygon
         points={points.map((point) => `${point.x},${point.y}`).join(' ')}
-        fill='rgba(0,0,0,0)'
+        fill="rgba(0,0,0,0)"
         stroke={colors[colorIndex]}
         strokeWidth="80"
         strokeLinejoin="round"
         style={rotationStyle}
+       filter="url(#glow-filter)"
       />
     </svg>
   );

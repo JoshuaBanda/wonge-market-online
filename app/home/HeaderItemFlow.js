@@ -103,6 +103,9 @@ const NavBarItemList = () => {
                         }}>
                         <PentagonTwo/>
                     </motion.div>
+                    <div className={styles.blurcircl}>
+                        
+                    </div>
                 </div>
             </div>
         </div>

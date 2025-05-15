@@ -10,27 +10,14 @@ const Pentagon = () => {
   const [colorIndex, setColorIndex] = useState(0);
   const [hasMounted, setHasMounted] = useState(false);
 
-  const colors = [
-    
-    
-    "orangered",
-    
-    "orangered",
-    "orangered",
-    "orangered",
-    "orangered",
-
-    
-  ];
+  const colors = ["orangered", "orangered", "orangered", "orangered", "orangered"];
 
   useEffect(() => {
-    setHasMounted(true); // Avoids SSR mismatch
-
+    setHasMounted(true);
     const interval = setInterval(() => {
       setRotation((prevRotation) => prevRotation - 72);
       setColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
     }, 6000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -47,18 +34,25 @@ const Pentagon = () => {
     transition: 'transform 2s ease-in-out'
   };
 
-  // ✅ Prevent SSR mismatch
   if (!hasMounted) return null;
 
   return (
     <svg width="200" height="200">
+      {/* 🔽 Add blur filter definition */}
+      <defs>
+        <filter id="blur-filter" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+        </filter>
+      </defs>
+
       <polygon
         points={points.map((point) => `${point.x},${point.y}`).join(' ')}
-        fill='rgba(0,0,0,0)'
+        fill="rgba(0,0,0,0)"
         stroke={colors[colorIndex]}
         strokeWidth="80"
         strokeLinejoin="round"
         style={rotationStyle}
+        filter="url(#blur-filter)" // 🔽 Apply blur filter
       />
     </svg>
   );

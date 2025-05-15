@@ -45,3 +45,16 @@
     padding: 1px;
     font-weight: normal;
 }
+
+.blurcircle {
+  top: 10px;
+  left: 10px; /* Optional: specify horizontal position */
+  
+  width: 240px;
+  height: 190px; /* Make it a circle by equal width & height */
+
+  background-color: rgba(255, 0, 0, 0.829); /* Semi-transparent red */
+
+  border-radius: 50%;
+  backdrop-filter: blur(10px); /* Creates the blur effect on background */
+}
