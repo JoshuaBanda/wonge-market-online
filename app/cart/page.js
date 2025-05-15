@@ -214,20 +214,13 @@ try {
         user
       ]);
 
-      const updateCart=async()=>{
-        try{
-            const res=await axios.get(`http://localhost3001/cart`);
-        }
-        catch(error){
-            console.error("error updating cart",error);
-        }
-      }
+ 
 
 
       const notifyCustomer= async(inventoryIds)=>{
       
             try {
-              await axios.post(`http://localhost:3001/notifications/notify-customer`, {
+              await axios.post(`https://wonge-backend.onrender.com/notifications/notify-customer`, {
                 user_id: user.userid,
                 inventory_ids: inventoryIds,
               });
@@ -349,6 +342,7 @@ try {
     
 
      const handleDelete = async (cartId) => {
+      //check if iem is not ordered yet
         try {
             // Optimistically remove the item from the state
             setCartItems(cartItems.filter(item => item.id !== cartId));
