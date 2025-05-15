@@ -13,12 +13,12 @@ const Pentagon = () => {
   const colors = [
     
     
-    "rgba(116, 230, 238, 0.93)",
+    "orangered",
     
-    "rgba(116, 230, 238, 0.93)",
-    "rgba(116, 230, 238, 0.93)",
-    "rgba(116, 230, 238, 0.93)",
-    "rgba(116, 230, 238, 0.93)",
+    "orangered",
+    "orangered",
+    "orangered",
+    "orangered",
 
     
   ];

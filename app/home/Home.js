@@ -9,6 +9,7 @@ import style from "../Styles/HomeItems.module.css";
 import { useUser } from "../userContext";
 import BestProducts from "./BestProducts";
 import Test from "../test/page";
+import Header from "./Header";
 
 const HomePage = ({user}) => {
   const {person}=useUser();
@@ -86,8 +87,7 @@ useEffect(() => {
 
 
       
-      <Test/>
-
+        <Header/>
 {/*      <div className={styles.itemsListContainer}>
           <ul>
             {items.map((item, index) => {
@@ -144,7 +144,7 @@ useEffect(() => {
             //fontFamily: 'DM Sans, sans-serif',
             //color: 'rgba(255, 255, 255, 0.9)',
             
-    background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent)',
+    //background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent)',
           }}
           className="myColor">
            Top {selectedItem}

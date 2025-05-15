@@ -23,9 +23,10 @@ function AnimatedWord() {
         position:"fixed",
         top:"0px",
         left:"0px",
-        width:"250px",
+        width:"300px",
+        padding:"20px 10px",
         
-        fontSize:"75%"
+        fontSize:"100%"
         }}
     >
       <motion.span

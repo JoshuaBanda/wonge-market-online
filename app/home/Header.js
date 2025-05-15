@@ -3,10 +3,13 @@ import Image from 'next/image';
 import styles from '../Styles/header.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import NavBarItemList from './HeaderItemFlow';
+import AnimatedWord from '@/components/AnimatedWord';
 const Header = () => {
     return (
         <div className={styles.main}>
-        <h2 className={styles.tittle}>Wonge Market Online</h2>
+        <div className={styles.tittle}>
+            <AnimatedWord/>
+        </div>
             <div>
                 
             <NavBarItemList/>
@@ -31,11 +34,11 @@ const Header = () => {
                         }}
                 >
                     <Image
-                        src='/avon3_with_no_bg.png'
+                        src='/wonge5_with_no_bg.png'
                         alt='w'
                         quality={100}
                         width="220"
-                        height="190"
+                        height="160"
                         sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
                         priority
                     />
@@ -71,7 +74,7 @@ const Header = () => {
             
             <div className={styles.imageContainerTwo}>
 
-
+{/*
             <motion.div className={styles.imageContainerTextTwo}
                 
                 initial={{
@@ -126,7 +129,7 @@ const Header = () => {
                         priority
                     />
                 </motion.div>
-
+*/}
             </div>
             
         </div>

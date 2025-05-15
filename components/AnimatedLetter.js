@@ -20,7 +20,6 @@ function AnimatedLetter({ letter }) {
       variants={letterChildVariants}
       style={{
         position:"relative",
-        color: 'black',
         display: 'inline-block',
         cursor: 'pointer',
         textShadow: '0 -3px 1px rgba(0,0,0,0.3)',

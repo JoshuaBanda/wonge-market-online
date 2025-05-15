@@ -12,11 +12,11 @@ const PentagonTwo = () => {
 
   const colors = [
     
-        "rgba(0,0,0, 0.9)",
-        "rgba(0,0,0, 0.9)",
-       "rgba(0,0,0, 0.9)",
-       "rgba(0,0,0, 0.9)",
-       "rgba(0,0,0, 0.9)",
+        "white",
+        "white",
+       "white",
+       "white",
+       "white",
     
   ];
 
