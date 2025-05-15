@@ -11,8 +11,13 @@ body {body {
   padding: 0;
   width: 100vw;
   height: 100vh;
+  color: black;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-amarath);
+  
 
-  background-image: url('/wonge48.jpg');
+  /*background-image: url('/wonge48.jpg');*/
   background-size: cover;             /* Ensures the image covers the entire screen */
   background-repeat: no-repeat;
   background-position: center;
@@ -55,15 +60,6 @@ body {body {
   100% { background-image: url("/wonge1.jpg");
   }
 }
-body {
-  color: black;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-amarath);
-  
-}
-
 .special-element {
   font-family: var(--font-lovers);
 }
@@ -76,6 +72,7 @@ body {
   background-attachment: fixed;
   backdrop-filter: blur(20px);
   min-height: 100vh;
+  width: 100vw;
   position: relative;
   top: 0px;
   bottom: 0px;
