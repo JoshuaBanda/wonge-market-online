@@ -22,7 +22,7 @@ const Spinner = () => {
     <>
       <motion.div style={{
         margin:'auto',
-        backgroundColor:'rgba(255,255,255,0.5)',
+        backgroundColor:'rgba(65, 57, 63, 0.95)',
         width:'10px',
         height:"10px",
         borderRadius:'50%',

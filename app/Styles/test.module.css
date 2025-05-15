@@ -17,8 +17,8 @@
     mask-repeat: no-repeat;
     mask-position: top, center, bottom;
     mask-size: 100%;
-    background-color: #000000;
-    background-image: url('/blackbackground.jpg');
+    background-color: #fffffffd;
+    background-image: url('/waterfall-chae-son-national-park-lampang-thailand.jpg');
 }
 .aboveMaskBox {
     padding-bottom: var(--mask-head-size);

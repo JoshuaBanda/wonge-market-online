@@ -6,7 +6,8 @@ import { useUser } from "../userContext";
 import axios from "axios";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaTrash } from "react-icons/fa";
+import Spinner from "../home/Spinning";
 const Cart = () => {
     
     const [cartItems,setCartItems]=useState([]);
@@ -27,96 +28,152 @@ const Cart = () => {
 
 
     const handleQuantityReduction = async (itemToUpdate, indexToUpdate) => {
-      
-      if (itemToUpdate.status === "ordered") {
-        console.warn("Cannot modify an ordered item.");
-        return;
-      }
-      
-      if (itemToUpdate.quantity <= 1) {
-        console.warn("Quantity can't be less than 1");
-        return;
-      }
-    
-      const updatedCart = cartItems.map(item =>
-        item.id === itemToUpdate.id
-          ? { ...item, quantity: item.quantity - 1 }
+  // Prevent modifying ordered items
+  if (itemToUpdate.status === "ordered") {
+    console.warn("Cannot modify an ordered item.");
+    return;
+  }
+
+  // Prevent quantity from going below 1
+  if (itemToUpdate.quantity <= 1) {
+    console.warn("Quantity can't be less than 1");
+    return;
+  }
+
+  // Optimistically update local state (UI update)
+  const updatedCart = cartItems.map(item =>
+    item.id === itemToUpdate.id
+      ? { ...item, quantity: item.quantity - 1 }
+      : item
+  );
+
+  // Get the updated item from the cart after the optimistic update
+  const updatedItem = updatedCart.find(item => item.id === itemToUpdate.id);
+  console.log("Updated item after optimistic update:", updatedItem);
+
+  // Set the new cart state
+  setCartItems(updatedCart);
+
+  try {
+    // 1. Send update request to server
+    const result = await updateRequest(updatedItem.inventory_id, updatedItem.quantity, updatedItem.id);
+
+    // Log the server response for debugging
+    console.log(`Server response: ${JSON.stringify(result, null, 2)}`);
+
+    // 2. Handle the server response (which is an array of items)
+    if (Array.isArray(result) && result.length > 0) {
+      const updatedServerItem = result[0]; // Assuming there's only one updated item in the array
+      console.log("Server update successful, updating cart...");
+
+      // Update cart with the server's response
+      const updatedCartFromServer = cartItems.map(item =>
+        item.id === updatedServerItem.id
+          ? { ...item, quantity: updatedServerItem.quantity }  // Assuming `updatedServerItem` contains the updated quantity
           : item
       );
+      setCartItems(updatedCartFromServer);
+      console.log("Update succeeded and UI synced with server:", JSON.stringify(updatedCartFromServer, null, 2));
+    } else {
+      // Rollback if backend update fails silently (or if result doesn't have the expected structure)
+      console.warn("Update failed, rolling back to optimistic state");
+      setCartItems(cartItems);  // Rollback
+    }
+  } catch (error) {
+    // Rollback in case of error
+    setCartItems(cartItems);
+    console.error("Update failed, rolled back", error);
+  }
+};
+
+const handleQuantityIncrement = async (itemToUpdate, indexToUpdate) => {
+  // Prevent modifying ordered items
+  if (itemToUpdate.status === "ordered") {
+    console.warn("Cannot modify an ordered item.");
+    return;
+  }
+
+  // Prevent quantity exceeding limit
+  if (itemToUpdate.quantity >= 100) {
+    console.warn("Quantity can't be greater than 100");
+    return;
+  }
+
+  // Optimistically update local state (UI update)
+  const optimisticCart = cartItems.map(item =>
+    item.id === itemToUpdate.id
+      ? { ...item, quantity: item.quantity + 1 }
+      : item
+  );
+  setCartItems(optimisticCart);
+  console.log("Optimistically updated local cart:", JSON.stringify(optimisticCart, null, 2));
+
+  try {
+    // 1. Send update request to server
+    const result = await updateRequest(
+      itemToUpdate.inventory_id,
+      itemToUpdate.quantity + 1,
+      itemToUpdate.id
+    );
     
-      const updatedItem = updatedCart.find(item => item.id === itemToUpdate.id);
-      console.log("updated item", updatedItem);
-    
-      setCartItems(updatedCart);
-    
-      try {
-        const result = await updateRequest(updatedItem.inventory_id, updatedItem.quantity,updatedItem.id);
-        if (result) {
-          console.log("Update succeeded");
-        } else {
-          // Optional: rollback state if backend failed but no error thrown
-          setCartItems(cartItems); // reset to original
-          console.warn("Update failed without error");
-        }
-      } catch (error) {
-        // Rollback state on failure
-        setCartItems(cartItems); // reset to original
-        console.error("Update failed, rolled back", error);
-      }
-    };
-    
-    const handleQuantityIncrement = async (itemToUpdate, indexToUpdate) => {
-      if (itemToUpdate.status === "ordered") {
-        console.warn("Cannot modify an ordered item.");
-        return;
-      }
-      if (itemToUpdate.quantity >= 100 && itemToUpdate) {
-        console.warn("Quantity can't be greter than 10");
-        return;
-      }
-    
-      const updatedCart = cartItems.map(item =>
-        item.id === itemToUpdate.id
-          ? { ...item, quantity: item.quantity + 1 }
+    // Log the response from the server
+    console.log(`Server response: ${JSON.stringify(result, null, 2)}`);
+
+    // 2. Handle server response, which is an array of items
+    if (Array.isArray(result) && result.length > 0) {
+      const updatedItem = result[0]; // Assuming there's only one updated item in the array
+      console.log("Server update successful, updating cart...");
+
+      // Update cart with the server's response
+      const updatedCartFromServer = cartItems.map(item =>
+        item.id === updatedItem.id
+          ? { ...item, quantity: updatedItem.quantity }  // Assuming `updatedItem` contains the updated quantity
           : item
       );
-    
-      const updatedItem = updatedCart.find(item => item.id === itemToUpdate.id);
-      console.log("updated item", updatedItem);
-    
-      setCartItems(updatedCart);
-    
-      try {
-        const result = await updateRequest(updatedItem.inventory_id, updatedItem.quantity,updatedItem.id);
-        if (result) {
-          console.log("Update succeeded");
-        } else {
-          // Optional: rollback state if backend failed but no error thrown
-          setCartItems(cartItems); // reset to original
-          console.warn("Update failed without error");
-        }
-      } catch (error) {
-        // Rollback state on failure
-        setCartItems(cartItems); // reset to original
-        console.error("Update failed, rolled back", error);
-      }
-    };
+      setCartItems(updatedCartFromServer);
+      console.log("Update succeeded and UI synced with server:", JSON.stringify(updatedCartFromServer, null, 2));
+    } else {
+      // Rollback if backend update fails silently (or if result doesn't have the expected structure)
+      console.warn("Update failed, rolling back to optimistic state");
+      setCartItems(cartItems);  // Rollback
+    }
+  } catch (error) {
+    // Rollback in case of error
+    setCartItems(cartItems);
+    console.error("Update failed, rolled back", error);
+  }
+};
+
 
 
     const updateRequest = async (inventoryId, newQuantity,cartId) => {
-      try {
-        const response = await axios.patch("https://wonge-backend.onrender.com/cart/cart-quantity", {
-          inventory_id: inventoryId,
-          quantity: newQuantity,
-          id:cartId,
-          
-        });
-    
-        console.log("Successfully updated:", response.data);
-        return true;
-      } catch (error) {
-        console.error("Error updating item quantity:", error.response?.data || error.message);
-      }
+try {
+  const response = await axios.patch("https://wonge-backend.onrender.com/cart/cart-quantity", {
+    inventory_id: inventoryId,
+    quantity: newQuantity,
+    id: cartId,
+  });
+
+  // Check if response indicates success
+  if (response.status === 200) {
+    console.log("Successfully updated:", response.data);
+    return response.data;
+  } else {
+    console.error("Unexpected response status:", response.status, response.data);
+  }
+} catch (error) {
+  // Enhanced error handling
+  if (error.response) {
+    // Server responded with a status other than 2xx
+    console.error("Error updating item quantity:", error.response.data);
+  } else if (error.request) {
+    // No response was received
+    console.error("No response received from server:", error.request);
+  } else {
+    // Something else went wrong during the setup
+    console.error("Error during request setup:", error.message);
+  }
+}
     };
     
 
@@ -132,6 +189,10 @@ const Cart = () => {
       
       useEffect(()=>{
         //fetch cart items
+               if (!user?.userid) {
+    // Optionally display a loading or error message if `user.userid` is not available yet
+          return;
+        }
         const fetchData=async()=>{
             try{
                 
@@ -163,6 +224,22 @@ const Cart = () => {
       }
 
 
+      const notifyCustomer= async(inventoryIds)=>{
+      
+            try {
+              await axios.post(`http://localhost:3001/notifications/notify-customer`, {
+                user_id: user.userid,
+                inventory_ids: inventoryIds,
+              });
+              console.log(`item id ${inventoryIds}`)
+              console.log('Customer notified successfully.');
+            } catch (notificationError) {
+              console.error('Error notifying customer:', notificationError);
+              // Optionally handle rollback or retry logic here
+            }
+          
+      }
+
       const makeOrder = async () => {
           
         setLoadingOrder(true);
@@ -179,12 +256,12 @@ const Cart = () => {
         
         try {
           const res = await axios.patch(`https://wonge-backend.onrender.com/cart/order/`, {
-            user: user.userid,
+            user_id: user.userid,
             status: "ordered",
             inventory_ids: inventoryIds,
           });
-      
-        //  console.log("response", res.data);
+          
+
           
           // Create a map of updated items from the response for quick lookup
           const updatedItemsMap = new Map(
@@ -201,10 +278,15 @@ const Cart = () => {
                   status: updatedItemsMap.get(item.id)
                 };
               }
+              
               return item;
             })
           );
-          
+                 if (res.status === 200 || res.status === 201) {
+  await notifyCustomer(inventoryIds);
+  console.log("notifying customer");
+}
+
         } catch (error) {
           console.error("error updating cart", error);
         } finally {
@@ -265,6 +347,30 @@ const Cart = () => {
       return total + (item.inventory.price * item.quantity);
     }, 0);
     
+
+     const handleDelete = async (cartId) => {
+        try {
+            // Optimistically remove the item from the state
+            setCartItems(cartItems.filter(item => item.id !== cartId));
+
+            // Send DELETE request to the backend
+            const response = await axios.delete(`https://wonge-backend.onrender.com/cart/remove-item/${user.userid}/${cartId}`);
+
+            // If successful, the item is deleted
+            if (response.status === 200) {
+                console.log("Item deleted successfully");
+            } else {
+                // If something went wrong, re-fetch the cart items to get the correct state
+                const res = await axios.get(`https://wonge-backend.onrender.com/cart/get-cart-items/${user.userid}`);
+                setCartItems(res.data);
+            }
+        } catch (error) {
+            console.error("Error deleting cart item:", error);
+            // Revert the optimistic update if there's an error
+            const res = await axios.get(`https://wonge-backend.onrender.com/cart/get-cart-items/${user.userid}`);
+            setCartItems(res.data);
+        }
+    };
     
       const itemsInCart=cartItems.map((item,index)=>{
         return(
@@ -338,9 +444,19 @@ const Cart = () => {
                                 <FaArrowRight/>
                             </div>
                         </div>
-                              
                     </div>
 
+
+                        <div
+                            className={styles.deleteButton}
+                        >
+                          <div 
+                            onClick={() => handleDelete(item.id)}>
+                            
+                            <FaTrash color="#222"/> <span>Remove</span>
+                          </div>
+                        </div>
+                              
                    
                 </div> 
                     
@@ -380,6 +496,7 @@ const Cart = () => {
                           position:"relative",margin:"20px",display:"flex",
                         }}>
                         Your Cart is empty
+                        <div style={{margin:"80px 50px"}}> <Spinner/></div>
                         </h3>
                         </div>
                     </>

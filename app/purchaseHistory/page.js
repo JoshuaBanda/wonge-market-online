@@ -25,6 +25,10 @@ const PurchaseHistory = () => {
 
   // Fetch cart items
   useEffect(() => {
+                   if (!user?.userid) {
+    // Optionally display a loading or error message if `user.userid` is not available yet
+          return;
+        }
     const fetchData = async () => {
       if (!user?.userid) return;
 console.log("hi")
