@@ -46,13 +46,13 @@ body {body {
 }
 
 @keyframes swappic {
-  0% { background-image: url("/wonge48.jpg");
+  0% { background-image: url("/wonge1.jpg");
   }
-  50% { background-image: url("/wonge48.jpg");
+  50% { background-image: url("/wonge1.jpg");
     
   }
   
-  100% { background-image: url("/wonge48.jpg");
+  100% { background-image: url("/wonge1.jpg");
   }
 }
 body {
@@ -70,7 +70,7 @@ body {
 
 .blur-wrapper {
   position: relative;
-  /*background-image: url('/wonge24.jpg');*/
+  /*background-image: url('/wonge1.jpg');*/
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
