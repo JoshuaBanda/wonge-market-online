@@ -25,7 +25,7 @@ body {body {
   background-color: #fafafa;
 
   overflow-x: hidden;
-  animation: swappic 60s infinite;    /* Your animation */
+  /*animation: swappic 60s infinite;    /* Your animation */
  z-index: 1;
 }
 

@@ -16,10 +16,11 @@ const HomeOptions = ({text,myBackgroudColor,myTextColor}) => {
                     //backgroundColor:myBackgroudColor,
                     //color:myTextColor,
                     //padding:"4px 10px",
+                    //margin:"0px 0px 0px 0px",
                     //fontSize:'18px'
 
                 }}
-                
+                //className={styles.card}
                 >
                     {text}
                 </div>

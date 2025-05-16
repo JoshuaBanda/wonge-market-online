@@ -85,9 +85,10 @@ useEffect(() => {
     <>
       <div className={styles.container}>
 
-
+        <div>
+          
+        </div>
       
-        <Header/>
 {/*      <div className={styles.itemsListContainer}>
           <ul>
             {items.map((item, index) => {

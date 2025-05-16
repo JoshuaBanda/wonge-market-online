@@ -1,15 +1,15 @@
 .container {
     position: relative;
-    background: rgba(3, 3, 3, 0.3);
+    background: #ebebeb;
     
-    border: 1px solid rgba(0, 0, 0, 0.096);
+    border: 1px solid #ebebeb;
     border-radius: 10px;
     margin:25px 8% 60px 8%;
     width: 120px;
     height: 200px;
     flex-shrink: 0;
-    box-shadow: -5px 10px 15px rgba(31, 30, 30, 0.3);
-    color: #ffffff;
+    box-shadow: -5px 5px 5px rgba(31, 30, 30, 0.3);
+    color: black;
 
 }
 
