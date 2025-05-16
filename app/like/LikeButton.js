@@ -117,10 +117,10 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
             border: '1px solid rgba(255,255,255,0.2)',
             cursor: isLoading ? 'not-allowed' : 'pointer',
             color: isLiked ? 'black' : 'black',
-            overflow:'visible',width:'100px',
+            overflow:'visible',width:'80px',
             borderRadius:'10px',
             height:'22px',backdropFilter:'blur(10px)',
-            boxShadow:'-2px 1px 5px rgba(0,0,0,0.5)'
+            boxShadow:'-2px 1px 2px rgba(0,0,0,0.5)',
           }}
         >
         {
@@ -144,11 +144,11 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
   display: "flex",
   alignItems: "center",      // vertically center items
   justifyContent: "center",
-  color:isLiked?"rgba(255,0,0,0.8)":"grey"
+  color:isLiked?"black":"grey"
 }}
 
           >
-          <div style={{fontSize:"18px",color:"silver"}} className={styles.like}>
+          <div style={{fontSize:"18px",color:"black"}} className={styles.like}>
           {likeCount}&nbsp;
           </div>
           <div>

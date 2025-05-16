@@ -1,14 +1,14 @@
 .container {
     position: relative;
-    background: #ebebeb;
+    background: #cececece;
     
-    border: 1px solid #ebebeb;
+    border: 1px solid #cececece;
     border-radius: 10px;
     margin:25px 8% 60px 8%;
     width: 120px;
     height: 200px;
     flex-shrink: 0;
-    box-shadow: -5px 3px 3px rgba(31, 30, 30, 0.3);
+    box-shadow: -2px 1px 1px rgba(31, 30, 30, 0.1);
     color: black;
 
 }
@@ -72,9 +72,7 @@
 .likeButton{
     position: absolute;
     top:10px;
-    left: 10%;
-    height: 3px;
-    width: 35px;
+    left: 0%;
     display: flex;
     justify-content: center;
 }
@@ -86,5 +84,5 @@
 
 .like{
     
-    font-family: var(--font-beauRivage);
+    font-family:var(--font-poppins);
 }

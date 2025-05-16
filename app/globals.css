@@ -14,7 +14,7 @@ body {body {
   color: black;
   margin: 0;
   padding: 0;
-  font-family: var(--font-amarath);
+    font-family:var(--font-poppins);
   
 
   /*background-image: url('/wonge48.jpg');*/
@@ -32,7 +32,7 @@ body {body {
 }.myColor {
   animation: changeTextColor 60s infinite;
   color: var(--textc);
-  font-family: var(--font-gudea);
+    font-family:var(--font-poppins);
   text-shadow: -4px 2px 4px rgba(90, 39, 39, 0.233);
   font-weight: bold;
   font-size: 25px;

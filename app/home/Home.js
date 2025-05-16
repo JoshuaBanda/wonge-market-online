@@ -145,7 +145,7 @@ useEffect(() => {
             //fontFamily: 'DM Sans, sans-serif',
             //color: 'rgba(255, 255, 255, 0.9)',
             
-    //background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent)',
+            //background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent)',
           }}
           className="myColor">
            Top {selectedItem}
