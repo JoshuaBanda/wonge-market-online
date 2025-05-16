@@ -11,13 +11,13 @@
     padding: 0.5em;
     width: 80px;
     height: 30px;
-    background-color:black;
+    background-color:#fff;
     display: flex; 
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     position: relative;
-    color: white;
+    color: black;
   }
 
   
@@ -36,13 +36,13 @@
   margin: 0 auto;
   padding: 0.5em;
   width: 80px;
-  background-color: black;
+  background-color: #fff;
   display: flex; 
   justify-content: center;
   align-items: center;
   border-radius: 20px;
   position: relative;
-  color: white;
+  color: black;
   height: 30px;
 }
 
@@ -56,7 +56,7 @@
   height: 105%;
   z-index: -1;
   border-radius: 20px;
-  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(0, 0, 0));
+  background-image: conic-gradient(from var(--angleitem), rgb(231, 231, 231),transparent,transparent,rgb(255, 0, 43));
   animation: 5s spins linear infinite;
 }
 .item::before{

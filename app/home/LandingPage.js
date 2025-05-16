@@ -133,7 +133,7 @@ const LandingPage = ({user}) => {
                         x:-30,y:60,
                     }}
                     animate={{
-                        opacity:1,
+                        opacity:0.7,
                         //y:5,
                         scale:[2.0,2.01],
                     }}
@@ -146,13 +146,14 @@ const LandingPage = ({user}) => {
                         }}
                 >
                     <Image
-                        src='/wonge5_with_no_bg.png'
+                        src={item.imgSrc}
                         alt='w'
                         quality={100}
                         width="120"
                         height="80"
                         sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
                         priority
+                        style={{zIndex:-10}}
                     />
                 </motion.div>
 
