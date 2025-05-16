@@ -84,9 +84,8 @@ const BestProducts = () => {
     flexDirection: 'column',
     alignItems: 'center',
     gap: '8px',
-    color: '#2d3748', // Default dark color
+    color: 'black', // Default dark color
     textShadow: '1px 1px 3px rgba(0,0,0,0.1)',
-    background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent)',
     borderRadius: '4px'
   }}
   className="myColor"
@@ -94,7 +93,7 @@ const BestProducts = () => {
   Best Products
   <span style={{
     fontWeight: 'normal',
-    color: '#4a5568',
+    color: 'black',
     maxWidth: '80%',
     lineHeight: '1.4'
   }}

@@ -137,10 +137,9 @@ useEffect(() => {
         <div 
           style={{
             position: 'relative',
-            margin: '20px 0px 0px 0px',
+            margin: '20px 0px 0px 20px',
             bottom:'0px',
-            textAlign: 'center',
-            fontSize: '30px',
+            fontSize: '20px',
             fontWeight: 'bold',
             //fontFamily: 'DM Sans, sans-serif',
             //color: 'rgba(255, 255, 255, 0.9)',
@@ -148,7 +147,7 @@ useEffect(() => {
             //background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent)',
           }}
           className="myColor">
-           Top {selectedItem}
+           New {selectedItem} Arrivals
           </div>
           
        <AnimatePresence>

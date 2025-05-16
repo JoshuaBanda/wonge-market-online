@@ -33,20 +33,18 @@ body {body {
   animation: changeTextColor 60s infinite;
   color: var(--textc);
     font-family:var(--font-poppins);
-  text-shadow: -4px 2px 4px rgba(90, 39, 39, 0.233);
   font-weight: bold;
-  font-size: 25px;
 }
 
 @keyframes changeTextColor {
   0% {
-    --textc: #222;
+    --textc: black;
   }
   50% {
-    --textc: #333;
+    --textc: black;
   }
   100% {
-    --textc: #222;
+    --textc: black;
   }
 }
 
