@@ -104,7 +104,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
 
   // Map over the items to create the list of items
   const homeItems = Array.isArray(items) && items.map((item,index) => (
-    <motion.div key={item.id} className={styles.container}
+    <motion.div key={item.id} className={styles.container} id="customizedbackground"
       initial={{
         x:0,y:0
       }}

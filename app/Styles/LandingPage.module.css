@@ -17,7 +17,6 @@
 }
 .icon1{
     left: 10px;
-    background-color: black;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -51,7 +50,7 @@
     margin: 10px;
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 400px;
     
     font-family:var(--font-poppins);
 
@@ -67,8 +66,8 @@
     position: relative;
     margin:0px  5px;
     font-weight:semi-bold;
-    color: #666666;
     font-size: 20px;
+    font-family: var(--font-bonheurRoyale);
     
 
 }
@@ -143,7 +142,6 @@
   display: flex;
   overflow: hidden;
   cursor: pointer;
-  background-color: #cececece;
   margin-left: 20px;
 }
   

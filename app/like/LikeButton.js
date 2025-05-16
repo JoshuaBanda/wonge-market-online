@@ -116,11 +116,11 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
             background: isLiked ? 'rgba(248, 248, 248, 0.9)' : 'rgba(248, 248, 248, 0.9)',
             border: '1px solid rgba(255,255,255,0.2)',
             cursor: isLoading ? 'not-allowed' : 'pointer',
-            color: isLiked ? 'black' : 'black',
+            color: isLiked ? 'black' : 'grey',
             overflow:'visible',width:'80px',
             borderRadius:'10px',
             height:'22px',backdropFilter:'blur(10px)',
-            boxShadow:'-2px 1px 2px rgba(0,0,0,0.5)',
+            boxShadow:'-1px 1px 1px rgba(0,0,0,0.025)',
           }}
         >
         {

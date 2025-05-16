@@ -50,7 +50,7 @@ useEffect(() => {
       index=0;
       //clearInterval(interval); // Stop after last item
     }
-  }, 60000); // Change every 60 seconds
+  }, 300000); // Change every 5 minutes seconds
 
   return () => clearInterval(interval); // Cleanup on unmount or search change
 }, [search]);
@@ -139,7 +139,7 @@ useEffect(() => {
             position: 'relative',
             margin: '20px 0px 0px 20px',
             bottom:'0px',
-            fontSize: '20px',
+            fontSize: '16px',
             fontWeight: 'bold',
             //fontFamily: 'DM Sans, sans-serif',
             //color: 'rgba(255, 255, 255, 0.9)',

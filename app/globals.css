@@ -98,3 +98,10 @@ a {
   height: 100vh;
 
 }
+
+#customizedbackground{
+  background-color: rgb(255, 174, 51);
+}
+#customizedColor{
+  color:rgb(255, 174, 51);
+}

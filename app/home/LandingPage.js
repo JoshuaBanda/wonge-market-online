@@ -49,7 +49,7 @@ const LandingPage = ({user}) => {
     <div className={styles.container}>
       {/* Top Icons */}
       <section className={styles.iconContainer}>
-        <div className={styles.icon1}>
+        <div className={styles.icon1} id="customizedbackground">
           <FaBarsStaggered className={styles.inIcon} />
         </div>
         <div className={styles.icon2}>
@@ -60,7 +60,8 @@ const LandingPage = ({user}) => {
       {/* Branding */}
       <div className={styles.topBranding}>
         <span className={styles.welcome}>Welcome,</span>
-        <span className={styles.brandName}>Our Online App</span>
+        <span className={styles.brandName} id="customizedColor">
+        Wonge Online Market</span>
       </div>
 
       {/* Search Bar */}
@@ -98,7 +99,7 @@ const LandingPage = ({user}) => {
               const myTextColor = isSelected ? "#333" : "white";
 
               return (
-                <motion.li
+                <motion.li id="customizedbackground"
                   key={index}
                   initial={{ opacity: 0, x: -300 }}
                   animate={{ opacity: 1, x: 0 }}

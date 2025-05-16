@@ -58,7 +58,7 @@ export default function ClientFetcher({ productName }) {
   const Products=items.map((item,index)=>{
     return(
         <li key={index}>
-            <motion.div key={item.id} className={styles.container}
+            <motion.div key={item.id} className={styles.container} id='customizedbackground'
                 initial={{
                     x:0,y:0
                 }}
