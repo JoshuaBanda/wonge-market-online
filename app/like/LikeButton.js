@@ -113,21 +113,21 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
           disabled={isLoading}
           style={{
             
-            background: isLiked ? 'rgba(31, 31, 31, 0.4)' : 'rgba(44, 44, 44, 0.18)',
+            background: isLiked ? 'rgba(248, 248, 248, 0.9)' : 'rgba(248, 248, 248, 0.9)',
             border: '1px solid rgba(255,255,255,0.2)',
             cursor: isLoading ? 'not-allowed' : 'pointer',
-            color: isLiked ? '#333' : '#333',
+            color: isLiked ? 'black' : 'black',
             overflow:'visible',width:'100px',
             borderRadius:'10px',
             height:'22px',backdropFilter:'blur(10px)',
-            boxShadow:'-2px 6px 10px rgba(0,0,0,0.5)'
+            boxShadow:'-2px 1px 5px rgba(0,0,0,0.5)'
           }}
         >
         {
           likeCount==0?(<>
             
           <div>
-            <FaHeart size={18} color='silver'/>
+            <FaHeart size={18}/>
           </div>
           </>
 
@@ -144,7 +144,7 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
   display: "flex",
   alignItems: "center",      // vertically center items
   justifyContent: "center",
-  color:isLiked?"white":"silver"
+  color:isLiked?"rgba(255,0,0,0.8)":"grey"
 }}
 
           >

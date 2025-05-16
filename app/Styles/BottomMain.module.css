@@ -1,9 +1,9 @@
 .main {
     position: fixed;
-    background-color: rgba(22, 22, 22, 0.4);
+    background-color: white;
     width: 90%;
     height: 60px;
-    bottom: 1%;
+    bottom: 2%;
     left: 50%; /* push to the center */
     transform: translateX(-50%); /* pull it back 50% of its own width */
     z-index: 1000;
@@ -11,7 +11,7 @@
     padding: 10px;
     display: flex;
     backdrop-filter: blur(5px);
-    border:1px solid rgba(209, 208, 208, 0.322);
+    border:1px solid white;
     box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
     
   }
@@ -34,7 +34,7 @@
   .icons {
     position: relative;
     top:0px;
-    color: #fff;
+    color: #111;
     transition: transform 0.2s ease, color 0.2s ease;
     font-size: 20px;
     font-weight: lighter;

@@ -59,11 +59,11 @@
     margin: 30px 10px;
     border-radius: 10px;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #ebebeb;
     padding: 20px 1px;
     
-    box-shadow:1px  1px 5px 1px rgba(2, 2, 2, 0.2) ;
-    color: white;
+    box-shadow:1px  1px 1px 1px rgba(2, 2, 2, 0.1) ;
+    color: black;
 }
 
   .quantityIn {
