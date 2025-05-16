@@ -87,7 +87,8 @@
   width: fit-content;
   min-width: 30px;
   height: 50px;
-  background-color: #cececece;
+  background-color: #f7f7f7ea;
+  border: 1px solid black;
 }
 
 .inputSearch {
@@ -97,7 +98,7 @@
   
   min-width: 200px;
   height: 45px;
-  background-color: #d6d6d6ce;
+  background-color: #f7f7f7ea;
 }
 
 

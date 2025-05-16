@@ -80,7 +80,7 @@ const BottomMenu = () => {
 
   return (
     <>
-      <motion.div className={styles.main}>
+      <motion.div className={styles.main} id="customizedbackground">
         <div onClick={handleHomeClick}>
           <FaHome className={styles.icons} />
         </div>

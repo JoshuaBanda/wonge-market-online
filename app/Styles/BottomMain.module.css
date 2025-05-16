@@ -1,6 +1,5 @@
 .main {
     position: fixed;
-    background-color: white;
     width: 90%;
     height: 60px;
     bottom: 2%;
@@ -11,7 +10,7 @@
     padding: 10px;
     display: flex;
     backdrop-filter: blur(5px);
-    border:1px solid white;
+    border:1px solid rgba(255, 255, 255, 0.295);
     box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
     
   }
