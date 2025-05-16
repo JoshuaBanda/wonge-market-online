@@ -11,9 +11,9 @@ import HomePage from "./Home";
 
 const LandingPage = ({user}) => {
   const items = [
-    { name: "Avon",imgSrc:'/wonge5_with_no_bg.png',alt:'pic' },
+    { name: "Avon",imgSrc:'/wonge3_with_no_bg.png',alt:'pic' },
     { name: "Earrings",imgSrc:'/wonge5_with_no_bg.png',alt:'pic' },
-    { name: "Brochus" ,imgSrc:'/wonge5_with_no_bg.png',alt:'pic'},
+    { name: "Brochus" ,imgSrc:'/wonge3_with_no_bg.png',alt:'pic'},
     { name: "Perfume" ,imgSrc:'/wonge5_with_no_bg.png',alt:'pic'},
   ];
 

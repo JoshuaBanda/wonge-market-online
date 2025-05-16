@@ -7,13 +7,13 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: #111;
+    background-color: white;
     display: flex; 
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     position: relative;
-    color: white;
+    color: #222;
   }
   
   .card::after ,.card::before {
@@ -26,7 +26,7 @@
     height: 104%;
     z-index: -1;
     border-radius: 20px;
-  background-image: conic-gradient(from var(--angle), rgb(231, 231, 231),transparent,transparent,black);
+  background-image: conic-gradient(from var(--angle), rgb(231, 231, 231),transparent,transparent,rgb(255, 51, 85));
     animation: 5s spin linear infinite;
   }
   .card::before{
@@ -47,13 +47,13 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: #111;
+    background-color: white;
     display: flex; 
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     position: relative;
-    color: white;
+    color: #222;
     z-index: 10
   }
   
@@ -80,12 +80,11 @@
 .contain {
   margin: 0 auto;
   padding: 0.5em;
-  background-color: #111;
   display: flex; 
   justify-content: center;
   align-items: center;
   position: relative;
-  color: white;
+  color: #222;
 }
 
 .contain::after ,.contain::before {
@@ -97,7 +96,7 @@
   width: 101%;
   height: 101%;
   z-index: -1;border-radius: 20px;
-  background-image: conic-gradient(from var(--angle), rgb(231, 231, 231),transparent,transparent,black);
+  background-image: conic-gradient(from var(--angle), rgb(231, 231, 231),transparent,transparent,rgb(255, 51, 85));
   animation: 3s spin linear infinite;
 }
 .contain::before{
@@ -108,12 +107,13 @@
 .containR {
   margin: 0 auto;
   padding: 0.5em;
-  background-color: #111;
+  background-color: white;
+  
   display: flex; 
   justify-content: center;
   align-items: center;
   position: relative;
-  color: white;
+  color: #222;
   border-bottom-right-radius:20px ;
   border-top-right-radius:20px ;
   height: 450px
@@ -130,7 +130,7 @@
   z-index: -1;
   border-bottom-right-radius:20px ;
   border-top-right-radius:20px ;
-  background-image: conic-gradient(from var(--angle), rgb(231, 231, 231),transparent,transparent,black);
+  background-image: conic-gradient(from var(--angle), rgb(231, 231, 231),transparent,transparent,rgb(255, 0, 43));
   animation: 5s spin linear infinite;
 }
 .containR::before{
@@ -158,13 +158,13 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 100px;
-    background-color: #111;
+    background-color: white;
     display: flex; 
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     position: relative;
-    color: white;
+    color: #222;
   }
   
   .cards::after ,.container::before {
@@ -177,7 +177,7 @@
     height: 103%;
     z-index: -1;
     border-radius: 20px;
-  background-image: conic-gradient(from var(--angle), rgb(231, 231, 231),transparent,transparent,black);
+  background-image: conic-gradient(from var(--angle), rgb(231, 231, 231),transparent,transparent,rgb(255, 51, 85));
     animation: 3s spin linear infinite;
   }
   .cards::before{
@@ -190,13 +190,13 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 150px;
-    background-color: #111;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     position: relative;
-    color: white;
+    color: #222;
     border: 1px solid rgba(255, 255, 255, 0.507);
     
     /* Animation properties */
@@ -211,13 +211,13 @@
     margin: 0 auto;
     padding: 0.5em;
     width: 100px;
-    background-color: #111;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     position: relative;
-    color: white;
+    color: #222;
     border: 1px solid rgba(255, 255, 255, 0.733);
     
     /* Animation properties */

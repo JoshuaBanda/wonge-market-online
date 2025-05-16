@@ -45,7 +45,7 @@ export default function LoginPage() {
     borderBottomLeftRadius: isLeftSelected ? '20px' : '20px',
     borderTopRightRadius: isLeftSelected ? '0px' : '0px',
     borderBottomRightRadius: isLeftSelected ? '0px' : '0px',
-    backgroundColor:isLeftSelected?"#111": 'white',
+    backgroundColor:isLeftSelected?"": 'white',
     
     color:isLeftSelected? 'rgba(255,255,255,1)':"rgba(0,0,0)",
   };
@@ -59,7 +59,7 @@ export default function LoginPage() {
     borderTopLeftRadius: isLeftSelected ? '0px' : '0px',
     borderBottomLeftRadius: isLeftSelected ? '0px' : '0px',
     
-    backgroundColor:isLeftSelected? 'white':"#111",
+    backgroundColor:isLeftSelected? 'white':"",
     
     color:isLeftSelected? 'rgba(0,0,0)':"rgba(255,255,255,1)",
   };
@@ -89,7 +89,7 @@ export default function LoginPage() {
             width: '90%',
             alignItems: 'stretch',
             borderRadius:"20px",
-            boxShadow:"1px 1px 10px 1px rgba(0,0,0,0.5)"
+            boxShadow:"1px 1px 10px 1px rgba(0,0,0,0.5)",
           }}
           className={showClass ? styles.contain : ''}
         >
@@ -100,6 +100,8 @@ export default function LoginPage() {
             }}
             
             className={isLeftSelected ? styles.inActiveContainer : styles.inActiveContainer}
+            
+            id='customizedbackground'
             onClick={() => handleSelect('left')}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
@@ -139,6 +141,8 @@ export default function LoginPage() {
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={handleDragEnd}
+            
+                id='customizedbackground'
           >
             {!isLeftSelected ? (
               <motion.div

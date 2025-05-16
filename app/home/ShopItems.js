@@ -152,7 +152,7 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
               <div className={styles.price}>
                 <p>MK{item.price}</p>
               </div>
-              <div className={styles.addToCart}>
+              <div className={styles.addToCart} id="customizedbackground">
                 Buy Now <FaShoppingCart style={{
                   fontSize:"18px",margin:"1px 1px 1px 3px"
                 }}/>
