@@ -63,7 +63,6 @@
   }
   
   .productDescription {
-    font-size: 24px;
     font-weight: 500;
     line-height: 1.6;
     margin-bottom: 15px;
@@ -71,10 +70,10 @@
   
     .productDescription span{
       font-weight: bold;
-      font-size: 20px;
+      font-size: 15px;
     }
     .productDescription p {
-      font-size: 15px;
+      font-size: 13px;
       font-weight: lighter;
     }
   .productPrice {
@@ -162,7 +161,7 @@
     padding: 2px 20px;
     gap:25%;
     border-radius: 20px;
-    height: 35px;
+    height: 25px;
     width: 50%;
     max-width: 130px;
     color: black;
@@ -170,10 +169,11 @@
   }
   .quantityIn div{
     position: relative;
-    top: 5px;
+    top: 2px;
   }
 
   .rating{
     position: relative;
-    margin: 25px;
+    margin: 5px;
+    font-size: 13px;
   }
