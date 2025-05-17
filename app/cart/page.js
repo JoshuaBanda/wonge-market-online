@@ -472,7 +472,7 @@ try {
                       <div className={styles.totalcost}>
                         <strong>Total Cost:</strong> Mk {totalCost.toLocaleString()}
                       </div>
-                      <div className={styles.orderall} onClick={makeOrder}>
+                      <div className={styles.orderall} onClick={makeOrder} id="customizedbackground">
                       {loadingOrder?(<>LOADING ...</>):
                           (<>ORDER NOW </>)
                       }

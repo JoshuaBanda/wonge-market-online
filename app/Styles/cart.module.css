@@ -37,12 +37,11 @@
   border-radius: 10px;
 }
 .itemText{
-    width: 60%;
-    
+    position: relative;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    
-    width: 70%;
+    left: -20px;
+    width: 80%;
     border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 .name{
@@ -98,7 +97,7 @@ gap: 5%;
   .price{
     position: relative;
     margin: 0px 30px 0px 30px;
-    
+    font-size: 15px;
   }
 .heading{
   position: relative;
@@ -106,7 +105,6 @@ gap: 5%;
   margin: 10px;
 }
   .orderall{
-    background-color: rgba(0, 0, 0, 0.815);
     padding: 20px;
     width: 150px;
     border-radius: 20px;
@@ -132,6 +130,8 @@ gap: 5%;
   .status{
     position: relative;
     margin:0px 0px 0px 25px;
+    
+    font-size: 15px;
   }
   .status span{
     color: rgb(44, 44, 44);
@@ -139,8 +139,8 @@ gap: 5%;
     padding: 3px 5px;
     margin: 4px;
     border-radius: 10px 2px;
-    font-family: var(--font-beauRivage);
-    font-size: 20px;
+    font-family: var(--font-bonheurRoyale);
+    font-size: 18px;
   }
   .availableNow{
     position: relative;
@@ -159,7 +159,8 @@ gap: 5%;
   padding:2px  1px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  height: 170px;
+  height: 150px;
+  width: 35px;
   color: black;
   align-items: center;
   align-content: center;
