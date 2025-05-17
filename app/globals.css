@@ -1,6 +1,6 @@
 @property --textc {
   syntax: "<color>";
-  initial-value: white;
+  initial-value: rgba(255,255,255);
   inherits: false;
 }
 
@@ -37,16 +37,11 @@ body {body {
 }
 
 @keyframes changeTextColor {
-  0% {
-    --textc: black;
-  }
-  50% {
-    --textc: black;
-  }
-  100% {
-    --textc: black;
-  }
+  0%   { --textc: black; }
+  50%  { --textc: red; }
+  100% { --textc: white; }
 }
+
 
 @keyframes swappic {
   0% { background-image: url("/wonge1.jpg");

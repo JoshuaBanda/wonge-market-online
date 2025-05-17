@@ -157,17 +157,23 @@ console.log("hi")
     }
   };
 
+  
+    const totalCost = cartItems.reduce((total, item) => {
+      return total + (item.inventory.price * item.quantity);
+    }, 0);
+
   const itemsInCart = cartItems.map((item, index) => (
     <li key={index}>
       <motion.div className={styles.imgTwo} 
         onClick={() => handleBuyNow(item)}
+        style={{margin:"0px 20px"}}
       >
         <Image
           src={item.inventory.photo_url}
           alt="product"
           quality={100}
-          width={120}
-          height={120}
+          width={100}
+          height={100}
           sizes="(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw"
           priority
         />
@@ -200,11 +206,11 @@ console.log("hi")
   return (
     <div className={styles.container}>
       <h2 className={styles.tittle}>Purchase History</h2>
+      <div className={styles.totalcost}>
+                        <strong>Total Cost:</strong> Mk {totalCost.toLocaleString()}
+                      </div>
       {cartItems.length > 0 ? (
         <>
-          <div className={styles.orderall} onClick={makeOrder}>
-            {loadingOrder ? "LOADING..." : "ORDER NOW"}
-          </div>
           <ul className={styles.unorderedlist}>
             {itemsInCart}
             <div style={{ position: "relative", height: "150px", backgroundColor: "transparent" }}></div>

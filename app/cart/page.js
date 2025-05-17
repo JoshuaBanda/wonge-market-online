@@ -25,8 +25,13 @@ const Cart = () => {
 
 
     const [quantity,setQuantity]=useState(null);
+    
+  const [deleteOption,setIsdeleteOption]=useState(null);
 
-
+  const handleDoubleClick=(itemIndex)=>{
+    setIsdeleteOption(itemIndex);
+    console.log('handleClick',deleteOption);
+  }
     const handleQuantityReduction = async (itemToUpdate, indexToUpdate) => {
   // Prevent modifying ordered items
   if (itemToUpdate.status === "ordered") {
@@ -49,7 +54,7 @@ const Cart = () => {
 
   // Get the updated item from the cart after the optimistic update
   const updatedItem = updatedCart.find(item => item.id === itemToUpdate.id);
-  console.log("Updated item after optimistic update:", updatedItem);
+ // console.log("Updated item after optimistic update:", updatedItem);
 
   // Set the new cart state
   setCartItems(updatedCart);
@@ -59,12 +64,12 @@ const Cart = () => {
     const result = await updateRequest(updatedItem.inventory_id, updatedItem.quantity, updatedItem.id);
 
     // Log the server response for debugging
-    console.log(`Server response: ${JSON.stringify(result, null, 2)}`);
+   // console.log(`Server response: ${JSON.stringify(result, null, 2)}`);
 
     // 2. Handle the server response (which is an array of items)
     if (Array.isArray(result) && result.length > 0) {
       const updatedServerItem = result[0]; // Assuming there's only one updated item in the array
-      console.log("Server update successful, updating cart...");
+     // console.log("Server update successful, updating cart...");
 
       // Update cart with the server's response
       const updatedCartFromServer = cartItems.map(item =>
@@ -73,7 +78,7 @@ const Cart = () => {
           : item
       );
       setCartItems(updatedCartFromServer);
-      console.log("Update succeeded and UI synced with server:", JSON.stringify(updatedCartFromServer, null, 2));
+     // console.log("Update succeeded and UI synced with server:", JSON.stringify(updatedCartFromServer, null, 2));
     } else {
       // Rollback if backend update fails silently (or if result doesn't have the expected structure)
       console.warn("Update failed, rolling back to optimistic state");
@@ -106,7 +111,7 @@ const handleQuantityIncrement = async (itemToUpdate, indexToUpdate) => {
       : item
   );
   setCartItems(optimisticCart);
-  console.log("Optimistically updated local cart:", JSON.stringify(optimisticCart, null, 2));
+ // console.log("Optimistically updated local cart:", JSON.stringify(optimisticCart, null, 2));
 
   try {
     // 1. Send update request to server
@@ -117,12 +122,12 @@ const handleQuantityIncrement = async (itemToUpdate, indexToUpdate) => {
     );
     
     // Log the response from the server
-    console.log(`Server response: ${JSON.stringify(result, null, 2)}`);
+    //console.log(`Server response: ${JSON.stringify(result, null, 2)}`);
 
     // 2. Handle server response, which is an array of items
     if (Array.isArray(result) && result.length > 0) {
       const updatedItem = result[0]; // Assuming there's only one updated item in the array
-      console.log("Server update successful, updating cart...");
+     // console.log("Server update successful, updating cart...");
 
       // Update cart with the server's response
       const updatedCartFromServer = cartItems.map(item =>
@@ -131,7 +136,7 @@ const handleQuantityIncrement = async (itemToUpdate, indexToUpdate) => {
           : item
       );
       setCartItems(updatedCartFromServer);
-      console.log("Update succeeded and UI synced with server:", JSON.stringify(updatedCartFromServer, null, 2));
+      //console.log("Update succeeded and UI synced with server:", JSON.stringify(updatedCartFromServer, null, 2));
     } else {
       // Rollback if backend update fails silently (or if result doesn't have the expected structure)
       console.warn("Update failed, rolling back to optimistic state");
@@ -156,7 +161,7 @@ try {
 
   // Check if response indicates success
   if (response.status === 200) {
-    console.log("Successfully updated:", response.data);
+   // console.log("Successfully updated:", response.data);
     return response.data;
   } else {
     console.error("Unexpected response status:", response.status, response.data);
@@ -184,7 +189,7 @@ try {
         setUser(person);
       //  console.log('user',user,"person",person);
       },[person]);
-      console.log(cartItems)
+    //  console.log(cartItems)
 
       
       useEffect(()=>{
@@ -224,7 +229,7 @@ try {
                 user_id: user.userid,
                 inventory_ids: inventoryIds,
               });
-              console.log(`item id ${inventoryIds}`)
+             // console.log(`item id ${inventoryIds}`)
               console.log('Customer notified successfully.');
             } catch (notificationError) {
               console.error('Error notifying customer:', notificationError);
@@ -339,6 +344,8 @@ try {
     const totalCost = cartItems.reduce((total, item) => {
       return total + (item.inventory.price * item.quantity);
     }, 0);
+
+    
     
 
      const handleDelete = async (cartId) => {
@@ -368,24 +375,14 @@ try {
     
       const itemsInCart=cartItems.map((item,index)=>{
         return(
-            <li key={index}>
+            <li key={index}
+            onDoubleClick={()=>handleDoubleClick(index)}
+            >
                 
                 <motion.div className={styles.imgTwo}
-                    /*initial={{
-                        x:0,y:0,
-                    }}
-                    animate={{
-                        opacity:1,
-                        //y:5,
-                        scale:[1,1.05],
-                    }}
-                    transition={{
-                        type: 'tween',
-                        stiffness: 200,
-                        repeat: Infinity, 
-                        repeatType:'reverse',
-                        duration:2
-                        }}*/
+                 style={{
+                  margin:(deleteOption!==index)&&"0 20px"
+                 }} 
                 >
                     <Image
                         src={item.inventory.photo_url}
@@ -444,8 +441,21 @@ try {
                               
                    
                 </div> 
-                
-                  <div
+                {
+                  (index==deleteOption)&&(
+                    
+                  <motion.div  
+                  initial={{
+                        x:0,y:-50,opacity:0
+                    }}
+                    animate={{
+                        opacity:1,
+                        y:0,
+                    }}
+                    transition={{
+                        type: 'spring',
+                        stiffness: 200,
+                        }}
                       className={styles.deleteButton}
                   >
                     <div 
@@ -455,8 +465,10 @@ try {
                       
                       <FaTrash color="#fff"/> 
                     </div>
-                  </div>
                     
+                  </motion.div>
+                  )
+                }
             </li>
         );
       })
@@ -493,7 +505,7 @@ try {
                           position:"relative",margin:"20px",display:"flex",
                         }}>
                         Your Cart is empty
-                        <div style={{margin:"80px 50px"}}> <Spinner/></div>
+                        <div style={{margin:"80px -20px"}}> <Spinner/></div>
                         </h3>
                         </div>
                     </>

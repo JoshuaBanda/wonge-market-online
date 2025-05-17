@@ -114,7 +114,7 @@ const ItemLikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
           style={{
             
             cursor: isLoading ? 'not-allowed' : 'pointer',
-            color: isLiked ? 'black' : 'grey',
+            color: isLiked ? 'white' : 'grey',
             overflow:'visible',width:'80px',
             height:'80px',
             backgroundColor:'rgba(0,0,0,0)',borderRadius:'50%'
@@ -124,7 +124,7 @@ const ItemLikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
           likeCount==0?(<>
             
           <div>
-            <FaHeart size={40}/>
+            <FaHeart size={30}/>
           </div>
           </>
 
@@ -141,7 +141,7 @@ const ItemLikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
   display: "flex",
   alignItems: "center",      // vertically center items
   justifyContent: "center",
-  color:isLiked?"black":"grey"
+  color:isLiked?"white":"grey"
 }}
 
           >

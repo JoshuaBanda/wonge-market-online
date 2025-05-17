@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation'; // ✅ Fixed import
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaArrowLeft, FaArrowRight, FaCartPlus } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaCartPlus, FaShoppingCart } from 'react-icons/fa';
 import { use } from 'react';
 import Spinner from '@/app/home/Spinning';
 import { useUser } from '@/app/userContext';
@@ -129,6 +129,19 @@ const handleQuantityReduction = () => {
             <span>
               <AnimatedWord/>
             </span>
+                <div
+                className={styles.prevButton}
+                id="customizedbackground"
+                onClick={() => router.back()}
+                style={{ cursor: "pointer" }}
+              >
+                <FaArrowLeft color="white" />
+              </div>
+            <div className={styles.cartButton} id='customizedbackground' onClick={()=>{
+              router.push('/cart')
+            }}>
+              <FaShoppingCart color='white'/>
+            </div>
             <div className={styles.likeButton} id='customizedbackground'>
               
              <ItemLikeButton postId={product.id} userId={product.user_id} initialLikeCount={likeCount} /*initialLikeStatus={isLiked}*/ />
@@ -145,7 +158,7 @@ const handleQuantityReduction = () => {
             sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
           />
 
-          <div className={styles.productDetails} id='customizedbackground'>
+          <div className={styles.productDetails} id=''>
             <h1 className={styles.productName}>{product.name}</h1>
             
              <div className={styles.rating}>
