@@ -58,7 +58,7 @@ export default function ClientFetcher({ productName }) {
   const Products=items.map((item,index)=>{
     return(
         <li key={index}>
-            <motion.div key={item.id} className={styles.container} id='customizedbackground'
+            <motion.div key={item.id} className={styles.container} id='customizedborder'
                 initial={{
                     x:0,y:0
                 }}
@@ -107,7 +107,7 @@ export default function ClientFetcher({ productName }) {
                         <div className={styles.price}>
                             <p>MK{item.price}</p>
                         </div>
-                        <div className={styles.addToCart}>
+                        <div className={styles.addToCart} id='customizedbackground'>
                             Add to cart <FaShoppingCart style={{
                             fontSize:"18px",margin:"1px 1px 1px 0px"
                             }}/>

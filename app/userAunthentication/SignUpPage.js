@@ -97,7 +97,7 @@ const SignUpPage = () => {
     
     try {
       const response = await axios.post(
-        "https://wonge-backend.onrender.com/users/otp/send",
+        "https://wonge-backend-k569.onrender.com/users/otp/send",
         { email }, // Must be an object with the key 'email'
         {
           headers: { 'Content-Type': 'application/json' }
@@ -129,7 +129,7 @@ const SignUpPage = () => {
       formData.append("otp",otp);
       
       const response = await axios.post(
-        "https://wonge-backend.onrender.com/users/otp/verify",
+        "https://wonge-backend-k569.onrender.com/users/otp/verify",
         { email,otp},
         {
           headers: { 'Content-Type': 'application/json' }
@@ -182,7 +182,7 @@ const SignUpPage = () => {
       formData.append("file", profilePicture); // Append the profile picture file
 
       // Send the complete data to the backend
-      const response = await axios.post("https://wonge-backend.onrender.com/users/create-user", formData, {
+      const response = await axios.post("https://wonge-backend-k569.onrender.com/users/create-user", formData, {
         headers: {
           "Content-Type": "multipart/form-data", // Important for file uploads
         },

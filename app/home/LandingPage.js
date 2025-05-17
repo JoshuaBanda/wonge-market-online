@@ -8,14 +8,16 @@ import style from "../Styles/HomeItems.module.css";
 import HomeOptions from "./HomeOptions";
 import Image from "next/image";
 import HomePage from "./Home";
+import { useRouter } from "next/navigation";
 
 const LandingPage = ({user}) => {
   const items = [
-    { name: "Avon",imgSrc:'/wonge3_with_no_bg.png',alt:'pic' },
+    { name: "Lotion",imgSrc:'/wonge3_with_no_bg.png',alt:'pic' },
     { name: "Earrings",imgSrc:'/wonge5_with_no_bg.png',alt:'pic' },
     { name: "Brochus" ,imgSrc:'/wonge3_with_no_bg.png',alt:'pic'},
     { name: "Perfume" ,imgSrc:'/wonge5_with_no_bg.png',alt:'pic'},
   ];
+  const route=useRouter();
 
   const [search, setSearch] = useState("Avon");
   const [listItemBorder, setListItemBorder] = useState(0);
@@ -24,6 +26,8 @@ const LandingPage = ({user}) => {
   const handleOnClick = (item) => {
     setSelectedItem(item);
     setSearch(item.name);
+    
+    route.push("/products/Lotion")
 
     switch (item.name) {
       case "Avon":

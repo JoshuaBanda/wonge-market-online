@@ -223,14 +223,14 @@ try {
 
 
       const notifyCustomer= async(inventoryIds)=>{
-      
+          console.log(inventoryIds);
             try {
-              await axios.post(`https://wonge-backend-k569.onrender.com/notifications/notify-customer`, {
+              const response=await axios.post(`https://wonge-backend-k569.onrender.com/notifications/notify-customer`, {
                 user_id: user.userid,
                 inventory_ids: inventoryIds,
               });
              // console.log(`item id ${inventoryIds}`)
-              console.log('Customer notified successfully.');
+              //console.log('Customer notified successfully.');
             } catch (notificationError) {
               console.error('Error notifying customer:', notificationError);
               // Optionally handle rollback or retry logic here
@@ -280,10 +280,10 @@ try {
               return item;
             })
           );
-                 if (res.status === 200 || res.status === 201) {
-  await notifyCustomer(inventoryIds);
-  console.log("notifying customer");
-}
+          if (res.status === 200 || res.status === 201) {
+            await notifyCustomer(inventoryIds);
+            console.log("notifying customer");
+            }
 
         } catch (error) {
           console.error("error updating cart", error);
@@ -335,6 +335,12 @@ try {
             return item;
           })
         );
+        
+          if (res.status === 200 || res.status === 201) {
+            await notifyCustomer([itemToBeOrdered.inventory_id]);
+            console.log("notifying customer");
+            }
+
       } catch (error) {
         console.error("error updating cart", error);
       } finally {

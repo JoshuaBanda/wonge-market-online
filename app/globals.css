@@ -1,6 +1,6 @@
 @property --textc {
   syntax: "<color>";
-  initial-value: rgb(255, 51, 85);
+  initial-value: rgb(255, 154, 107);
   inherits: false;
 }
 
@@ -97,11 +97,14 @@ a {
 #customizedbackground{
   background-color:var(--textc) ;
   
-  animation: changeTextColor 60s infinite;
 }
 #customizedColor{
   color:var(--textc);
   
-  animation: changeTextColor 60s infinite;
+}
+
+#customizedborder{
+  border: 1px solid var(--textc);
+  
 }
 /*rgb(255, 51, 85)*/
