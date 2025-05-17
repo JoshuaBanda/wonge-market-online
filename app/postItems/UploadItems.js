@@ -226,7 +226,7 @@ const UploadItems = () => {
             </label>
           </div>
         </div>
-        <button type="submit" disabled={uploading} style={submitButtonStyle}>
+        <button type="submit" disabled={uploading} style={submitButtonStyle} id='customizedbackground'>
           {uploading ? 'Submitting...' : 'Submit'}
         </button>
       </form>
@@ -244,22 +244,19 @@ const containerStyle = {
   boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
   marging:"0 auto",
   display:"flex",
-  backgroundColor:"rgba(0,0,0,0.4)"
 };
 
 const formStyle = {
-  backgroundColor: 'rgba(0,0,0,0.3)',
   padding: '20px',
   borderRadius: '5px',
   boxShadow: '0 2px 5px rgba(0, 0, 0, 0.5)',
-  color:"black",
   margin:"0 auto",
   width:"500px"
+
 };
 
 const headingStyle = {
   textAlign: 'center',
-  color: '#fff',
 };
 
 const formGroupStyle = {
@@ -296,7 +293,6 @@ const radioLabelStyle = {
 };
 
 const submitButtonStyle = {
-  backgroundColor: 'orangered',
   color: 'white',
   padding: '10px',
   border: 'none',

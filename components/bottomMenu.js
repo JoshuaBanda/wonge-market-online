@@ -80,23 +80,25 @@ const BottomMenu = () => {
 
   return (
     <>
-      <motion.div className={styles.main} id="customizedbackground">
+      <motion.div className={styles.main} id="customizedborder">
         <div onClick={handleHomeClick}>
-          <FaHome className={styles.icons} />
+          <FaHome className={styles.icons} id="customizedColor"/>
         </div>
 
         <div>
-          <FaSearch className={styles.icons} />
+          <FaSearch className={styles.icons} id="customizedColor" />
         </div>
 
         <div>
           <FaCartShopping className={styles.icons} onClick={()=>{
             
             router.push("/cart");
-          }}/>
+          }}
+            id="customizedColor"
+          />
         </div>
 
-        <div ref={menuRef} onClick={handleMenuToggle}>
+        <div ref={menuRef} onClick={handleMenuToggle} id="customizedColor">
           <FaBars className={styles.icons} />
           {/* Menu Pop Up */}
           {showMenuPopUp && (
