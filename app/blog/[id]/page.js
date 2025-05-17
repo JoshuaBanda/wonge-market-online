@@ -122,14 +122,14 @@ const handleQuantityReduction = () => {
   if (!product) return <div className={styles.error}>Product not found</div>;
 
   return (
-    <div >
-      <div className={styles.container} id='customizedbackground'>
+    <div  className={styles.container} >
+      <div>
         {/* Header*/}
         <section className={styles.header}>
             <span>
               <AnimatedWord/>
             </span>
-            <div className={styles.likeButton}>
+            <div className={styles.likeButton} id='customizedbackground'>
               
              <ItemLikeButton postId={product.id} userId={product.user_id} initialLikeCount={likeCount} /*initialLikeStatus={isLiked}*/ />
             </div>
@@ -140,12 +140,12 @@ const handleQuantityReduction = () => {
             src={product.photo_url}
             alt={product.name}
             quality={100}
-            width="400"
-            height="400"
+            width="200"
+            height="200"
             sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
           />
 
-          <div className={styles.productDetails} id='customizedBackGroundColor'>
+          <div className={styles.productDetails} id='customizedbackground'>
             <h1 className={styles.productName}>{product.name}</h1>
             
              <div className={styles.rating}>

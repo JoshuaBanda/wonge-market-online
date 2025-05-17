@@ -445,17 +445,17 @@ try {
                    
                 </div> 
                 
-                        <div
-                            className={styles.deleteButton}
-                        >
-                          <div 
-                            onClick={() => handleDelete(item.id)}
-                            
-                            id="customizedbackground">
-                            
-                            <FaTrash color="#fff"/> 
-                          </div>
-                        </div>
+                  <div
+                      className={styles.deleteButton}
+                  >
+                    <div 
+                      onClick={() => handleDelete(item.id)}
+                      
+                      id="customizedbackground">
+                      
+                      <FaTrash color="#fff"/> 
+                    </div>
+                  </div>
                     
             </li>
         );

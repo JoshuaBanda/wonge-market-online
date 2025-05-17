@@ -1,9 +1,11 @@
 "use client";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaRegStar, FaRegStarHalf, FaStar } from "react-icons/fa";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 
 const Rating = ({initialLikeCount,postId,userId}) => {
+    const jwtToken=1;
     const [likes,setLikes]=useState(0);
     
       const [likeCount, setLikeCount] = useState(initialLikeCount);
@@ -14,7 +16,6 @@ const Rating = ({initialLikeCount,postId,userId}) => {
   }, []);
 
           const fetchLikeData = async () => {
-    setIsLoading(true);
     try {
       // Fetch like count
       const likeCountResponse = await axios.get(`https://wonge-backend-k569.onrender.com/post-likes/${postId}`, {
@@ -39,7 +40,6 @@ const Rating = ({initialLikeCount,postId,userId}) => {
     } catch (error) {
       console.error("Error fetching like data:", error);
     } finally {
-      setIsLoading(false);
     }
   };
 
