@@ -31,7 +31,7 @@ const EditProducts = () => {
                 const userId = user.userid; // or however your user object is structured
               
                 try {
-                  const response = await axios.get('https://wonge-backend.onrender.com/inventory', {
+                  const response = await axios.get('https://wonge-backend-k569.onrender.com/inventory', {
                     headers: {
                       Authorization: `Bearer ${user.access_token}`, // this is enough!
                     },
@@ -53,7 +53,7 @@ const EditProducts = () => {
 
         setDeletingId(itemId);
         try {
-            await axios.delete(`https://wonge-backend.onrender.com/inventory/${itemId}`);
+            await axios.delete(`https://wonge-backend-k569.onrender.com/inventory/${itemId}`);
             setShopItems(prevItems => prevItems.filter(item => item.id !== itemId));
             setMessage("Item deleted successfully.");
         } catch (error) {
@@ -106,7 +106,7 @@ const EditProducts = () => {
                 prevItems.map(item => item.id === itemId ? { ...item, ...updatedItem } : item)
             );
 
-            await axios.patch(`https://wonge-backend.onrender.com/inventory/${itemId}/description`, updatedItem);
+            await axios.patch(`https://wonge-backend-k569.onrender.com/inventory/${itemId}/description`, updatedItem);
             setMessage("Item updated successfully.");
         } catch (error) {
             console.error("Update failed:", error);

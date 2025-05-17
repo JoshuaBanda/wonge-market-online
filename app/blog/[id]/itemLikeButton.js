@@ -2,11 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // You can use axios or fetch for https://wonge-backend-k569.onrender.com requests
 import { ClipLoader } from 'react-spinners'; // For a loading spinner
-import Rating from './Rating';
 import { FaHeart,FaThumbsUp, FaRegHeart,FaFaceGrinHearts } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
-import styles from "../Styles/like.module.css";
-const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
+import styles from "../../Styles/itemLike.module.css";
+
+
+const ItemLikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
   //console.log(" postId", postId,"userId",userId,"jwtToken",jwtToken,"initialLikeCount",initialLikeCount);
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(initialLikeCount);
@@ -41,7 +42,6 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
       });
 
 
-      setLikeCount(fetchedLikeCount);
 
      // console.log('like status response',likeStatusResponse.data,'like count:',likeCount);
       setIsLiked(likeStatusResponse.data);
@@ -113,21 +113,18 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
           disabled={isLoading}
           style={{
             
-            background: isLiked ? 'rgba(248, 248, 248, 0.9)' : 'rgba(248, 248, 248, 0.9)',
-            border: '1px solid rgba(255,255,255,0.2)',
             cursor: isLoading ? 'not-allowed' : 'pointer',
             color: isLiked ? 'black' : 'grey',
             overflow:'visible',width:'80px',
-            borderRadius:'10px',
-            height:'22px',backdropFilter:'blur(10px)',
-            boxShadow:'-1px 1px 1px rgba(0,0,0,0.025)',
+            height:'80px',
+            backgroundColor:'rgba(0,0,0,0)',borderRadius:'50%'
           }}
         >
         {
           likeCount==0?(<>
             
           <div>
-            <FaHeart size={18}/>
+            <FaHeart size={40}/>
           </div>
           </>
 
@@ -149,10 +146,9 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
 
           >
           <div style={{fontSize:"18px",color:"black"}} className={styles.like}>
-          {likeCount}&nbsp;
           </div>
           <div>
-          <FaHeart style={{fontSize:"18px"}}/></div>
+          <FaHeart style={{fontSize:"30px"}}/></div>
           </motion.div>
             </>
           )
@@ -172,4 +168,4 @@ const LikeButton = ({ postId, userId, jwtToken, initialLikeCount,  }) => {
   );
 };
 
-export default LikeButton;
+export default ItemLikeButton;

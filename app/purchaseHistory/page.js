@@ -34,7 +34,7 @@ const PurchaseHistory = () => {
 console.log("hi")
       try {
         const res = await axios.get(
-          `https://wonge-backend.onrender.com/cart/get-cart-items/${user.userid}/history`
+          `https://wonge-backend-k569.onrender.com/cart/get-cart-items/${user.userid}/history`
         );
         if (Array.isArray(res.data)) {
           setCartItems(res.data);

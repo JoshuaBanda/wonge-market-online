@@ -30,7 +30,7 @@ body {body {
 }
 
 }.myColor {
-  animation: changeTextColor 60s infinite;
+  /*animation: changeTextColor 60s infinite;*/
   color: var(--textc);
     font-family:var(--font-poppins);
   font-weight: bold;

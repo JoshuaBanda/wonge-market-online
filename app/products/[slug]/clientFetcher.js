@@ -30,7 +30,7 @@ export default function ClientFetcher({ productName }) {
     const fetchItems = async () => {
       try {
         const response = await axios.get(
-          `https://wonge-backend.onrender.com/inventory/products/${productName}/${page}/${limit}`
+          `https://wonge-backend-k569.onrender.com/inventory/products/${productName}/${page}/${limit}`
         );
         
        // console.log("response",response.data);console.log("items",items);

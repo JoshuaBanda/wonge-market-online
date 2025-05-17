@@ -17,7 +17,7 @@ const ProductPage = () => {
 
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`https://wonge-backend.onrender.com/inventory/${id}`);
+        const response = await axios.get(`https://wonge-backend-k569.onrender.com/inventory/${id}`);
         setProduct(response.data);
         setLoading(false);
       } catch (error) {

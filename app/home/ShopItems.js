@@ -71,8 +71,8 @@ const ShopItems = ({ searchItem, jwtToken='1', post='', /*currentUserId,*/ apiSe
 
           // Make API call to search for items
           const response = await axios.get(
-            //`https://wonge-backend.onrender.com/search/search?name=${searchItem}`
-            `https://wonge-backend.onrender.com/inventory/products/${searchItem}/${page}/${limit}`
+            //`https://wonge-backend-k569.onrender.com/search/search?name=${searchItem}`
+            `https://wonge-backend-k569.onrender.com/inventory/products/${searchItem}/${page}/${limit}`
           );
          // console.log(`fecthing ttp://localhost:3001/inventory/products/${searchItem}/${page}/${limit} ${response.data}`)
           

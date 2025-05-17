@@ -34,7 +34,7 @@ const LoginPart = () => {
 
     try {
       const response = await axios.post(
-        "https://wonge-backend.onrender.com/users/logi-n",
+        "https://wonge-backend-k569.onrender.com/users/logi-n",
         { email, password },
         { timeout: 120000 }
       );

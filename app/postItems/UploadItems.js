@@ -73,7 +73,7 @@ const UploadItems = () => {
     formData.append('whatsappmessage', whatsappMessage);
     formData.append('user_id', user.userid); // Assuming user ID is static for now
     try {
-      const response = await axios.post('https://wonge-backend.onrender.com/inventory/create', formData, {
+      const response = await axios.post('https://wonge-backend-k569.onrender.com/inventory/create', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
