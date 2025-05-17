@@ -1,6 +1,6 @@
 @property --textc {
   syntax: "<color>";
-  initial-value: rgba(255,255,255);
+  initial-value: rgb(255, 51, 85);
   inherits: false;
 }
 
@@ -37,9 +37,9 @@ body {body {
 }
 
 @keyframes changeTextColor {
-  0%   { --textc: black; }
-  50%  { --textc: red; }
-  100% { --textc: white; }
+  0%   { --textc: rgb(255, 51, 85); }
+  50%  { --textc: rgb(60, 161, 82); }
+  100% { --textc: rgb(255, 51, 85); }
 }
 
 
@@ -95,8 +95,13 @@ a {
 }
 
 #customizedbackground{
-  background-color: rgb(255, 51, 85);
+  background-color:var(--textc) ;
+  
+  animation: changeTextColor 60s infinite;
 }
 #customizedColor{
-  color:rgb(255, 51, 85);
+  color:var(--textc);
+  
+  animation: changeTextColor 60s infinite;
 }
+/*rgb(255, 51, 85)*/

@@ -146,7 +146,7 @@ useEffect(() => {
             
             //background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent)',
           }}
-          className="myColor">
+          id="customizedColor">
            New {selectedItem} Arrivals
           </div>
           
