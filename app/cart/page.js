@@ -391,8 +391,8 @@ try {
                         src={item.inventory.photo_url}
                         alt='w'
                         quality={100}
-                        width="150"
-                        height="150"
+                        width="120"
+                        height="120"
                         sizes='(max-width:768px)100vw, (max-width:1200pxpx)50vw, 33vw'
                         priority
                         onClick={() => handleBuyNow(item)}

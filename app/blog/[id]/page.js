@@ -46,7 +46,7 @@ const item = ({params}) => {
       try {
         const response = await axios.get(`https://wonge-backend-k569.onrender.com/inventory/${id}`);
         setProduct(response.data);
-        console.log(response.data)
+        //console.log(response.data)
         setLoading(false);
       } catch (error) {
         console.error("Error fetching product data", error);
@@ -149,7 +149,7 @@ const handleQuantityReduction = () => {
             <h1 className={styles.productName}>{product.name}</h1>
             
              <div className={styles.rating}>
-                <Rating  initialLikeCount={5} postId={product.id} userId={product.user_id}/>
+                <Rating  initialLikeCount={0} postId={product.id} userId={product.user_id}/>
              </div>
              <div className={styles.productDescription}>
               <span>
@@ -157,7 +157,9 @@ const handleQuantityReduction = () => {
               </span>
               <p >{product.description}</p>
              </div>
-            <p className={styles.productPrice}>${product.price}</p>
+            <p className={styles.productPrice}>
+              ${product.price}
+            </p>
 
             {/*Quantity */}
             
