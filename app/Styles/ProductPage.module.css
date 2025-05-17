@@ -79,7 +79,7 @@
     }
   .productPrice {
     position: fixed;
-    bottom: 80px;
+    bottom: 50px;
     font-weight: 500;
     color: #333; /* Tomato color for emphasis */
     margin-bottom: 20px;
@@ -90,7 +90,7 @@
   
   .addToCartBtn {
     position: fixed;
-    bottom: 100px;right: 30px;
+    bottom: 50px;right: 30px;
     background-color: rgba(0, 0, 0); /* Tomato color */
     color: white;
     font-size: 1.2rem;
@@ -145,7 +145,7 @@
     }
   
     .productPrice {
-      font-size: 40px;
+      font-size: 20px;
     }
   
     .addToCartBtn {
@@ -156,7 +156,7 @@
   
   .quantityIn {
     position: absolute;
-    right: 50px;top: 50px;
+    right: 20px;top: 30px;
     background-color: rgb(236, 236, 236);
     display: flex;
     padding: 2px 20px;
