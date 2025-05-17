@@ -1,6 +1,6 @@
 @property --textc {
   syntax: "<color>";
-  initial-value: rgb(255, 154, 107);
+  initial-value: rgb(255, 51, 85);
   inherits: false;
 }
 
