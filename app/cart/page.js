@@ -148,7 +148,7 @@ const handleQuantityIncrement = async (itemToUpdate, indexToUpdate) => {
 
     const updateRequest = async (inventoryId, newQuantity,cartId) => {
 try {
-  const response = await axios.patch("https://wonge-backend.onrender.com/cart/cart-quantity", {
+  const response = await axios.patch("https://wonge-backend-k569.onrender.com/cart/cart-quantity", {
     inventory_id: inventoryId,
     quantity: newQuantity,
     id: cartId,
@@ -196,7 +196,7 @@ try {
         const fetchData=async()=>{
             try{
                 
-                const res=await axios.get(`https://wonge-backend.onrender.com/cart/get-cart-items/${user.userid}`);
+                const res=await axios.get(`https://wonge-backend-k569.onrender.com/cart/get-cart-items/${user.userid}`);
                 if (Array.isArray(res.data)) {
                   setCartItems(res.data);
                 } else {
@@ -220,7 +220,7 @@ try {
       const notifyCustomer= async(inventoryIds)=>{
       
             try {
-              await axios.post(`https://wonge-backend.onrender.com/notifications/notify-customer`, {
+              await axios.post(`https://wonge-backend-k569.onrender.com/notifications/notify-customer`, {
                 user_id: user.userid,
                 inventory_ids: inventoryIds,
               });
@@ -248,7 +248,7 @@ try {
     
         
         try {
-          const res = await axios.patch(`https://wonge-backend.onrender.com/cart/order/`, {
+          const res = await axios.patch(`https://wonge-backend-k569.onrender.com/cart/order/`, {
             user_id: user.userid,
             status: "ordered",
             inventory_ids: inventoryIds,
@@ -307,7 +307,7 @@ try {
       setLoadingOrder(true);
     
       try {
-        const res = await axios.patch(`https://wonge-backend.onrender.com/cart/order-one-item/`, {
+        const res = await axios.patch(`https://wonge-backend-k569.onrender.com/cart/order-one-item/`, {
           user_id: user.userid,
           status: "ordered",
           cart_id: itemToBeOrdered.id,
@@ -348,20 +348,20 @@ try {
             setCartItems(cartItems.filter(item => item.id !== cartId));
 
             // Send DELETE request to the backend
-            const response = await axios.delete(`https://wonge-backend.onrender.com/cart/remove-item/${user.userid}/${cartId}`);
+            const response = await axios.delete(`https://wonge-backend-k569.onrender.com/cart/remove-item/${user.userid}/${cartId}`);
 
             // If successful, the item is deleted
             if (response.status === 200) {
                 console.log("Item deleted successfully");
             } else {
                 // If something went wrong, re-fetch the cart items to get the correct state
-                const res = await axios.get(`https://wonge-backend.onrender.com/cart/get-cart-items/${user.userid}`);
+                const res = await axios.get(`https://wonge-backend-k569.onrender.com/cart/get-cart-items/${user.userid}`);
                 setCartItems(res.data);
             }
         } catch (error) {
             console.error("Error deleting cart item:", error);
             // Revert the optimistic update if there's an error
-            const res = await axios.get(`https://wonge-backend.onrender.com/cart/get-cart-items/${user.userid}`);
+            const res = await axios.get(`https://wonge-backend-k569.onrender.com/cart/get-cart-items/${user.userid}`);
             setCartItems(res.data);
         }
     };
@@ -441,18 +441,21 @@ try {
                     </div>
 
 
+                              
+                   
+                </div> 
+                
                         <div
                             className={styles.deleteButton}
                         >
                           <div 
-                            onClick={() => handleDelete(item.id)}>
+                            onClick={() => handleDelete(item.id)}
                             
-                            <FaTrash color="#222"/> <span>Remove</span>
+                            id="customizedbackground">
+                            
+                            <FaTrash color="#fff"/> 
                           </div>
                         </div>
-                              
-                   
-                </div> 
                     
             </li>
         );
