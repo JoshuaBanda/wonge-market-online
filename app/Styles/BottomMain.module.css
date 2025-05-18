@@ -1,3 +1,9 @@
+
+@property --clr {
+  syntax: "<color>";
+  initial-value: white;
+  inherits: false;
+}
 .navigation {
     position: fixed;
     width: 95%;
@@ -107,9 +113,6 @@
   }
   
 
- :root{ 
-  --clr:#fff;
- }
 
  .navigation ul{
   display: flex;
