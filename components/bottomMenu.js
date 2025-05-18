@@ -8,6 +8,7 @@ import {
   FaBox,
   FaCog,
   FaHome,
+  FaReceipt,
   FaSearch,
   FaSignInAlt,
   FaUser
@@ -27,7 +28,7 @@ const BottomMenu = () => {
     { label: "Home", icon: <FaHome />, route: "/home" },
     { label: "Search", icon: <FaSearch />, route: "/search" },
     { label: "Cart", icon: <FaCartShopping />, route: "/cart" },
-    { label: "Book", icon: <FaBook />, route: "/story" },
+    { label: "Records", icon: <FaReceipt />, route: "/records" },
     { label: "Menu", icon: <FaBars />, action: () => setShowMenPopUp((prev) => !prev) }
   ];
 

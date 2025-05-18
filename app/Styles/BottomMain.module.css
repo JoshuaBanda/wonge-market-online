@@ -8,7 +8,7 @@
     position: fixed;
     width: 95%;
     height: 60px;
-    bottom: 5%;
+    bottom: 2%;
     left: 50%; /* push to the center */
     transform: translateX(-50%); /* pull it back 50% of its own width */
     z-index: 1000;
@@ -83,7 +83,7 @@
 
   .indicator{
     position: absolute;
-    top:-65%;
+    top:-55%;
     width: 70px;height: 70px;
     border: 6px solid var(--clr);
     border-radius: 50%;
@@ -98,7 +98,7 @@
     top: 50%;
     left: -22px;
     border-top-right-radius: 15px;
-    box-shadow: 0px -12px 0 0 var(--clr);
+    /*box-shadow: 0px -12px 0 0 var(--clr);*/
   }
     .indicator::after{
     content: '';
@@ -109,7 +109,7 @@
     top: 50%;
     right: -22px;
     border-top-left-radius: 15px;
-    box-shadow: 0px -12px 0 0 var(--clr);
+    /*box-shadow: 0px -12px 0 0 var(--clr);*/
   }
   
 
@@ -142,7 +142,7 @@
   font-size: 28px;
  }
  .navigation ul li.active div .icon{
-  transform: translateY(-45px);
+  transform: translateY(-40px);
  }
  .navigation ul li .text{
   position: absolute;
